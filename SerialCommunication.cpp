@@ -55,7 +55,7 @@ bool SerialCommunication::sendMessage(QByteArray c){
 		standardOutput << QObject::tr("Failed to open port %1, error: %2").arg(serialPortName).arg(serialPort.errorString()) << endl;
 		return false;
 	}
-	QByteArray writeData = c; //Caractère à choisir
+	QByteArray writeData = c; //Caractere a choisir
 
 	qint64 bytesWritten = serialPort.write(writeData);
 
@@ -109,7 +109,7 @@ bool SerialCommunication::read(){
 
 	while (serialPort.waitForReadyRead(-1) & !isReading)
 		if (serialPort.readAll() == "a") {
-			standardOutput << "Message bien reçu" << endl;
+			standardOutput << "Message bien recu" << endl;
 			isReading = true;
 		}
 	standardOutput << serialPort.readAll() << endl;

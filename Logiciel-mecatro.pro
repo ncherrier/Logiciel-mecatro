@@ -9,23 +9,23 @@ QT += serialport
 QT += quick qml multimedia multimediawidgets # for the webcam
 
 SOURCES += \
-    IndustrialCamera/camera.cpp \
-    IndustrialCamera/camera_settings.cpp \
-    GraphicalUserInterface/FramingWindow.cpp \
-    GraphicalUserInterface/SettingsWindow.cpp \
-    GraphicalUserInterface/cameraSettingsWindow.cpp \
-    GraphicalUserInterface/ProcessWindow.cpp \
-    MainProg.cpp \
+    camera.cpp \
+    camera_settings.cpp \
+    FramingWindow.cpp \
+    SettingsWindow.cpp \
+    cameraSettingsWindow.cpp \
+    ProcessWindow.cpp \
+    Main_Prog.cpp \
     TakePictureTest.cpp \
     SerialCommunication.cpp
 
 HEADERS += \
-    IndustrialCamera/camera.h \
-    GraphicalUserInterface/FramingWindow.h \
-    GraphicalUserInterface/SettingsWindow.h \
-    GraphicalUserInterface/cameraSettingsWindow.h \
-    GraphicalUserInterface/ProcessWindow.h \
-    MainProg.h \
+    camera.h \
+    FramingWindow.h \
+    SettingsWindow.h \
+    cameraSettingsWindow.h \
+    ProcessWindow.h \
+    Main_Prog.h \
     SerialCommunication.h \
     TakePictureTest.h \
     Vimba_2.0/VimbaCPP/Include/AncillaryData.h \

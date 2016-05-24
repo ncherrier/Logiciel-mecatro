@@ -73,7 +73,7 @@ SettingsWindow::SettingsWindow() {
 	// Set size
 
 	setFixedSize(800, 400);
-	setWindowTitle("Mise au point et réglages");
+	setWindowTitle("Mise au point et reglages");
 
 	// Buttons
 
