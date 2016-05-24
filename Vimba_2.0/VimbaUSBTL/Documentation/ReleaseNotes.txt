@@ -1,0 +1,120 @@
+===========================================================================
+
+  Vimba USB Transport Layer - Release Notes 
+  
+  Version: 1.0.1
+  Date:    2015-Nov-09
+===========================================================================
+
+--------------------------------
+Components and Version Reference  
+--------------------------------
+
+Drivers
+------
+  Vimba USB Driver                                    1.0.0
+
+Vimba Genicam Transport Layer modules
+-----------------------------------
+  USB Transport Layer (VimbaUSBTL.cti)                1.0.1
+
+Tools
+-----
+  Vimba Driver Installer (VimbaDriverInstaller.exe)	  1.1.6*
+  
+---------------------
+Hardware Requirements
+---------------------
+PC or laptop with 1 GHz 32-bit (x86) or 64-bit (x64) processor or better.
+
+ARMv7-compatible 32 bit processor with 500 MHz or better (for hard-float with VFP3 support
+and Thumb extension), e.g. ODROID-XU, Mirabox
+
+Additionally a built-in USB 3.0 controller for PCI Express bus is required.
+
+  Remark:
+  Testing has been performed on host controllers that are based on Intel chip
+  sets and Renesas chip sets. The driver may run on host controllers that
+  are based on chip sets from other vendors, too. Nevertheless for best
+  performance we highly recommend Intel chip sets.
+  However, if there are any problems please feel free to contact our Technical
+  Software Support (see below).
+
+
+---------------------------
+Supported Operating Systems
+---------------------------
+The Vimba USB Transport Layer is designed for the 32-bit or 64-bit Windows 
+operating systems:
+
+   Windows XP
+   Windows 7
+   Windows 8 and 8.1
+   
+   Please note that Windows RT is not supported with this version of 
+   Vimba USB TL.
+
+   Ubuntu (Tested with version 12.04 LTS "Precise Pangolin")
+   Debian (Tested with version 6 "Squeeze")
+   Fedora (Tested with version 17 "Beefy Miracle")
+
+   
+Vimba has been tested with the following 32-bit ARM
+operating systems:
+
+   Ubuntu hard-float (Tested with version 12.04 LTS "Precise Pangolin")
+   Ubuntu soft-float (Tested with version 11.10 "Oneiric Ocelot")
+   Angstrom hard-float (Tested with version 2012.12)
+ 
+   If running soft-float applications on hard-float boards, it might become
+   necessary to install additional runtime libraries for soft-float support.
+
+Vimba is most likely while not guaranteed to be compatible to follow up 
+versions of the aforementioned environments.
+
+
+------------
+Installation
+------------            
+The Vimba USB Transport Layer is part of the Vimba SDK. For instructions how
+to install this module please refer to the Vimba SDK User Guide.
+
+	
+-------------------------------------------------------
+Correlations with other Allied Vision Software Packages
+-------------------------------------------------------
+Please refer to the Vimba SDK Release Notes.
+
+
+-------------------------------------------------------
+Known issues
+-------------------------------------------------------
+MSI Uninstallation by new Windows 10 dialog "Apps&Features" is not supported by now.
+Please use the old "Programs and Features" dialog.
+
+
+----------------------------------------
+Allied Vision Technical Software Support
+----------------------------------------
+You can reach the Allied Vision Technical Software Support via the
+corresponding contact form for your region:
+
+   Asia Pacific
+   ------------
+        http://www.alliedvision.com/apac/support/contact-support.html 
+   
+   Europe, Middle East and Africa 
+   ------------------------------
+        http://www.alliedvision.com/emea/support/contact-support.html
+  
+   Germany
+   -------
+        http://www.alliedvision.com/de/support/support-kontaktieren.html
+
+   The Americas
+   ------------
+        http://www.alliedvision.com/us/support/contact-support.html
+
+   China
+   ------------
+        http://www.alliedvision.com/cn/support/contact-support.html

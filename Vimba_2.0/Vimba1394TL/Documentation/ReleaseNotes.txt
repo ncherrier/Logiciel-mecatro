@@ -1,0 +1,151 @@
+===========================================================================
+
+  Vimba 1394 Transport Layer - Release Notes 
+  
+  Version: 1.4.1
+  Date:    2015-Nov-09
+===========================================================================
+
+--------------------------------
+Components and Version Reference  
+--------------------------------
+
+Driver
+------
+  intek 1394 Bus Driver (FireDrv.sys)                 2.9.0
+
+Vimba Genicam Transport Layer modules
+-----------------------------------
+  1394 Transport Layer (Vimba1394TL.cti)              1.4.1
+
+Tools
+-----
+  Vimba Driver Installer (VimbaDriverInstaller.exe)   1.1.6*
+
+
+---------------------
+Hardware Requirements
+---------------------
+PC or laptop with 1 GHz 32-bit (x86) or 64-bit (x64) processor or better.
+
+Additionally a built-in IEEE 1394 interface or IEEE 1394 adapter (OHCI) card 
+(one or more) for PCI or PCI Express bus or PC card or ExpressCard with IEEE 
+1394 port(s) is required.
+
+  Remark:
+  Testing has been performed on host controllers that are based on OHCI chip
+  sets from Texas Instruments. The driver should run on host controllers that
+  are based on OHCI chip sets from other vendors, too. 
+  However, if there are any problems please feel free to contact our Technical
+  Software Support (see below).
+
+
+---------------------------
+Supported Operating Systems
+---------------------------
+The Vimba 1394 Transport Layer is designed for the 32-bit or 64-bit Windows 
+operating systems:
+
+   Windows XP
+   Windows 7
+   Windows 8 and 8.1
+   
+   Please note that Windows RT is not supported with this version of Vimba 1394 TL.
+
+
+------------
+Installation
+------------            
+The Vimba 1394 Transport Layer is part of the Vimba SDK. For instructions how 
+to install this module please refer to the Vimba SDK User Guide.
+
+
+------------
+Known Issues
+------------
+The Vimba 1394 Transport Layer module supports most of the features 
+implemented in Allied Visions 1394 cameras. Please contact Allied Vision
+in case you require a feature currently not supported.
+
+MSI Uninstallation by new Windows 10 dialog "Apps&Features" is not supported by now.
+Please use the old "Programs and Features" dialog.
+
+
+---------------------------
+Changes and release history
+---------------------------
+
+Changes in version 1.4.1:
+-------------------------
+1394 Transport Layer
+  - Fixed maximum of DeviceRegisterAddress
+  - Omitted some unnecessary "pSelected" links for single-value selectors
+  - Small changes
+
+Vimba Driver Installer
+  - Bug fixes
+
+Changes in version 1.3.2:
+-------------------------
+1394 Transport Layer
+  - Now conforms to GenTL specification 1.3
+  - Corrected value of LineStatus, allowed AcquisitionStop at all times,
+    disabled caching of StreamAnnouncedBufferCount, other small fixes
+  - Refined the documentation
+
+AVT Driver Installer
+  - Small bug-fixes
+
+Changes in version 1.2.0:
+-------------------------
+1394 Transport Layer
+  - Added features: FirmwareVerMajor, FirmwareVerMinor, FirmwareVerBuild, 
+    ImageSize, AcquisitionAbort, AcquisitionFrameRateLimit and
+    ExposureAutoAlg for compatibility with GigE cameras
+  - Refined and corrected some tooltips and descriptions
+  - Refined the documentation for categories (now available in PDF)
+  
+Changes in version 1.1.0:
+-------------------------
+1394 Transport Layer
+  - Added features: SensorTaps, SensorDigitizationTaps, DeviceStatusLight,
+    SmearReductionEnable, ExposureAutoTarget and GainAutoTarget
+  - Renamed category ShadingControl to ImageQualityControl, moved SensorBits
+    to category ImageFormatControl
+  - Refined some tooltips and descriptions
+  - Extended the documentation for categories (now available in PDF)
+  - Bugfix: Commands UserSetLoad and UserSetSave were switched
+  - Bugfix: Oscar cameras were always ignored by the AVT1394TL
+
+
+-------------------------------------------------------
+Correlations with other Allied Vision Software Packages
+-------------------------------------------------------
+Please refer to the Vimba SDK Release Notes.
+
+
+----------------------------------------
+Allied Vision Technical Software Support
+----------------------------------------
+You can reach the Allied Vision Technical Software Support via the
+corresponding contact form for your region:
+
+   Asia Pacific
+   ------------
+        http://www.alliedvision.com/apac/support/contact-support.html 
+   
+   Europe, Middle East and Africa 
+   ------------------------------
+        http://www.alliedvision.com/emea/support/contact-support.html
+  
+   Germany
+   -------
+        http://www.alliedvision.com/de/support/support-kontaktieren.html
+
+   The Americas
+   ------------
+        http://www.alliedvision.com/us/support/contact-support.html
+
+   China
+   ------------
+        http://www.alliedvision.com/cn/support/contact-support.html

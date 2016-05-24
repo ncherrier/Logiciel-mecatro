@@ -1,0 +1,755 @@
+﻿Build started 17/05/2016 14:45:45.
+     1>Project "C:\Users\Public\Documents\Allied Vision\Vimba_2.0\VimbaCPP_Examples\VimbaViewer\Build\VS2010\VimbaViewer.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\Source /I..\..\Source\UI /I.\GeneratedFiles /I.\GeneratedFiles\Debug /IC:\Qt\5.5\msvc2013\include\QtCore /IC:\Qt\5.5\msvc2013\include\QtGui /IC:\Qt\5.5\msvc2013\include\QtWidgets /I"C:\Users\Noëlie\Documents\Mines\Mécatro\Logiciel\Fonctions_cameraPIKE\Vimba_2.0\\VimbaImageTransform\Include" /IC:\Qt\5.5\msvc2013\include /IC:\Qt\5.5\msvc2013\include\qtmain /IC:\Qt\5.5\msvc2013\include\QtCore /IC:\Qt\5.5\msvc2013\include\QtSvg /IC:\Qt\5.5\msvc2013\include\QtGui /IC:\Qt\5.5\msvc2013\include\QtXml /IC:\Qt\5.5\msvc2013\include\QtTest /I"C:\Users\Noëlie\Documents\Mines\Mécatro\Logiciel\Fonctions_cameraPIKE\Vimba_2.0\\" /I"C:\Users\Noëlie\Documents\Mines\Mécatro\Logiciel\Fonctions_cameraPIKE\Vimba_2.0\\ThirdParty\TinyXML\Include" /I..\..\.. /Zi /nologo /W3 /WX- /MP /Od /Oy- /D UNICODE /D WIN32 /D QT_CORE_LIB /D QT_GUI_LIB /D QT_MULTIMEDIA_LIB /D QT_XML_LIB /D QT_SQL_LIB /D QT_OPENGL_LIB /D QT_NETWORK_LIB /D QT_SCRIPT_LIB /D QT_WEBKIT_LIB /D QT_XMLPATTERNS_LIB /D QT_PHONON_LIB /D _WINDOWS /D QT_DLL /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"C:\Users\Public\Documents\Allied Vision\Vimba_2.0\VimbaCPP_Examples\VimbaViewer\Build\VS2010\Win32\Debug\Intermediate\VimbaViewer\\" /Fd"C:\Users\Public\Documents\Allied Vision\Vimba_2.0\VimbaCPP_Examples\VimbaViewer\Build\VS2010\Win32\Debug\Intermediate\VimbaViewer\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ExternLib\qwt\qwt_abstract_scale.cpp ..\..\Source\ExternLib\qwt\qwt_abstract_scale_draw.cpp ..\..\Source\ExternLib\qwt\qwt_clipper.cpp ..\..\Source\ExternLib\qwt\qwt_dial.cpp ..\..\Source\ExternLib\qwt\qwt_painter.cpp ..\..\Source\ExternLib\qwt\qwt_plot.cpp ..\..\Source\ExternLib\qwt\qwt_plot_axis.cpp ..\..\Source\ExternLib\qwt\qwt_plot_canvas.cpp ..\..\Source\ExternLib\qwt\qwt_plot_curve.cpp ..\..\Source\ExternLib\qwt\qwt_plot_directpainter.cpp ..\..\Source\ExternLib\qwt\qwt_plot_grid.cpp ..\..\Source\ExternLib\qwt\qwt_plot_histogram.cpp ..\..\Source\ExternLib\qwt\qwt_plot_intervalcurve.cpp ..\..\Source\ExternLib\qwt\qwt_plot_item.cpp ..\..\Source\ExternLib\qwt\qwt_plot_layout.cpp ..\..\Source\ExternLib\qwt\qwt_plot_magnifier.cpp ..\..\Source\ExternLib\qwt\qwt_plot_marker.cpp ..\..\Source\ExternLib\qwt\qwt_plot_panner.cpp ..\..\Source\ExternLib\qwt\qwt_plot_picker.cpp ..\..\Source\ExternLib\qwt\qwt_plot_rasteritem.cpp ..\..\Source\ExternLib\qwt\qwt_plot_renderer.cpp ..\..\Source\ExternLib\qwt\qwt_plot_rescaler.cpp ..\..\Source\ExternLib\qwt\qwt_plot_scaleitem.cpp ..\..\Source\ExternLib\qwt\qwt_plot_spectrocurve.cpp ..\..\Source\ExternLib\qwt\qwt_plot_spectrogram.cpp ..\..\Source\ExternLib\qwt\qwt_plot_svgitem.cpp ..\..\Source\ExternLib\qwt\qwt_plot_xml.cpp ..\..\Source\ExternLib\qwt\qwt_plot_zoomer.cpp ..\..\Source\ExternLib\qwt\qwt_round_scale_draw.cpp ..\..\Source\ExternLib\qwt\qwt_scale_draw.cpp ..\..\Source\ExternLib\qwt\qwt_scale_engine.cpp ..\..\Source\ExternLib\qwt\qwt_scale_map.cpp ..\..\Source\ExternLib\qwt\qwt_scale_widget.cpp ..\..\Source\ExternLib\qwt\qwt_series_data.cpp ..\..\Source\ExternLib\qwt\qwt_slider.cpp ..\..\Source\ExternLib\qwt\qwt_thermo.cpp ..\..\Source\Main.cpp ..\..\Source\MainWindow.cpp ..\..\Source\UI\CameraTreeWindow.cpp ..\..\Source\UI\ControllerTreeWindow.cpp ..\..\Source\UI\HexEditor\HexMainWindow.cpp ..\..\Source\UI\HexEditor\HexOptionDialog.cpp ..\..\Source\UI\HexEditor\QHexEdit.cpp ..\..\Source\UI\HexEditor\QHexEdit_p.cpp ..\..\Source\UI\Histogram\Histogram.cpp ..\..\Source\UI\Histogram\HistogramWindow.cpp ..\..\Source\UI\LineEditCompleter.cpp ..\..\Source\UI\MdiChild.cpp ..\..\Source\ViewerWindow.cpp GeneratedFiles\Debug\moc_ControllerTreeWindow.cpp GeneratedFiles\Debug\moc_HexMainWindow.cpp GeneratedFiles\Debug\moc_HexOptionDialog.cpp GeneratedFiles\Debug\moc_HistogramWindow.cpp GeneratedFiles\Debug\moc_MainWindow.cpp GeneratedFiles\Debug\moc_QHexEdit.cpp GeneratedFiles\Debug\moc_QHexEdit_p.cpp GeneratedFiles\Debug\moc_qwt_plot.cpp GeneratedFiles\Debug\moc_ViewerWindow.cpp
+         qwt_abstract_scale.cpp
+         qwt_abstract_scale_draw.cpp
+         qwt_clipper.cpp
+         qwt_dial.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_abstract_scale.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_abstract_scale.cpp)
+     1>..\..\Source\ExternLib\qwt\qwt_clipper.cpp(232): error C3861: 'qMemCopy': identifier not found
+                 ..\..\Source\ExternLib\qwt\qwt_clipper.cpp(214) : while compiling class template member function 'QPolygon QwtPolygonClipper<QPolygon,QRect,QPoint,int>::clipPolygon(const Polygon &,bool) const'
+                 with
+                 [
+                     Polygon=QPolygon
+                 ]
+                 ..\..\Source\ExternLib\qwt\qwt_clipper.cpp(449) : see reference to function template instantiation 'QPolygon QwtPolygonClipper<QPolygon,QRect,QPoint,int>::clipPolygon(const Polygon &,bool) const' being compiled
+                 with
+                 [
+                     Polygon=QPolygon
+                 ]
+                 ..\..\Source\ExternLib\qwt\qwt_clipper.cpp(448) : see reference to class template instantiation 'QwtPolygonClipper<QPolygon,QRect,QPoint,int>' being compiled
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_abstract_scale.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_abstract_scale.cpp)
+         qwt_painter.cpp
+         qwt_plot.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_abstract_scale_draw.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_abstract_scale_draw.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_abstract_scale_draw.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_abstract_scale_draw.cpp)
+         qwt_plot_axis.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_dial.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_dial.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_dial.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_dial.cpp)
+         qwt_plot_canvas.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_painter.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_painter.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_painter.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_painter.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_axis.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_axis.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_axis.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_axis.cpp)
+     1>..\..\Source\ExternLib\qwt\qwt_painter.cpp(234): error C2039: 'intersect' : is not a member of 'QRectF'
+                 C:\Qt\5.5\msvc2013\include\QtCore\qrect.h(494) : see declaration of 'QRectF'
+     1>..\..\Source\ExternLib\qwt\qwt_painter.cpp(408): error C3861: 'qMemCopy': identifier not found
+         qwt_plot_curve.cpp
+     1>..\..\Source\ExternLib\qwt\qwt_plot.cpp(381): error C2039: 'subtract' : is not a member of 'QRegion'
+                 C:\Qt\5.5\msvc2013\include\QtGui/qregion.h(56) : see declaration of 'QRegion'
+     1>..\..\Source\ExternLib\qwt\qwt_plot.cpp(383): error C2039: 'subtract' : is not a member of 'QRegion'
+                 C:\Qt\5.5\msvc2013\include\QtGui/qregion.h(56) : see declaration of 'QRegion'
+         qwt_plot_directpainter.cpp
+         qwt_plot_grid.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_canvas.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_canvas.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_canvas.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_canvas.cpp)
+         qwt_plot_histogram.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_directpainter.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_directpainter.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_directpainter.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_directpainter.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_grid.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_grid.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_grid.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_grid.cpp)
+     1>..\..\Source\ExternLib\qwt\qwt_plot_directpainter.cpp(197): error C2039: 'WA_PaintOutsidePaintEvent' : is not a member of 'Qt'
+     1>..\..\Source\ExternLib\qwt\qwt_plot_directpainter.cpp(197): error C2065: 'WA_PaintOutsidePaintEvent' : undeclared identifier
+         qwt_plot_intervalcurve.cpp
+         qwt_plot_item.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_curve.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_curve.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_curve.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_curve.cpp)
+     1>..\..\Source\ExternLib\qwt\qwt_plot_curve.cpp(737): error C2597: illegal reference to non-static member 'QwtScaleMap::LogMin'
+     1>..\..\Source\ExternLib\qwt\qwt_plot_curve.cpp(737): error C3867: 'QwtScaleMap::LogMin': function call missing argument list; use '&QwtScaleMap::LogMin' to create a pointer to member
+     1>..\..\Source\ExternLib\qwt\qwt_plot_curve.cpp(737): error C2568: '<' : unable to resolve function overload
+                 unable to recover from previous error(s); stopping compilation
+         qwt_plot_layout.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_histogram.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_histogram.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_histogram.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_histogram.cpp)
+         qwt_plot_magnifier.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_item.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_item.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_item.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_item.cpp)
+         qwt_plot_marker.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_intervalcurve.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_intervalcurve.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_intervalcurve.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_intervalcurve.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_layout.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_layout.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_layout.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_layout.cpp)
+     1>..\..\Source\ExternLib\qwt\qwt_plot_intervalcurve.cpp(414): error C3861: 'qMemCopy': identifier not found
+     1>..\..\Source\ExternLib\qwt\qwt_plot_intervalcurve.cpp(419): error C3861: 'qMemCopy': identifier not found
+         qwt_plot_panner.cpp
+     1>..\..\Source\ExternLib\qwt\qwt_plot_layout.cpp(1089): error C2039: 'subtract' : is not a member of 'QRegion'
+                 C:\Qt\5.5\msvc2013\include\QtGui/qregion.h(56) : see declaration of 'QRegion'
+     1>..\..\Source\ExternLib\qwt\qwt_plot_layout.cpp(1089): error C2228: left of '.boundingRect' must have class/struct/union
+         qwt_plot_picker.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_magnifier.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_magnifier.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_magnifier.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_magnifier.cpp)
+         qwt_plot_rasteritem.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_marker.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_marker.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_marker.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_marker.cpp)
+         qwt_plot_renderer.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_panner.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_panner.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_panner.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_panner.cpp)
+         qwt_plot_rescaler.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_picker.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_picker.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_picker.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_picker.cpp)
+         qwt_plot_scaleitem.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_rasteritem.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_rasteritem.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_rasteritem.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_rasteritem.cpp)
+         qwt_plot_spectrocurve.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_renderer.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_renderer.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_renderer.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_renderer.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_rescaler.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_rescaler.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_rescaler.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_rescaler.cpp)
+     1>..\..\Source\ExternLib\qwt\qwt_plot_renderer.cpp(26): fatal error C1083: Cannot open include file: 'qprinter.h': No such file or directory
+         qwt_plot_spectrogram.cpp
+         qwt_plot_svgitem.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_scaleitem.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_scaleitem.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_scaleitem.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_scaleitem.cpp)
+         qwt_plot_xml.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_spectrocurve.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_spectrocurve.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_spectrocurve.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_spectrocurve.cpp)
+         qwt_plot_zoomer.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_svgitem.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_svgitem.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_svgitem.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_svgitem.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_spectrogram.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_spectrogram.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_spectrogram.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_spectrogram.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_xml.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_xml.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_xml.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_xml.cpp)
+     1>..\..\Source\ExternLib\qwt\qwt_plot_spectrogram.cpp(23): fatal error C1083: Cannot open include file: 'qtconcurrentrun.h': No such file or directory
+         qwt_round_scale_draw.cpp
+         qwt_scale_draw.cpp
+         qwt_scale_engine.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_zoomer.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_zoomer.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_plot_zoomer.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_plot_zoomer.cpp)
+         qwt_scale_map.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_scale_engine.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_scale_engine.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_scale_engine.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_scale_engine.cpp)
+         qwt_scale_widget.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_round_scale_draw.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_round_scale_draw.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_round_scale_draw.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_round_scale_draw.cpp)
+         qwt_series_data.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_scale_draw.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_scale_draw.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_scale_draw.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_scale_draw.cpp)
+         qwt_slider.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_scale_map.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_scale_map.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_scale_map.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_scale_map.cpp)
+     1>..\..\Source\ExternLib\qwt\qwt_scale_map.cpp(21): error C2144: syntax error : 'double' should be preceded by ';'
+     1>..\..\Source\ExternLib\qwt\qwt_scale_map.cpp(21): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>..\..\Source\ExternLib\qwt\qwt_scale_map.cpp(21): error C2761: 'double QwtScaleMap::LogMin' : member function redeclaration not allowed
+     1>..\..\Source\ExternLib\qwt\qwt_scale_map.cpp(21): fatal error C1903: unable to recover from previous error(s); stopping compilation
+         qwt_thermo.cpp
+     1>..\..\Source\ExternLib\qwt\qwt_series_data.cpp(326): error C3861: 'qMemCopy': identifier not found
+     1>..\..\Source\ExternLib\qwt\qwt_series_data.cpp(329): error C3861: 'qMemCopy': identifier not found
+         Main.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_scale_widget.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_scale_widget.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_scale_widget.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_scale_widget.cpp)
+         MainWindow.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_slider.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_slider.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_slider.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_slider.cpp)
+         CameraTreeWindow.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_thermo.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_thermo.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ExternLib\qwt\qwt_thermo.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ExternLib\qwt\qwt_thermo.cpp)
+         ControllerTreeWindow.cpp
+     1>..\..\Source\UI\CameraTreeWindow.cpp(39): error C2039: 'setResizeMode' : is not a member of 'QHeaderView'
+                 c:\qt\5.5\msvc2013\include\qtwidgets\qheaderview.h(47) : see declaration of 'QHeaderView'
+         HexMainWindow.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(117): error C2143: syntax error : missing ';' before '*' (..\..\Source\Main.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(117): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\Main.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(126): error C2143: syntax error : missing ';' before '*' (..\..\Source\Main.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(126): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\Main.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(127): error C2143: syntax error : missing ';' before '*' (..\..\Source\Main.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(127): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\Main.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(138): error C2143: syntax error : missing ';' before '*' (..\..\Source\Main.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(138): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\Main.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(139): error C2143: syntax error : missing ';' before '*' (..\..\Source\Main.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(139): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\Main.cpp)
+     1>..\..\Source\Main.cpp(54): error C2065: 'QMessageBox' : undeclared identifier
+     1>..\..\Source\Main.cpp(54): error C2146: syntax error : missing ';' before identifier 'msgBox'
+     1>..\..\Source\Main.cpp(54): error C2065: 'msgBox' : undeclared identifier
+     1>..\..\Source\Main.cpp(56): error C2065: 'msgBox' : undeclared identifier
+     1>..\..\Source\Main.cpp(56): error C2228: left of '.setText' must have class/struct/union
+                 type is 'unknown-type'
+     1>..\..\Source\Main.cpp(57): error C2065: 'msgBox' : undeclared identifier
+     1>..\..\Source\Main.cpp(57): error C2228: left of '.exec' must have class/struct/union
+                 type is 'unknown-type'
+     1>..\..\Source\Main.cpp(61): error C2065: 'QMessageBox' : undeclared identifier
+     1>..\..\Source\Main.cpp(61): error C2146: syntax error : missing ';' before identifier 'msgBox'
+     1>..\..\Source\Main.cpp(61): error C2065: 'msgBox' : undeclared identifier
+     1>..\..\Source\Main.cpp(62): error C2065: 'msgBox' : undeclared identifier
+     1>..\..\Source\Main.cpp(62): error C2228: left of '.setText' must have class/struct/union
+                 type is 'unknown-type'
+     1>..\..\Source\Main.cpp(63): error C2065: 'msgBox' : undeclared identifier
+     1>..\..\Source\Main.cpp(63): error C2228: left of '.exec' must have class/struct/union
+                 type is 'unknown-type'
+         HexOptionDialog.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(117): error C2143: syntax error : missing ';' before '*' (..\..\Source\MainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(117): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\MainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(126): error C2143: syntax error : missing ';' before '*' (..\..\Source\MainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(126): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\MainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(127): error C2143: syntax error : missing ';' before '*' (..\..\Source\MainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(127): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\MainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(138): error C2143: syntax error : missing ';' before '*' (..\..\Source\MainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(138): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\MainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(139): error C2143: syntax error : missing ';' before '*' (..\..\Source\MainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(139): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\MainWindow.cpp)
+     1>..\..\Source\MainWindow.cpp(117): error C2653: 'QMessageBox' : is not a class or namespace name
+     1>..\..\Source\MainWindow.cpp(117): error C2660: 'MainWindow::about' : function does not take 3 arguments
+     1>..\..\Source\MainWindow.cpp(1151): error C2065: 'QMessageBox' : undeclared identifier
+     1>..\..\Source\MainWindow.cpp(1151): error C2146: syntax error : missing ';' before identifier 'MsgBox'
+     1>..\..\Source\MainWindow.cpp(1151): error C2065: 'MsgBox' : undeclared identifier
+     1>..\..\Source\MainWindow.cpp(1152): error C2065: 'MsgBox' : undeclared identifier
+     1>..\..\Source\MainWindow.cpp(1152): error C2228: left of '.setText' must have class/struct/union
+                 type is 'unknown-type'
+     1>..\..\Source\MainWindow.cpp(1153): error C2065: 'MsgBox' : undeclared identifier
+     1>..\..\Source\MainWindow.cpp(1153): error C2228: left of '.exec' must have class/struct/union
+                 type is 'unknown-type'
+         QHexEdit.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(15): error C2061: syntax error : identifier 'QScrollArea' (..\..\Source\UI\ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(96): error C2143: syntax error : missing ';' before '*' (..\..\Source\UI\ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(96): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\UI\ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(98): error C2143: syntax error : missing ';' before '*' (..\..\Source\UI\ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(98): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\UI\ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(48): error C2504: 'QScrollArea' : base class undefined (..\..\Source\UI\ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(231): error C2143: syntax error : missing ';' before '*' (..\..\Source\UI\ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(231): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\UI\ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\HexOptionDialog.h(40): error C2504: 'QDialog' : base class undefined (..\..\Source\UI\ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\../ExternLib/qwt/qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\UI\ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\../ExternLib/qwt/qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\UI\ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\../ExternLib/qwt/qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\UI\ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\../ExternLib/qwt/qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\UI\ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(11): error C2504: 'QWidget' : base class undefined (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(15): error C2061: syntax error : identifier 'QScrollArea' (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(96): error C2143: syntax error : missing ';' before '*' (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(96): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(98): error C2143: syntax error : missing ';' before '*' (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(98): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(48): error C2504: 'QScrollArea' : base class undefined (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(230): error C2143: syntax error : missing ';' before '*' (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(230): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(231): error C2143: syntax error : missing ';' before '*' (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(231): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\HexOptionDialog.h(40): error C2504: 'QDialog' : base class undefined (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>..\..\Source\UI\ControllerTreeWindow.cpp(1317): error C2039: 'toAscii' : is not a member of 'QString'
+                 C:\Qt\5.5\msvc2013\include\QtCore/qstring.h(209) : see declaration of 'QString'
+     1>..\..\Source\UI\ControllerTreeWindow.cpp(1317): error C2228: left of '.data' must have class/struct/union
+     1>..\..\Source\UI\ControllerTreeWindow.cpp(1350): error C2039: 'toAscii' : is not a member of 'QString'
+                 C:\Qt\5.5\msvc2013\include\QtCore/qstring.h(209) : see declaration of 'QString'
+     1>..\..\Source\UI\ControllerTreeWindow.cpp(1350): error C2228: left of '.data' must have class/struct/union
+     1>..\..\Source\UI\ControllerTreeWindow.cpp(2058): error C2039: 'toAscii' : is not a member of 'QString'
+                 C:\Qt\5.5\msvc2013\include\QtCore/qstring.h(209) : see declaration of 'QString'
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\HexMainWindow.h(84): error C2143: syntax error : missing ';' before '*' (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\HexMainWindow.h(84): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\HexMainWindow.h(84): error C2143: syntax error : missing ';' before ',' (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\HexMainWindow.h(84): error C2238: unexpected token(s) preceding ';' (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\HexMainWindow.h(85): error C2143: syntax error : missing ';' before '*' (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\HexMainWindow.h(85): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\HexMainWindow.h(85): error C2143: syntax error : missing ';' before ',' (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\HexMainWindow.h(85): error C2238: unexpected token(s) preceding ';' (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\HexMainWindow.h(86): error C2143: syntax error : missing ';' before '*' (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\HexMainWindow.h(86): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\HexMainWindow.h(86): error C2143: syntax error : missing ';' before ',' (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\HexMainWindow.h(86): error C2238: unexpected token(s) preceding ';' (..\..\Source\UI\HexEditor\HexMainWindow.cpp)
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(70): error C2065: 'm_LbAddress' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(70): error C2227: left of '->setText' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(76): error C2065: 'm_LbOverwriteMode' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(76): error C2227: left of '->setText' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(78): error C2065: 'm_LbOverwriteMode' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(78): error C2227: left of '->setText' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(83): error C2065: 'm_LbSize' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(83): error C2227: left of '->setText' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(88): error C2039: 'show' : is not a member of 'HexOptionDialog'
+                 c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\HexOptionDialog.h(39) : see declaration of 'HexOptionDialog'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(95): error C2039: 'setWindowFlags' : is not a member of 'HexOptionDialog'
+                 c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\HexOptionDialog.h(39) : see declaration of 'HexOptionDialog'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(95): error C2039: 'windowFlags' : is not a member of 'HexOptionDialog'
+                 c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\HexOptionDialog.h(39) : see declaration of 'HexOptionDialog'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(96): error C2664: 'QMetaObject::Connection QObject::connect(const QObject *,const char *,const char *,Qt::ConnectionType) const' : cannot convert argument 1 from 'HexOptionDialog *' to 'const QObject *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>..\..\Source\UI\ControllerTreeWindow.cpp(2639): error C2065: 'QDesktopWidget' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(99): error C2664: 'void QMainWindow::setCentralWidget(QWidget *)' : cannot convert argument 1 from 'QHexEdit *' to 'QWidget *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>..\..\Source\UI\ControllerTreeWindow.cpp(2639): error C2146: syntax error : missing ';' before identifier 'desktop'
+     1>..\..\Source\UI\ControllerTreeWindow.cpp(2639): error C2065: 'desktop' : undeclared identifier
+     1>..\..\Source\UI\ControllerTreeWindow.cpp(2640): error C2065: 'desktop' : undeclared identifier
+     1>..\..\Source\UI\ControllerTreeWindow.cpp(2640): error C2228: left of '.screenGeometry' must have class/struct/union
+                 type is 'unknown-type'
+     1>..\..\Source\UI\ControllerTreeWindow.cpp(2640): error C2228: left of '.screenNumber' must have class/struct/union
+                 type is 'unknown-type'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(100): error C2664: 'QMetaObject::Connection QObject::connect(const QObject *,const char *,const char *,Qt::ConnectionType) const' : cannot convert argument 1 from 'QHexEdit *' to 'const QObject *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(112): error C2514: 'QAction' : class has no constructors
+                 C:\Qt\5.5\msvc2013\include\QtGui/qevent.h(56) : see declaration of 'QAction'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(113): error C2027: use of undefined type 'QAction'
+                 C:\Qt\5.5\msvc2013\include\QtGui/qevent.h(56) : see declaration of 'QAction'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(113): error C2227: left of '->setShortcuts' must point to class/struct/union/generic type
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(114): error C2027: use of undefined type 'QAction'
+                 C:\Qt\5.5\msvc2013\include\QtGui/qevent.h(56) : see declaration of 'QAction'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(114): error C2227: left of '->setStatusTip' must point to class/struct/union/generic type
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(115): error C2664: 'QMetaObject::Connection QObject::connect(const QObject *,const char *,const char *,Qt::ConnectionType) const' : cannot convert argument 1 from 'QAction *' to 'const QObject *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(117): error C2514: 'QAction' : class has no constructors
+                 C:\Qt\5.5\msvc2013\include\QtGui/qevent.h(56) : see declaration of 'QAction'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(118): error C2027: use of undefined type 'QAction'
+                 C:\Qt\5.5\msvc2013\include\QtGui/qevent.h(56) : see declaration of 'QAction'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(118): error C2227: left of '->setStatusTip' must point to class/struct/union/generic type
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(119): error C2664: 'QMetaObject::Connection QObject::connect(const QObject *,const char *,const char *,Qt::ConnectionType) const' : cannot convert argument 1 from 'QAction *' to 'const QObject *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(124): error C2027: use of undefined type 'QMenuBar'
+                 c:\qt\5.5\msvc2013\include\qtwidgets\qmainwindow.h(47) : see declaration of 'QMenuBar'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(124): error C2227: left of '->addMenu' must point to class/struct/union/generic type
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(125): error C2027: use of undefined type 'QMenu'
+                 c:\qt\5.5\msvc2013\include\qtwidgets\qmainwindow.h(50) : see declaration of 'QMenu'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(125): error C2227: left of '->addAction' must point to class/struct/union/generic type
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(127): error C2027: use of undefined type 'QMenuBar'
+                 c:\qt\5.5\msvc2013\include\qtwidgets\qmainwindow.h(47) : see declaration of 'QMenuBar'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(127): error C2227: left of '->addMenu' must point to class/struct/union/generic type
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(128): error C2027: use of undefined type 'QMenu'
+                 c:\qt\5.5\msvc2013\include\qtwidgets\qmainwindow.h(50) : see declaration of 'QMenu'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(128): error C2227: left of '->addAction' must point to class/struct/union/generic type
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(134): error C2065: 'm_LbAddressName' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(134): error C2061: syntax error : identifier 'QLabel'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(135): error C2065: 'm_LbAddressName' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(135): error C2227: left of '->setText' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(136): error C2027: use of undefined type 'QStatusBar'
+                 c:\qt\5.5\msvc2013\include\qtwidgets\qmainwindow.h(48) : see declaration of 'QStatusBar'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(136): error C2227: left of '->addPermanentWidget' must point to class/struct/union/generic type
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(136): error C2065: 'm_LbAddressName' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(137): error C2065: 'm_LbAddress' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(137): error C2061: syntax error : identifier 'QLabel'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(138): error C2065: 'm_LbAddress' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(138): error C2227: left of '->setFrameShape' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(138): error C2653: 'QFrame' : is not a class or namespace name
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(138): error C2065: 'Panel' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(139): error C2065: 'm_LbAddress' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(139): error C2227: left of '->setFrameShadow' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(139): error C2653: 'QFrame' : is not a class or namespace name
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(139): error C2065: 'Sunken' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(140): error C2065: 'm_LbAddress' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(140): error C2227: left of '->setMinimumWidth' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(141): error C2027: use of undefined type 'QStatusBar'
+                 c:\qt\5.5\msvc2013\include\qtwidgets\qmainwindow.h(48) : see declaration of 'QStatusBar'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(141): error C2227: left of '->addPermanentWidget' must point to class/struct/union/generic type
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(141): error C2065: 'm_LbAddress' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(142): error C2664: 'QMetaObject::Connection QObject::connect(const QObject *,const char *,const char *,Qt::ConnectionType) const' : cannot convert argument 1 from 'QHexEdit *' to 'const QObject *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(145): error C2065: 'm_LbSizeName' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(145): error C2061: syntax error : identifier 'QLabel'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(146): error C2065: 'm_LbSizeName' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(146): error C2227: left of '->setText' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(147): error C2027: use of undefined type 'QStatusBar'
+                 c:\qt\5.5\msvc2013\include\qtwidgets\qmainwindow.h(48) : see declaration of 'QStatusBar'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(147): error C2227: left of '->addPermanentWidget' must point to class/struct/union/generic type
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(147): error C2065: 'm_LbSizeName' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(148): error C2065: 'm_LbSize' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(148): error C2061: syntax error : identifier 'QLabel'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(149): error C2065: 'm_LbSize' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(149): error C2227: left of '->setFrameShape' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(149): error C2653: 'QFrame' : is not a class or namespace name
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(149): error C2065: 'Panel' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(150): error C2065: 'm_LbSize' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(150): error C2227: left of '->setFrameShadow' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(150): error C2653: 'QFrame' : is not a class or namespace name
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(150): error C2065: 'Sunken' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(151): error C2065: 'm_LbSize' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(151): error C2227: left of '->setMinimumWidth' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(152): error C2027: use of undefined type 'QStatusBar'
+                 c:\qt\5.5\msvc2013\include\qtwidgets\qmainwindow.h(48) : see declaration of 'QStatusBar'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(152): error C2227: left of '->addPermanentWidget' must point to class/struct/union/generic type
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(152): error C2065: 'm_LbSize' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(153): error C2664: 'QMetaObject::Connection QObject::connect(const QObject *,const char *,const char *,Qt::ConnectionType) const' : cannot convert argument 1 from 'QHexEdit *' to 'const QObject *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(156): error C2065: 'm_LbOverwriteModeName' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(156): error C2061: syntax error : identifier 'QLabel'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(157): error C2065: 'm_LbOverwriteModeName' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(157): error C2227: left of '->setText' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(158): error C2027: use of undefined type 'QStatusBar'
+                 c:\qt\5.5\msvc2013\include\qtwidgets\qmainwindow.h(48) : see declaration of 'QStatusBar'
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(158): error C2227: left of '->addPermanentWidget' must point to class/struct/union/generic type
+     1>..\..\Source\UI\HexEditor\HexMainWindow.cpp(158): fatal error C1003: error count exceeds 100; stopping compilation
+         QHexEdit_p.cpp
+         Histogram.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\UI\Histogram\Histogram.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\UI\Histogram\Histogram.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\UI\Histogram\Histogram.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\UI\Histogram\Histogram.cpp)
+         HistogramWindow.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\HexOptionDialog.h(40): error C2504: 'QDialog' : base class undefined (..\..\Source\UI\HexEditor\HexOptionDialog.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(11): error C2504: 'QWidget' : base class undefined (..\..\Source\UI\HexEditor\QHexEdit.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(15): error C2061: syntax error : identifier 'QScrollArea' (..\..\Source\UI\HexEditor\QHexEdit.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(96): error C2143: syntax error : missing ';' before '*' (..\..\Source\UI\HexEditor\QHexEdit.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(96): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\UI\HexEditor\QHexEdit.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(98): error C2143: syntax error : missing ';' before '*' (..\..\Source\UI\HexEditor\QHexEdit.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(98): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\UI\HexEditor\QHexEdit.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(48): error C2504: 'QScrollArea' : base class undefined (..\..\Source\UI\HexEditor\QHexEdit.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(230): error C2143: syntax error : missing ';' before '*' (..\..\Source\UI\HexEditor\QHexEdit.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(230): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\UI\HexEditor\QHexEdit.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(231): error C2143: syntax error : missing ';' before '*' (..\..\Source\UI\HexEditor\QHexEdit.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(231): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\UI\HexEditor\QHexEdit.cpp)
+     1>..\..\Source\UI\HexEditor\QHexEdit.cpp(30): error C2614: 'QHexEdit' : illegal member initialization: 'QScrollArea' is not a base or member
+     1>..\..\Source\UI\HexEditor\QHexEdit.cpp(31): error C2664: 'QHexEditPrivate::QHexEditPrivate(const QHexEditPrivate &)' : cannot convert argument 1 from 'QHexEdit *const ' to 'const QHexEditPrivate &'
+                 Reason: cannot convert from 'QHexEdit *const ' to 'const QHexEditPrivate'
+                 No constructor could take the source type, or constructor overload resolution was ambiguous
+     1>..\..\Source\UI\HexEditor\QHexEdit.cpp(32): error C3861: 'setWidget': identifier not found
+     1>..\..\Source\UI\HexEditor\QHexEdit.cpp(33): error C3861: 'setWidgetResizable': identifier not found
+     1>..\..\Source\UI\HexEditor\QHexEdit.cpp(35): error C2660: 'connect' : function does not take 4 arguments
+     1>..\..\Source\UI\HexEditor\QHexEdit.cpp(36): error C2660: 'connect' : function does not take 4 arguments
+     1>..\..\Source\UI\HexEditor\QHexEdit.cpp(37): error C2660: 'connect' : function does not take 4 arguments
+     1>..\..\Source\UI\HexEditor\QHexEdit.cpp(38): error C2660: 'connect' : function does not take 4 arguments
+     1>..\..\Source\UI\HexEditor\QHexEdit.cpp(39): error C3861: 'setFocusPolicy': identifier not found
+     1>..\..\Source\UI\HexEditor\QHexEdit.cpp(202): error C2039: 'font' : is not a member of 'QHexEditPrivate'
+                 c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(10) : see declaration of 'QHexEditPrivate'
+         LineEditCompleter.cpp
+     1>..\..\Source\UI\HexEditor\HexOptionDialog.cpp(33): error C2614: 'HexOptionDialog' : illegal member initialization: 'QDialog' is not a base or member
+     1>..\..\Source\UI\HexEditor\HexOptionDialog.cpp(34): error C2664: 'void Ui_OptionDialog::setupUi(QDialog *)' : cannot convert argument 1 from 'HexOptionDialog *const ' to 'QDialog *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>..\..\Source\UI\HexEditor\HexOptionDialog.cpp(47): error C3861: 'accepted': identifier not found
+     1>..\..\Source\UI\HexEditor\HexOptionDialog.cpp(48): error C2352: 'QWidget::hide' : illegal call of non-static member function
+                 C:\Qt\5.5\msvc2013\include\QtWidgets/qwidget.h(463) : see declaration of 'QWidget::hide'
+     1>..\..\Source\UI\HexEditor\HexOptionDialog.cpp(96): error C2653: 'QColorDialog' : is not a class or namespace name
+     1>..\..\Source\UI\HexEditor\HexOptionDialog.cpp(96): error C3861: 'getColor': identifier not found
+     1>..\..\Source\UI\HexEditor\HexOptionDialog.cpp(103): error C2653: 'QColorDialog' : is not a class or namespace name
+     1>..\..\Source\UI\HexEditor\HexOptionDialog.cpp(103): error C3861: 'getColor': identifier not found
+     1>..\..\Source\UI\HexEditor\HexOptionDialog.cpp(110): error C2653: 'QColorDialog' : is not a class or namespace name
+     1>..\..\Source\UI\HexEditor\HexOptionDialog.cpp(110): error C3861: 'getColor': identifier not found
+     1>..\..\Source\UI\HexEditor\HexOptionDialog.cpp(118): error C2027: use of undefined type 'QFontDialog'
+                 C:\Qt\5.5\msvc2013\include\QtGui/qfontdatabase.h(161) : see declaration of 'QFontDialog'
+     1>..\..\Source\UI\HexEditor\HexOptionDialog.cpp(118): error C3861: 'getFont': identifier not found
+         MdiChild.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\histogram\HistogramWindow.h(39): fatal error C1083: Cannot open include file: 'QPrinter': No such file or directory (..\..\Source\UI\Histogram\HistogramWindow.cpp)
+         ViewerWindow.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(11): error C2504: 'QWidget' : base class undefined (..\..\Source\UI\HexEditor\QHexEdit_p.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(15): error C2061: syntax error : identifier 'QScrollArea' (..\..\Source\UI\HexEditor\QHexEdit_p.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(96): error C2143: syntax error : missing ';' before '*' (..\..\Source\UI\HexEditor\QHexEdit_p.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(96): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\UI\HexEditor\QHexEdit_p.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(98): error C2143: syntax error : missing ';' before '*' (..\..\Source\UI\HexEditor\QHexEdit_p.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(98): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\UI\HexEditor\QHexEdit_p.cpp)
+     1>..\..\Source\UI\HexEditor\QHexEdit_p.cpp(34): error C2065: 'QScrollArea' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\QHexEdit_p.cpp(34): error C2065: 'parent' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\QHexEdit_p.cpp(34): error C2448: 'QHexEditPrivate::{ctor}' : function-style initializer appears to be a function definition
+     1>..\..\Source\UI\HexEditor\QHexEdit_p.cpp(34): error C2143: syntax error : missing ';' before ':'
+     1>..\..\Source\UI\HexEditor\QHexEdit_p.cpp(35): error C2079: 'parent' uses undefined class 'QWidget'
+     1>..\..\Source\UI\HexEditor\QHexEdit_p.cpp(36): error C2065: 'm_UndoStack' : undeclared identifier
+     1>..\..\Source\UI\HexEditor\QHexEdit_p.cpp(36): error C2355: 'this' : can only be referenced inside non-static member functions or non-static data member initializers
+     1>..\..\Source\UI\HexEditor\QHexEdit_p.cpp(36): error C2143: syntax error : missing '}' before ';'
+     1>..\..\Source\UI\HexEditor\QHexEdit_p.cpp(36): fatal error C1903: unable to recover from previous error(s); stopping compilation
+         moc_ControllerTreeWindow.cpp
+     1>..\..\Source\UI\LineEditCompleter.cpp(65): error C2027: use of undefined type 'QAbstractItemView'
+                 c:\qt\5.5\msvc2013\include\qtwidgets\qcompleter.h(49) : see declaration of 'QAbstractItemView'
+     1>..\..\Source\UI\LineEditCompleter.cpp(65): error C2227: left of '->isVisible' must point to class/struct/union/generic type
+     1>..\..\Source\UI\LineEditCompleter.cpp(90): error C2027: use of undefined type 'QAbstractItemView'
+                 c:\qt\5.5\msvc2013\include\qtwidgets\qcompleter.h(49) : see declaration of 'QAbstractItemView'
+     1>..\..\Source\UI\LineEditCompleter.cpp(90): error C2227: left of '->hide' must point to class/struct/union/generic type
+     1>..\..\Source\UI\LineEditCompleter.cpp(95): error C2027: use of undefined type 'QAbstractItemView'
+                 c:\qt\5.5\msvc2013\include\qtwidgets\qcompleter.h(49) : see declaration of 'QAbstractItemView'
+     1>..\..\Source\UI\LineEditCompleter.cpp(95): error C2227: left of '->setCurrentIndex' must point to class/struct/union/generic type
+     1>..\..\Source\UI\LineEditCompleter.cpp(99): error C2027: use of undefined type 'QAbstractItemView'
+                 c:\qt\5.5\msvc2013\include\qtwidgets\qcompleter.h(49) : see declaration of 'QAbstractItemView'
+     1>..\..\Source\UI\LineEditCompleter.cpp(99): error C2227: left of '->hide' must point to class/struct/union/generic type
+         moc_HexMainWindow.cpp
+     1>..\..\Source\UI\MdiChild.cpp(39): error C2065: 'QVBoxLayout' : undeclared identifier
+     1>..\..\Source\UI\MdiChild.cpp(39): error C2065: 'verticalLayout_Parent' : undeclared identifier
+     1>..\..\Source\UI\MdiChild.cpp(39): error C2061: syntax error : identifier 'QVBoxLayout'
+     1>..\..\Source\UI\MdiChild.cpp(40): error C2065: 'verticalLayout_Parent' : undeclared identifier
+     1>..\..\Source\UI\MdiChild.cpp(40): error C2227: left of '->setObjectName' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\MdiChild.cpp(42): error C2065: 'QVBoxLayout' : undeclared identifier
+     1>..\..\Source\UI\MdiChild.cpp(42): error C2065: 'verticalLayout_Child' : undeclared identifier
+     1>..\..\Source\UI\MdiChild.cpp(42): error C2061: syntax error : identifier 'QVBoxLayout'
+     1>..\..\Source\UI\MdiChild.cpp(43): error C2065: 'verticalLayout_Child' : undeclared identifier
+     1>..\..\Source\UI\MdiChild.cpp(43): error C2227: left of '->setObjectName' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\MdiChild.cpp(50): error C2065: 'verticalLayout_Child' : undeclared identifier
+     1>..\..\Source\UI\MdiChild.cpp(50): error C2227: left of '->addWidget' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\MdiChild.cpp(51): error C2065: 'verticalLayout_Parent' : undeclared identifier
+     1>..\..\Source\UI\MdiChild.cpp(51): error C2227: left of '->addLayout' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\MdiChild.cpp(51): error C2065: 'verticalLayout_Child' : undeclared identifier
+     1>..\..\Source\UI\MdiChild.cpp(56): error C2065: 'QHBoxLayout' : undeclared identifier
+     1>..\..\Source\UI\MdiChild.cpp(56): error C2065: 'horizontalLayout' : undeclared identifier
+     1>..\..\Source\UI\MdiChild.cpp(56): error C2061: syntax error : identifier 'QHBoxLayout'
+     1>..\..\Source\UI\MdiChild.cpp(57): error C2065: 'horizontalLayout' : undeclared identifier
+     1>..\..\Source\UI\MdiChild.cpp(57): error C2227: left of '->setObjectName' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\MdiChild.cpp(61): error C2065: 'horizontalLayout' : undeclared identifier
+     1>..\..\Source\UI\MdiChild.cpp(61): error C2227: left of '->addWidget' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\MdiChild.cpp(66): error C2065: 'horizontalLayout' : undeclared identifier
+     1>..\..\Source\UI\MdiChild.cpp(66): error C2227: left of '->addWidget' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\MdiChild.cpp(70): error C2065: 'QSpacerItem' : undeclared identifier
+     1>..\..\Source\UI\MdiChild.cpp(70): error C2065: 'horizontalSpacer' : undeclared identifier
+     1>..\..\Source\UI\MdiChild.cpp(70): error C2061: syntax error : identifier 'QSpacerItem'
+     1>..\..\Source\UI\MdiChild.cpp(71): error C2065: 'horizontalLayout' : undeclared identifier
+     1>..\..\Source\UI\MdiChild.cpp(71): error C2227: left of '->addItem' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\MdiChild.cpp(71): error C2065: 'horizontalSpacer' : undeclared identifier
+     1>..\..\Source\UI\MdiChild.cpp(73): error C2065: 'verticalLayout_Parent' : undeclared identifier
+     1>..\..\Source\UI\MdiChild.cpp(73): error C2227: left of '->addLayout' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+     1>..\..\Source\UI\MdiChild.cpp(73): error C2065: 'horizontalLayout' : undeclared identifier
+         moc_HexOptionDialog.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(15): error C2061: syntax error : identifier 'QScrollArea' (GeneratedFiles\Debug\moc_ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(96): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(96): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(98): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(98): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(48): error C2504: 'QScrollArea' : base class undefined (GeneratedFiles\Debug\moc_ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(231): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(231): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\HexOptionDialog.h(40): error C2504: 'QDialog' : base class undefined (GeneratedFiles\Debug\moc_ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(11): error C2504: 'QWidget' : base class undefined (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(15): error C2061: syntax error : identifier 'QScrollArea' (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(96): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(96): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(98): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(98): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(48): error C2504: 'QScrollArea' : base class undefined (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(230): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(230): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(231): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(231): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\HexOptionDialog.h(40): error C2504: 'QDialog' : base class undefined (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(117): error C2143: syntax error : missing ';' before '*' (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(117): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(126): error C2143: syntax error : missing ';' before '*' (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(126): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(127): error C2143: syntax error : missing ';' before '*' (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(127): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(138): error C2143: syntax error : missing ';' before '*' (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(138): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(139): error C2143: syntax error : missing ';' before '*' (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(139): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(15): error C2061: syntax error : identifier 'QScrollArea' (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(96): error C2143: syntax error : missing ';' before '*' (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(96): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(98): error C2143: syntax error : missing ';' before '*' (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(98): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(48): error C2504: 'QScrollArea' : base class undefined (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\../ExternLib/qwt/qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (GeneratedFiles\Debug\moc_ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(231): error C2143: syntax error : missing ';' before '*' (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\../ExternLib/qwt/qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit.h(231): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\../ExternLib/qwt/qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (GeneratedFiles\Debug\moc_ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\../ExternLib/qwt/qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_ControllerTreeWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\../ExternLib/qwt/qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\../ExternLib/qwt/qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\../ExternLib/qwt/qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (..\..\Source\ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\../ExternLib/qwt/qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (..\..\Source\ViewerWindow.cpp)
+         moc_HistogramWindow.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/HexMainWindow.h(84): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/HexMainWindow.h(84): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/HexMainWindow.h(84): error C2143: syntax error : missing ';' before ',' (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/HexMainWindow.h(84): error C2238: unexpected token(s) preceding ';' (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/HexMainWindow.h(85): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/HexMainWindow.h(85): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/HexMainWindow.h(85): error C2143: syntax error : missing ';' before ',' (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/HexMainWindow.h(85): error C2238: unexpected token(s) preceding ';' (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/HexMainWindow.h(86): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/HexMainWindow.h(86): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/HexMainWindow.h(86): error C2143: syntax error : missing ';' before ',' (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/HexMainWindow.h(86): error C2238: unexpected token(s) preceding ';' (GeneratedFiles\Debug\moc_HexMainWindow.cpp)
+         moc_MainWindow.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\UI/Histogram/HistogramWindow.h(39): fatal error C1083: Cannot open include file: 'QPrinter': No such file or directory (..\..\Source\ViewerWindow.cpp)
+         moc_QHexEdit.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/Histogram/HistogramWindow.h(39): fatal error C1083: Cannot open include file: 'QPrinter': No such file or directory (GeneratedFiles\Debug\moc_HistogramWindow.cpp)
+         moc_QHexEdit_p.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/HexOptionDialog.h(40): error C2504: 'QDialog' : base class undefined (GeneratedFiles\Debug\moc_HexOptionDialog.cpp)
+     1>GeneratedFiles\Debug\moc_HexOptionDialog.cpp(82): error C2440: 'static_cast' : cannot convert from 'QObject *' to 'HexOptionDialog *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>GeneratedFiles\Debug\moc_HexOptionDialog.cpp(97): error C2027: use of undefined type 'QDialog'
+                 C:\Qt\5.5\msvc2013\include\QtGui/qwindowdefs.h(49) : see declaration of 'QDialog'
+     1>GeneratedFiles\Debug\moc_HexOptionDialog.cpp(104): error C2227: left of '->metaObject' must point to class/struct/union/generic type
+     1>GeneratedFiles\Debug\moc_HexOptionDialog.cpp(104): error C2227: left of '->dynamicMetaObject' must point to class/struct/union/generic type
+     1>GeneratedFiles\Debug\moc_HexOptionDialog.cpp(112): error C2027: use of undefined type 'QDialog'
+                 C:\Qt\5.5\msvc2013\include\QtGui/qwindowdefs.h(49) : see declaration of 'QDialog'
+     1>GeneratedFiles\Debug\moc_HexOptionDialog.cpp(117): error C2027: use of undefined type 'QDialog'
+                 C:\Qt\5.5\msvc2013\include\QtGui/qwindowdefs.h(49) : see declaration of 'QDialog'
+     1>GeneratedFiles\Debug\moc_HexOptionDialog.cpp(122): error C2664: 'void HexOptionDialog::qt_static_metacall(QObject *,QMetaObject::Call,int,void **)' : cannot convert argument 1 from 'HexOptionDialog *const ' to 'QObject *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+         moc_qwt_plot.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C2144: syntax error : 'double' should be preceded by ';' (GeneratedFiles\Debug\moc_qwt_plot.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_qwt_plot.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C2144: syntax error : 'double' should be preceded by ';' (GeneratedFiles\Debug\moc_qwt_plot.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\externlib\qwt\qwt_scale_map.h(105): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_qwt_plot.cpp)
+         moc_ViewerWindow.cpp
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(11): error C2504: 'QWidget' : base class undefined (GeneratedFiles\Debug\moc_QHexEdit.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(15): error C2061: syntax error : identifier 'QScrollArea' (GeneratedFiles\Debug\moc_QHexEdit.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(96): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_QHexEdit.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(96): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_QHexEdit.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(98): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_QHexEdit.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ui\hexeditor\QHexEdit_p.h(98): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_QHexEdit.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/QHexEdit.h(48): error C2504: 'QScrollArea' : base class undefined (GeneratedFiles\Debug\moc_QHexEdit.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/QHexEdit.h(230): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_QHexEdit.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/QHexEdit.h(230): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_QHexEdit.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/QHexEdit.h(231): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_QHexEdit.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/QHexEdit.h(231): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_QHexEdit.cpp)
+     1>GeneratedFiles\Debug\moc_QHexEdit.cpp(133): error C2440: 'static_cast' : cannot convert from 'QObject *' to 'QHexEdit *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>GeneratedFiles\Debug\moc_QHexEdit.cpp(178): error C2440: 'static_cast' : cannot convert from 'QObject *' to 'QHexEdit *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>GeneratedFiles\Debug\moc_QHexEdit.cpp(194): error C2440: 'static_cast' : cannot convert from 'QObject *' to 'QHexEdit *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>GeneratedFiles\Debug\moc_QHexEdit.cpp(215): error C2653: 'QScrollArea' : is not a class or namespace name
+     1>GeneratedFiles\Debug\moc_QHexEdit.cpp(222): error C2227: left of '->metaObject' must point to class/struct/union/generic type
+     1>GeneratedFiles\Debug\moc_QHexEdit.cpp(222): error C2227: left of '->dynamicMetaObject' must point to class/struct/union/generic type
+     1>GeneratedFiles\Debug\moc_QHexEdit.cpp(230): error C2653: 'QScrollArea' : is not a class or namespace name
+     1>GeneratedFiles\Debug\moc_QHexEdit.cpp(235): error C2653: 'QScrollArea' : is not a class or namespace name
+     1>GeneratedFiles\Debug\moc_QHexEdit.cpp(240): error C2664: 'void QHexEdit::qt_static_metacall(QObject *,QMetaObject::Call,int,void **)' : cannot convert argument 1 from 'QHexEdit *const ' to 'QObject *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>GeneratedFiles\Debug\moc_QHexEdit.cpp(250): error C2664: 'void QHexEdit::qt_static_metacall(QObject *,QMetaObject::Call,int,void **)' : cannot convert argument 1 from 'QHexEdit *const ' to 'QObject *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>GeneratedFiles\Debug\moc_QHexEdit.cpp(271): error C2665: 'QMetaObject::activate' : none of the 3 overloads could convert all the argument types
+                 C:\Qt\5.5\msvc2013\include\QtCore/qobjectdefs.h(362): could be 'void QMetaObject::activate(QObject *,int,int,void **)'
+                 C:\Qt\5.5\msvc2013\include\QtCore/qobjectdefs.h(361): or       'void QMetaObject::activate(QObject *,const QMetaObject *,int,void **)'
+                 while trying to match the argument list '(QHexEdit *const , const QMetaObject *, int, void *[2])'
+     1>GeneratedFiles\Debug\moc_QHexEdit.cpp(278): error C2665: 'QMetaObject::activate' : none of the 3 overloads could convert all the argument types
+                 C:\Qt\5.5\msvc2013\include\QtCore/qobjectdefs.h(362): could be 'void QMetaObject::activate(QObject *,int,int,void **)'
+                 C:\Qt\5.5\msvc2013\include\QtCore/qobjectdefs.h(361): or       'void QMetaObject::activate(QObject *,const QMetaObject *,int,void **)'
+                 while trying to match the argument list '(QHexEdit *const , const QMetaObject *, int, void *[2])'
+     1>GeneratedFiles\Debug\moc_QHexEdit.cpp(284): error C2665: 'QMetaObject::activate' : none of the 3 overloads could convert all the argument types
+                 C:\Qt\5.5\msvc2013\include\QtCore/qobjectdefs.h(362): could be 'void QMetaObject::activate(QObject *,int,int,void **)'
+                 C:\Qt\5.5\msvc2013\include\QtCore/qobjectdefs.h(361): or       'void QMetaObject::activate(QObject *,const QMetaObject *,int,void **)'
+                 while trying to match the argument list '(QHexEdit *const , const QMetaObject *, int, nullptr)'
+     1>GeneratedFiles\Debug\moc_QHexEdit.cpp(291): error C2665: 'QMetaObject::activate' : none of the 3 overloads could convert all the argument types
+                 C:\Qt\5.5\msvc2013\include\QtCore/qobjectdefs.h(362): could be 'void QMetaObject::activate(QObject *,int,int,void **)'
+                 C:\Qt\5.5\msvc2013\include\QtCore/qobjectdefs.h(361): or       'void QMetaObject::activate(QObject *,const QMetaObject *,int,void **)'
+                 while trying to match the argument list '(QHexEdit *const , const QMetaObject *, int, void *[2])'
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(117): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_MainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(117): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_MainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(126): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_MainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(126): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_MainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(127): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_MainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(127): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_MainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(138): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_MainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(138): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_MainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(139): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_MainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\source\ViewerWindow.h(139): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_MainWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/QHexEdit_p.h(11): error C2504: 'QWidget' : base class undefined (GeneratedFiles\Debug\moc_QHexEdit_p.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/QHexEdit_p.h(15): error C2061: syntax error : identifier 'QScrollArea' (GeneratedFiles\Debug\moc_QHexEdit_p.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/QHexEdit_p.h(96): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_QHexEdit_p.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/QHexEdit_p.h(96): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_QHexEdit_p.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/QHexEdit_p.h(98): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_QHexEdit_p.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/UI/HexEditor/QHexEdit_p.h(98): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_QHexEdit_p.cpp)
+     1>GeneratedFiles\Debug\moc_QHexEdit_p.cpp(88): error C2440: 'static_cast' : cannot convert from 'QObject *' to 'QHexEditPrivate *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>GeneratedFiles\Debug\moc_QHexEdit_p.cpp(129): error C2027: use of undefined type 'QWidget'
+                 C:\Qt\5.5\msvc2013\include\QtCore/qmetatype.h(1314) : see declaration of 'QWidget'
+     1>GeneratedFiles\Debug\moc_QHexEdit_p.cpp(136): error C2227: left of '->metaObject' must point to class/struct/union/generic type
+     1>GeneratedFiles\Debug\moc_QHexEdit_p.cpp(136): error C2227: left of '->dynamicMetaObject' must point to class/struct/union/generic type
+     1>GeneratedFiles\Debug\moc_QHexEdit_p.cpp(144): error C2027: use of undefined type 'QWidget'
+                 C:\Qt\5.5\msvc2013\include\QtCore/qmetatype.h(1314) : see declaration of 'QWidget'
+     1>GeneratedFiles\Debug\moc_QHexEdit_p.cpp(149): error C2027: use of undefined type 'QWidget'
+                 C:\Qt\5.5\msvc2013\include\QtCore/qmetatype.h(1314) : see declaration of 'QWidget'
+     1>GeneratedFiles\Debug\moc_QHexEdit_p.cpp(154): error C2664: 'void QHexEditPrivate::qt_static_metacall(QObject *,QMetaObject::Call,int,void **)' : cannot convert argument 1 from 'QHexEditPrivate *const ' to 'QObject *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>GeneratedFiles\Debug\moc_QHexEdit_p.cpp(168): error C2665: 'QMetaObject::activate' : none of the 3 overloads could convert all the argument types
+                 C:\Qt\5.5\msvc2013\include\QtCore/qobjectdefs.h(362): could be 'void QMetaObject::activate(QObject *,int,int,void **)'
+                 C:\Qt\5.5\msvc2013\include\QtCore/qobjectdefs.h(361): or       'void QMetaObject::activate(QObject *,const QMetaObject *,int,void **)'
+                 while trying to match the argument list '(QHexEditPrivate *const , const QMetaObject *, int, void *[2])'
+     1>GeneratedFiles\Debug\moc_QHexEdit_p.cpp(175): error C2665: 'QMetaObject::activate' : none of the 3 overloads could convert all the argument types
+                 C:\Qt\5.5\msvc2013\include\QtCore/qobjectdefs.h(362): could be 'void QMetaObject::activate(QObject *,int,int,void **)'
+                 C:\Qt\5.5\msvc2013\include\QtCore/qobjectdefs.h(361): or       'void QMetaObject::activate(QObject *,const QMetaObject *,int,void **)'
+                 while trying to match the argument list '(QHexEditPrivate *const , const QMetaObject *, int, void *[2])'
+     1>GeneratedFiles\Debug\moc_QHexEdit_p.cpp(181): error C2665: 'QMetaObject::activate' : none of the 3 overloads could convert all the argument types
+                 C:\Qt\5.5\msvc2013\include\QtCore/qobjectdefs.h(362): could be 'void QMetaObject::activate(QObject *,int,int,void **)'
+                 C:\Qt\5.5\msvc2013\include\QtCore/qobjectdefs.h(361): or       'void QMetaObject::activate(QObject *,const QMetaObject *,int,void **)'
+                 while trying to match the argument list '(QHexEditPrivate *const , const QMetaObject *, int, nullptr)'
+     1>GeneratedFiles\Debug\moc_QHexEdit_p.cpp(188): error C2665: 'QMetaObject::activate' : none of the 3 overloads could convert all the argument types
+                 C:\Qt\5.5\msvc2013\include\QtCore/qobjectdefs.h(362): could be 'void QMetaObject::activate(QObject *,int,int,void **)'
+                 C:\Qt\5.5\msvc2013\include\QtCore/qobjectdefs.h(361): or       'void QMetaObject::activate(QObject *,const QMetaObject *,int,void **)'
+                 while trying to match the argument list '(QHexEditPrivate *const , const QMetaObject *, int, void *[2])'
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/ViewerWindow.h(117): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/ViewerWindow.h(117): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/ViewerWindow.h(126): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/ViewerWindow.h(126): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/ViewerWindow.h(127): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/ViewerWindow.h(127): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/ViewerWindow.h(138): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/ViewerWindow.h(138): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/ViewerWindow.h(139): error C2143: syntax error : missing ';' before '*' (GeneratedFiles\Debug\moc_ViewerWindow.cpp)
+     1>c:\users\public\documents\allied vision\vimba_2.0\vimbacpp_examples\vimbaviewer\build\vs2010\generatedfiles\debug\../../../../Source/ViewerWindow.h(139): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (GeneratedFiles\Debug\moc_ViewerWindow.cpp)
+     1>Done Building Project "C:\Users\Public\Documents\Allied Vision\Vimba_2.0\VimbaCPP_Examples\VimbaViewer\Build\VS2010\VimbaViewer.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:47.06

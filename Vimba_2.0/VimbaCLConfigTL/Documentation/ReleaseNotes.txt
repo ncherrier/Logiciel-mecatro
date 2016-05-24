@@ -1,0 +1,75 @@
+===========================================================================
+
+  Vimba CL Config Transport Layer - Release Notes 
+  
+  Version: 1.0.1
+  Date:    2016-Jan-14
+===========================================================================
+
+--------------------------------
+Components and Version Reference  
+--------------------------------
+
+Vimba Genicam Transport Layer modules
+-----------------------------------
+  CL Config Transport Layer (VimbaCLConfigTL.cti)     1.0.1
+
+---------------------
+Hardware Requirements
+---------------------
+PC or laptop with 1 GHz 32-bit (x86) or 64-bit (x64) processor or better.
+
+Additionally a built-in Camera Link frame grabber is required.
+
+---------------------------
+Supported Operating Systems
+---------------------------
+The Vimba CL Config Transport Layer is designed for the 32-bit or 64-bit Windows 
+operating systems:
+
+   Windows 7
+   Windows 8 and 8.1
+   Windows 10
+   
+   Please note that Windows RT is not supported with this version of 
+   Vimba CL Config TL.
+
+
+------------
+Installation
+------------            
+The Vimba CL Config Transport Layer is part of the Vimba SDK. For instructions how
+to install this module please refer to the Vimba SDK User Guide.
+
+	
+-------------------------------------------------------
+Correlations with other Allied Vision Software Packages
+-------------------------------------------------------
+Please refer to the Vimba SDK Release Notes.
+
+
+----------------------------------------
+Allied Vision Technical Software Support
+----------------------------------------
+You can reach the Allied Vision Technical Software Support via the
+corresponding contact form for your region:
+
+   Asia Pacific
+   ------------
+        http://www.alliedvision.com/apac/support/contact-support.html 
+   
+   Europe, Middle East and Africa 
+   ------------------------------
+        http://www.alliedvision.com/emea/support/contact-support.html
+  
+   Germany
+   -------
+        http://www.alliedvision.com/de/support/support-kontaktieren.html
+
+   The Americas
+   ------------
+        http://www.alliedvision.com/us/support/contact-support.html
+
+   China
+   ------------
+        http://www.alliedvision.com/cn/support/contact-support.html
