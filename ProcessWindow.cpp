@@ -12,31 +12,31 @@ using namespace std;
 
 void ProcessWindow::emergencyStop() {
 
-std::cout << "calling ProcessWindow::emergencyStop();" << std::endl;
+	std::cout << "calling ProcessWindow::emergencyStop();" << std::endl;
 
-//SerialCommunication::emergencyStop();
+	SerialCommunication::emergencyStop();
 
-// retour aux reglages (SettingsWindow)
-// (ou a une autre fenetre ? a reflechir)
-SettingsWindow* set = new SettingsWindow;
-set->show();
+	// retour aux reglages (SettingsWindow)
+	// (ou a une autre fenetre ? a reflechir)
+	SettingsWindow* set = new SettingsWindow;
+	set->show();
 
-this->close();
+	this->close();
 }
 
 // Default constructor
 ProcessWindow::ProcessWindow()
 {
-setWindowTitle("In process...");
-setFixedSize(800,400);
-stopButton = new QPushButton("Stop");
+	setWindowTitle("In process...");
+	setFixedSize(800, 400);
+	stopButton = new QPushButton("Stop");
 
-QObject::connect(stopButton, SIGNAL(clicked()), this, SLOT(emergencyStop()));
+	QObject::connect(stopButton, SIGNAL(clicked()), this, SLOT(emergencyStop()));
 
-// Layout
+	// Layout
 
-QGridLayout *layout = new QGridLayout;
-layout->addWidget(stopButton);
-setLayout(layout);
+	QGridLayout *layout = new QGridLayout;
+	layout->addWidget(stopButton);
+	setLayout(layout);
 }
 

@@ -1,5 +1,5 @@
-﻿Build started 24/05/2016 14:42:36.
-     1>Project "C:\Users\Noëlie\Documents\Mines\Mécatro\Logiciel_mecatro\Logiciel_mecatro\Logiciel_mecatro.vcxproj" on node 2 (Build target(s)).
+﻿Build started 24/05/2016 14:49:46.
+     1>Project "C:\Users\Noëlie\Documents\Mines\Mécatro\Logiciel_mecatro\Logiciel_mecatro\Logiciel_mecatro.vcxproj" on node 2 (LibLinkOnly target(s)).
      1>Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Noëlie\Documents\Mines\Mécatro\Logiciel_mecatro\Win32\Debug\\Logiciel_mecatro.exe" /NOLOGO /LIBPATH:C:\Qt\5.5\msvc2013\lib qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5Widgets.lib Qt5SerialPort.lib VimbaC.lib VimbaCPP.lib Qt5Multimediad.lib Qt5MultimediaWidgetsd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Noëlie\Documents\Mines\Mécatro\Logiciel_mecatro\Win32\Debug\Logiciel_mecatro.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Noëlie\Documents\Mines\Mécatro\Logiciel_mecatro\Win32\Debug\Logiciel_mecatro.lib" /MACHINE:X86 /SAFESEH Debug\ApiController.obj
          Debug\camera.obj
@@ -24,8 +24,8 @@
      1>camera.obj : error LNK2019: unresolved external symbol "protected: __thiscall AVT::VmbAPI::Camera::Camera(void)" (??0Camera@VmbAPI@AVT@@IAE@XZ) referenced in function "public: __thiscall CameraPike::CameraPike(void)" (??0CameraPike@@QAE@XZ)
      1>SynchronousGrab.obj : error LNK2019: unresolved external symbol "public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall AVT::VmbAPI::Examples::ApiController::ErrorCodeToMessage(enum VmbErrorType)const " (?ErrorCodeToMessage@ApiController@Examples@VmbAPI@AVT@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4VmbErrorType@@@Z) referenced in function "private: void __thiscall SynchronousGrab::Log(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,enum VmbErrorType)" (?Log@SynchronousGrab@@AAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4VmbErrorType@@@Z)
      1>C:\Users\Noëlie\Documents\Mines\Mécatro\Logiciel_mecatro\Win32\Debug\\Logiciel_mecatro.exe : fatal error LNK1120: 2 unresolved externals
-     1>Done Building Project "C:\Users\Noëlie\Documents\Mines\Mécatro\Logiciel_mecatro\Logiciel_mecatro\Logiciel_mecatro.vcxproj" (Build target(s)) -- FAILED.
+     1>Done Building Project "C:\Users\Noëlie\Documents\Mines\Mécatro\Logiciel_mecatro\Logiciel_mecatro\Logiciel_mecatro.vcxproj" (LibLinkOnly target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:01.35
+Time Elapsed 00:00:01.62

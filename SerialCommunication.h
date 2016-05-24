@@ -1,6 +1,6 @@
 #ifndef SERIALCOMMUNICATION_H
 #define SERIALCOMMUNICATION_H
-/*
+
 #include <QtSerialPort>
 
 class SerialCommunication
@@ -31,5 +31,5 @@ public:
 	static bool pictureTaken(); // signals that the picture has been taken, so that elec can move the camera
 
 };
-*/
+
 #endif // SERIALCOMMUNICATION_H

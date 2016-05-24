@@ -9,36 +9,36 @@
 #include <QSpinBox>
 
 class CameraSettingsWindow : public QDialog
-// interet d'heriter de QDialog :
-// quand cette fenetre est affichee, l'autre devient inactive
-// (fenetre modale)
+	// interet d'heriter de QDialog :
+	// quand cette fenetre est affichee, l'autre devient inactive
+	// (fenetre modale)
 {
 
-Q_OBJECT
+	Q_OBJECT
 
 public:
-//CameraSettingsWindow();
-CameraSettingsWindow(QWidget*); // arg = parent widget
+	//CameraSettingsWindow();
+	CameraSettingsWindow(QWidget*); // arg = parent widget
 
-public slots:
-void reset();
-void apply();
-//void cancel(); // utile ?
-void validate();
+	public slots:
+	void reset();
+	void apply();
+	//void cancel(); // utile ?
+	void validate();
 
 private:
-// Basics
-QPushButton* resetButton;
-QPushButton* applyButton;
-QPushButton* cancelButton;
-QPushButton* validateButton;
+	// Basics
+	QPushButton* resetButton;
+	QPushButton* applyButton;
+	QPushButton* cancelButton;
+	QPushButton* validateButton;
 
-// Settings
-// exposureTime
-QSpinBox* exposureTimeBox;
+	// Settings
+	// exposureTime
+	QSpinBox* exposureTimeBox;
 
-// TODO:
-// pixelColorFilter // variables possibles : BayerRG BayerGB BayerGR BayerBG
+	// TODO:
+	// pixelColorFilter // variables possibles : BayerRG BayerGB BayerGR BayerBG
 
 };
 

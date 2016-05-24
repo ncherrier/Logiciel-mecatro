@@ -15,53 +15,50 @@
 #include "ProcessWindow.h"
 #include "Main_Prog.h"
 #include "SerialCommunication.h"
+#include "cameraSettingsWindow.h"
 
 using namespace std;
 
 // Slots and functions
 void SettingsWindow::goToProcessWindow() {
-ProcessWindow *pro = new ProcessWindow;
-pro->show();
-this->close();
+	ProcessWindow *pro = new ProcessWindow;
+	pro->show();
+	this->close();
 }
 
 void SettingsWindow::goToFramingWindow() {
-FramingWindow *fra = new FramingWindow;
-fra->show();
-this->close();
+	FramingWindow *fra = new FramingWindow;
+	fra->show();
+	this->close();
 }
 
 void SettingsWindow::openCameraSettings() {
-CameraSettingsWindow *cam = new CameraSettingsWindow(this);
-cam->exec();
+	CameraSettingsWindow *cam = new CameraSettingsWindow(this);
+	cam->exec();
 }
 
 void SettingsWindow::startCycle() {
-// TODO !!
-goToProcessWindow();
-MainProg::startCycle();
+	// TODO !!
+	goToProcessWindow();
+	startCycle();
 }
 
 // give instructions to move camera
 
 bool SettingsWindow::goUp() {
-//return SerialCommunication::goUp();
-	return true;
+	return SerialCommunication::goUp();
 }
 
 bool SettingsWindow::goDown() {
-//return SerialCommunication::goDown();
-	return true;
+	return SerialCommunication::goDown();
 }
 
 bool SettingsWindow::goLeft() {
-//return SerialCommunication::goLeft();
-	return true;
+	return SerialCommunication::goLeft();
 }
 
 bool SettingsWindow::goRight() {
-//return SerialCommunication::goRight();
-	return true;
+	return SerialCommunication::goRight();
 }
 
 
@@ -70,52 +67,52 @@ bool SettingsWindow::goRight() {
 // Default Constructor
 SettingsWindow::SettingsWindow() {
 
-// provisory
-cout << "TODO: inclure flux video webcam et camera" << endl;
+	// provisory
+	cout << "TODO: inclure flux video webcam et camera" << endl;
 
-// Set size
+	// Set size
 
-setFixedSize(800,400);
-setWindowTitle("Mise au point et réglages");
+	setFixedSize(800, 400);
+	setWindowTitle("Mise au point et réglages");
 
-// Buttons
+	// Buttons
 
-upButton = new QPushButton("Up ^");
-leftButton = new QPushButton("< Left");
-downButton = new QPushButton("Down v");
-rightButton = new QPushButton("Right >");
+	upButton = new QPushButton("Up ^");
+	leftButton = new QPushButton("< Left");
+	downButton = new QPushButton("Down v");
+	rightButton = new QPushButton("Right >");
 
-finishButton = new QPushButton("Finish >");
-previousButton = new QPushButton("< Previous");
+	finishButton = new QPushButton("Finish >");
+	previousButton = new QPushButton("< Previous");
 
-cameraSettingsButton = new QPushButton("Indus. camera settings");
+	cameraSettingsButton = new QPushButton("Indus. camera settings");
 
-//QPushButton RegisterSettingsButton("Register settings"); // To open a window to choose the repository to save photos. Useful ??
-
-
-// Add signals and slots (interactions with user)
-QObject::connect(finishButton, SIGNAL(clicked()), this, SLOT(startCycle()));
-QObject::connect(previousButton, SIGNAL(clicked()), this, SLOT(goToFramingWindow()));
-QObject::connect(cameraSettingsButton, SIGNAL(clicked()), this, SLOT(openCameraSettings()));
-QObject::connect(upButton, SIGNAL(clicked()), this, SLOT(goUp()));
-QObject::connect(downButton, SIGNAL(clicked()), this, SLOT(goDown()));
-QObject::connect(leftButton, SIGNAL(clicked()), this, SLOT(goLeft()));
-QObject::connect(rightButton, SIGNAL(clicked()), this, SLOT(goRight()));
+	//QPushButton RegisterSettingsButton("Register settings"); // To open a window to choose the repository to save photos. Useful ??
 
 
-// Layout
+	// Add signals and slots (interactions with user)
+	QObject::connect(finishButton, SIGNAL(clicked()), this, SLOT(startCycle()));
+	QObject::connect(previousButton, SIGNAL(clicked()), this, SLOT(goToFramingWindow()));
+	QObject::connect(cameraSettingsButton, SIGNAL(clicked()), this, SLOT(openCameraSettings()));
+	QObject::connect(upButton, SIGNAL(clicked()), this, SLOT(goUp()));
+	QObject::connect(downButton, SIGNAL(clicked()), this, SLOT(goDown()));
+	QObject::connect(leftButton, SIGNAL(clicked()), this, SLOT(goLeft()));
+	QObject::connect(rightButton, SIGNAL(clicked()), this, SLOT(goRight()));
 
-QGridLayout *layout = new QGridLayout;
 
-layout->addWidget(upButton);
-layout->addWidget(leftButton);
-layout->addWidget(downButton);
-layout->addWidget(rightButton);
-layout->addWidget(finishButton);
-layout->addWidget(previousButton);
-layout->addWidget(cameraSettingsButton);
+	// Layout
 
-setLayout(layout);
+	QGridLayout *layout = new QGridLayout;
+
+	layout->addWidget(upButton);
+	layout->addWidget(leftButton);
+	layout->addWidget(downButton);
+	layout->addWidget(rightButton);
+	layout->addWidget(finishButton);
+	layout->addWidget(previousButton);
+	layout->addWidget(cameraSettingsButton);
+
+	setLayout(layout);
 
 }
 

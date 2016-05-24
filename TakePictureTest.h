@@ -6,21 +6,21 @@
 #define TAKEPICTURETEST_H
 
 #include <QWidget>
-#include <QPushButton>
+//#include <QPushButton>
 
 class TakePictureTest : public QWidget
 {
-Q_OBJECT //!\ Build -> run QMAKE before building and running
+	// Q_OBJECT //!\ Build -> run QMAKE before building and running
 
 public:
-TakePictureTest();
-virtual ~TakePictureTest();
+	TakePictureTest();
+	virtual ~TakePictureTest();
 
-  public slots:
-    void takePicture();
+	//  public slots:
+	//    void takePicture();
 
-private:
-  QPushButton *goButton;
+	//private:
+	//  QPushButton *goButton;
 
 };
 

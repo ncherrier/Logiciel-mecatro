@@ -1,8 +1,8 @@
-
+/*
 #include <iostream> // TODO: remove after tests
 #include <QtWidgets/QApplication>
-#include <QPushButton>
-#include <QGridLayout>
+//#include <QPushButton>
+//#include <QGridLayout>
 #include "TakePictureTest.h"
 
 using namespace std;
@@ -17,17 +17,17 @@ std::cout << "TODO : take picture" << std::endl;
 TakePictureTest::TakePictureTest()
 {
 // Set size and title
-	
+
 setFixedSize(800,400);
 setWindowTitle("Test : take picture");
 
 // Button
 
-goButton = new QPushButton("Take picture");
+//goButton = new QPushButton("Take picture");
 
 // Slots
 
-QObject::connect(goButton, SIGNAL(clicked()), this, SLOT(takePicture()));
+//QObject::connect(goButton, SIGNAL(clicked()), this, SLOT(takePicture()));
 
 // Layout
 
@@ -41,3 +41,4 @@ setLayout(layout);
 TakePictureTest::~TakePictureTest() {
 // What TODO ?
 }
+*/

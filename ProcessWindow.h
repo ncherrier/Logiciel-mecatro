@@ -8,17 +8,17 @@
 
 class ProcessWindow : public QWidget
 {
-Q_OBJECT // To be able to define new slots (interactions with user)
-// /!\ Build -> run QMAKE before building and running
+	Q_OBJECT // To be able to define new slots (interactions with user)
+		// /!\ Build -> run QMAKE before building and running
 
 public:
-ProcessWindow();
+	ProcessWindow();
 
-public slots:
-void emergencyStop();
+	public slots:
+	void emergencyStop();
 
 private:
-QPushButton *stopButton; // For "emergency" stop
+	QPushButton *stopButton; // For "emergency" stop
 
 };
 

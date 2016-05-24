@@ -2,6 +2,7 @@
 
 #include <iostream> // TODO: remove after tests
 
+#include <QtSerialPort>
 
 #include <QTextStream>
 #include <QCoreApplication>
@@ -10,7 +11,7 @@
 
 using namespace std;
 
-/*
+
 bool SerialCommunication::connectSerialPort(){
 
 	int portCount = QSerialPortInfo::availablePorts().count();
@@ -113,7 +114,7 @@ bool SerialCommunication::read(){
 		}
 	standardOutput << serialPort.readAll() << endl;
 
-	*/
+
 	/* //Message d'erreur
 	if (serialPort.error() == QSerialPort::ReadError) {
 	standardOutput << QObject::tr("Failed to read from port %1, error: %2").arg(serialPortName).arg(serialPort.errorString()) << endl;
@@ -123,7 +124,7 @@ bool SerialCommunication::read(){
 	return 0;
 	}
 	*/
-/*
+
 	standardOutput << QObject::tr("Data successfully received from port %1").arg(serialPortName) << endl;
 }
 
@@ -157,13 +158,13 @@ bool SerialCommunication::goRight(){
 	cout << "calling SerialCommunication::goRight()" << endl;
 	return sendMessage("r"); // voir avec l'elec
 }
-*/
+
 /*bool SerialCommunication::goTo(int x, int y){
 cout << "calling SerialCommunication::goTo(" << x << "," << y << ")" << endl;
 return (sendMessage("c") && sendMessage(x) && sendMessage(y));
 // TODO: verifier protocole de communication avec elec
 }*/
-/*
+
 bool SerialCommunication::pictureTaken() {
 	cout << "calling SerialCommunication::pictureTaken()" << endl;
 	return sendMessage("o"); // "OK"
@@ -171,4 +172,3 @@ bool SerialCommunication::pictureTaken() {
 
 
 
-*/

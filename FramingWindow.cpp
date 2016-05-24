@@ -13,11 +13,13 @@ using namespace std;
 
 // Slots
 
-void FramingWindow::goToSettingsWindow() {
-SettingsWindow *set = new SettingsWindow();
-set->show();
-this->close();
-}
+/*void FramingWindow::goToSettingsWindow() {
+// SettingsWindow *set = new SettingsWindow();
+// set->show();
+// this->close();
+// ****** TEST!!! ******
+
+}*/
 
 // Constructors and destructors
 
@@ -25,57 +27,62 @@ this->close();
 FramingWindow::FramingWindow() : QWidget()
 {
 
-// provisory
-cout << "TODO: inclure le flux video de la webcam" << endl;
+	// provisory
+	cout << "TODO: inclure le flux video de la webcam" << endl;
 
-// Detect webcam
-QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
-QCameraInfo const firstCam = cameras[0];
-QCamera camera(firstCam);
+	// Detect webcam
+	QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
+	QCameraInfo const firstCam = cameras[0];
+	QCamera camera(firstCam);
 
-// Flux video...
-QVideoWidget videoWidget;
-videoWidget.resize(800,480); // video size
-camera.setViewfinder(&videoWidget); //Intègre la vidéo au videoWidget
-camera.start();
-
-// Set size and title
-
-setFixedSize(800,400);
-setWindowTitle("Framing");
-
-
-// Buttons
-
-nextButton = new QPushButton("Next >");
-cancelButton = new QPushButton("Cancel");
+	// Flux video...
+	QWidget videoContainer(this);
+	// setCentralWidget(&videoContainer);
+	QVideoWidget videoWidget(&videoContainer);
+	videoWidget.resize(800, 480); // video size
+	camera.setViewfinder(&videoWidget); //Intègre la vidéo au videoWidget
+	camera.start();
+	// provisory
+	cout << "camera started" << endl;
 
 
-// Tips
+	// Set size and title
 
-//QString userTip = "Utiliser la webcam pour le cadrage, puis cliquer sur Next. Au besoin, régler la webcam. (Ces réglages n'interviennent pas dans la photo finale.)";
+	setFixedSize(800, 480);
+	setWindowTitle("Framing");
 
 
+	// Buttons
 
-// Signals and slots
+	//nextButton = new QPushButton("Next >");
+	//cancelButton = new QPushButton("Cancel");
 
-QObject::connect(cancelButton, SIGNAL(clicked()), qApp, SLOT(quit()));
-QObject::connect(nextButton, SIGNAL(clicked()), this, SLOT(goToSettingsWindow()));
+
+	// Tips
+
+	//QString userTip = "Utiliser la webcam pour le cadrage, puis cliquer sur Next. Au besoin, régler la webcam. (Ces réglages n'interviennent pas dans la photo finale.)";
 
 
 
-// Layout
+	// Signals and slots
 
-QGridLayout *layout = new QGridLayout;
+	// QObject::connect(cancelButton, SIGNAL(clicked()), qApp, SLOT(quit()));
+	// QObject::connect(nextButton, SIGNAL(clicked()), this, SLOT(goToSettingsWindow()));
 
-layout->addWidget(&videoWidget, 1, 1);
-layout->addWidget(cancelButton, 2, 1);
-layout->addWidget(nextButton, 2, 2);
 
-setLayout(layout);
+
+	// Layout
+
+	// QGridLayout *layout = new QGridLayout;
+
+	/*layout->addWidget(&videoWidget, 1, 1);
+	layout->addWidget(cancelButton, 2, 1);
+	layout->addWidget(nextButton, 2, 2);
+
+	setLayout(layout);*/
 }
 
 // Default destructor
-FramingWindow::~FramingWindow(){
+//FramingWindow::~FramingWindow(){
 // what TODO ??
-}
+//}
