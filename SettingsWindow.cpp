@@ -32,10 +32,10 @@ void SettingsWindow::goToFramingWindow() {
 	this->close();
 }
 
-void SettingsWindow::openCameraSettings() {
+/*void SettingsWindow::openCameraSettings() {
 	CameraSettingsWindow *cam = new CameraSettingsWindow(this);
 	cam->exec();
-}
+}*/
 
 void SettingsWindow::startCycle() {
 	// TODO !!

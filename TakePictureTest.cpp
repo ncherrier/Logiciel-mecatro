@@ -6,6 +6,7 @@
 #include "TakePictureTest.h"
 #include "SynchronousGrab.h"
 
+/*
 using namespace std;
 
 // Slot
@@ -31,12 +32,12 @@ goButton = new QPushButton("Take picture");
 QObject::connect(goButton, SIGNAL(clicked()), this, SLOT(takePicture()));
 
 // Layout
-/*
-QGridLayout *layout = new QGridLayout;
-layout->addWidget(goButton,1,1);
-setLayout(layout);
-SynchronousGrab sync = SynchronousGrab::SynchronousGrab(this,0);
-QImage imagetest = sync.GetImage();*/
+
+//QGridLayout *layout = new QGridLayout;
+//layout->addWidget(goButton,1,1);
+//setLayout(layout);
+//SynchronousGrab sync = SynchronousGrab::SynchronousGrab(this,0);
+//QImage imagetest = sync.GetImage();
 
 }
 
@@ -44,3 +45,5 @@ QImage imagetest = sync.GetImage();*/
 TakePictureTest::~TakePictureTest() {
 // What TODO ?
 }
+
+*/

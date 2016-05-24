@@ -2,7 +2,7 @@
 #ifndef CAMERASETTINGSWINDOW_H
 #define CAMERASETTINGSWINDOW_H
 
-/*
+
 
 #include <QWidget>
 #include <QApplication>
@@ -44,7 +44,7 @@ private:
 
 };
 
-*/
+
 
 #endif // CAMERASETTINGSWINDOW_H
 

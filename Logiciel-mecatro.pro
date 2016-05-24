@@ -17,7 +17,8 @@ SOURCES += \
     ProcessWindow.cpp \
     Main_Prog.cpp \
     TakePictureTest.cpp \
-    SerialCommunication.cpp
+    SerialCommunication.cpp \
+    GPPizard.cpp
 
 HEADERS += \
     camera.h \
@@ -58,7 +59,8 @@ HEADERS += \
     Vimba_2.0/VimbaCPP/Include/VimbaCPP.h \
     Vimba_2.0/VimbaCPP/Include/VimbaCPPCommon.h \
     Vimba_2.0/VimbaCPP/Include/VimbaSystem.h \
-    Vimba_2.0/VimbaCPP/Include/VimbaSystem.hpp
+    Vimba_2.0/VimbaCPP/Include/VimbaSystem.hpp \
+    GPPWizard.h
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/Vimba_2.0/VimbaC/Lib/Win32 -lVimbaC
 #else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/Vimba_2.0/VimbaC/Lib/Win32 -lVimbaCd

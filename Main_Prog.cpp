@@ -20,11 +20,11 @@ using namespace std;
 
 // Algorithm to take a global picture
 // will be called by the User Interface
-// take subpictures and communcate with Electronics to move the Industrial Camera
+// take subpictures and communicate with Electronics to move the Industrial camera
 // returns true if the process was executed normally
 bool startCycle() {
 
-	cout << "call startCycle()" << endl;
+    cout << "call startCycle()" << endl;
 	// TODO: change return so that one can know whether everything went good or not (or use exceptions ?)
 
 	return true;
@@ -43,13 +43,14 @@ bool startCycle() {
 //fra->show();
 //cout << "FramingWindow shown" << endl;
 
-//Permet de détecter la caméra // TODO: ameliorer...
+//Permet de detecter la camera // TODO: ameliorer...
 QCameraInfo const getWebcamInfo(){
-	QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
-	QCameraInfo const firstCam = cameras[0];
-	return firstCam;
+    QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
+    QCameraInfo const firstcam = cameras[0];
+	return firstcam;
 }
 
+/*
 QWizardPage *createIntroPage()
 {
 	QWizardPage *page = new QWizardPage;
@@ -62,18 +63,18 @@ QWizardPage *createFramingPage()
 {
 	// Basics
 	QWizardPage *page = new QWizardPage;
-	page->setTitle("Cadrage");
-	QLabel *label = new QLabel("Vérifiez que le cadrage vous convient, puis passez à l'étape suivante.");
+	page->setTitle("cadrage");
+    QLabel *label = new QLabel("Verifiez que le cadrage vous convient, puis passez a l'etape suivante.");
 	label->setWordWrap(true);
 
 	// Webcam
-	/*QCamera camera(getWebcamInfo());
-	QWidget * videoContainer = new QWidget(page);
-	QVideoWidget * videoWidget = new QVideoWidget(videoContainer);
-	videoWidget->resize(200,120);
-	camera.setViewfinder(videoWidget);
-	camera.start();*/
-	//cout << "Camera started" << endl;
+    //QCamera camera(getWebcamInfo());
+    //QWidget * videoContainer = new QWidget(page);
+    //QVideoWidget * videoWidget = new QVideoWidget(videoContainer);
+    //videoWidget->resize(200,120);
+    //camera.setViewfinder(videoWidget);
+    //camera.start();
+    //cout << "Camera started" << endl;
 
 	// Test
 	//QPushButton * testButton = new QPushButton("Test");
@@ -84,12 +85,12 @@ QWizardPage *createFramingPage()
 	// Layout
 	QGridLayout *layout = new QGridLayout;
 	layout->addWidget(label, 1, 1);
-	//layout->addWidget(videoContainer, 2, 1);
+    //layout->addWidget(videoContainer, 2, 1);
 	//layout->addWidget(testButton, 3, 1);
 
 	page->setLayout(layout);
 
-	//videoContainer->show();
+    //videoContainer->show();
 	//videoWidget->show();
 
 	return page;
@@ -98,7 +99,7 @@ QWizardPage *createFramingPage()
 QWizardPage *createSettingsPage()
 {
 	QWizardPage *page = new QWizardPage;
-	page->setTitle("Mise au point et réglages");
+	page->setTitle("Mise au point et reglages");
 	return page;
 }
 
@@ -108,21 +109,21 @@ QWizardPage *createInProcessPage()
 	page->setTitle("In process...");
 	return page;
 }
-
+*/
 int main(int argc, char *argv[])
 {
 	cout << "hello! in main" << endl;
 	QApplication *app = new QApplication(argc, argv);
 
 	//*****************QWizard creation****************
-
+/*
 	QWizard wizard;
 
 	//Page 0: Intro
 	//Page 1: Framing
-	//Contains video from webcam
+	//contains video from webcam
 	//Page 2: "Settings": focus, exposure time
-	//Contains videos from webcam and industrial camera
+	//contains videos from webcam and industrial camera
 	//Page 3: In process
 	//Enables user to stop the process
 
@@ -132,24 +133,24 @@ int main(int argc, char *argv[])
 
 	QWizardPage * framingPage = createFramingPage();
 	// Add video
-	QCamera webcam(getWebcamInfo());
-	QWidget * videoContainer = new QWidget();
-	QVideoWidget * videoWidget = new QVideoWidget(videoContainer);
+    QCamera webcam(getWebcamInfo());
+    QWidget * videoContainer = new QWidget();
+    QVideoWidget * videoWidget = new QVideoWidget(videoContainer);
 	videoWidget->resize(200, 120);
 
 	webcam.setViewfinder(videoWidget);
 	webcam.start();
 
 	// Label
-	//QLabel *label = new QLabel("Vérifiez que le cadrage vous convient, puis passez à l'étape suivante.");
+	//QLabel *label = new QLabel("Verifiez que le cadrage vous convient, puis passez a l'etape suivante.");
 	//label->setWordWrap(true);
 
 	// Layout
 	//QGridLayout *framingPageLayout = new QGridLayout;
 	//framingPageLayout->addWidget(label);
-	//framingPageLayout->addWidget(videoContainer);
+    //framingPageLayout->addWidget(videoContainer);
 	//framingPage->setLayout(framingPageLayout);
-	framingPage->layout()->addWidget(videoContainer);
+    framingPage->layout()->addWidget(videoContainer);
 
 	wizard.addPage(framingPage);
 
@@ -160,7 +161,7 @@ int main(int argc, char *argv[])
 	wizard.addPage(createInProcessPage());
 
 	wizard.setWindowTitle("GigaProxyPhoto");
-	wizard.show();
+    wizard.show();*/
 
 	return app->exec();
 }
