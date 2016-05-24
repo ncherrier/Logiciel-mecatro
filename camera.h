@@ -1,7 +1,7 @@
 
 #ifndef CAMERAPIKE_H
 #define CAMERAPIKE_H
-
+/*
 #include "Vimba_2.0/VimbaCPP/Include/VimbaCPP.h"
 #include "Vimba_2.0/VimbaC/Include/VimbaC.h"
 #include "ApiController.h"
@@ -21,10 +21,10 @@ public:
 	std::string getPixelFormat();
 
 	// Operations on image
-	bool reverseX(); // symétrise horizontalement l'image envoyée par la caméra
+	bool reverseX(); // symetrise horizontalement l'image envoyee par la camera
 	bool reverseY(); // idem mais verticalement
 	bool setPixelColorFilter_auto(); // filtre couleur automatique (aucun ?)
-	std::string getPixelColorFilter(); // récupérer le type de filtre couleur appliqué
+	std::string getPixelColorFilter(); // recuperer le type de filtre couleur applique
 	bool setPixelColorFilter(char *mode); // variables possibles : BayerRG BayerGB BayerGR BayerBG
 
 	// Acquisition control
@@ -32,16 +32,16 @@ public:
 	bool setExposureTime(int time_us);
 
 	// Picture commands
-	// Appeler au début et à la fin du process entier
+	// Appeler au debut et a la fin du process entier
 	bool start_acquisition();
 	bool stop_acquisition();
 
-	// Prendre une image (à mettre plusieurs fois au cours du process)
+	// Prendre une image (a mettre plusieurs fois au cours du process)
 	AVT::VmbAPI::FramePtr take_picture();
 
 	AVT::VmbAPI::IFrameObserverPtr start_getting_images();
 	bool stop_getting_images();
-	void get_image(AVT::VmbAPI::IFrameObserverPtr frameObserver); // en continu, évènement nouvelle frame => actualisation de l'affichage
+	void get_image(AVT::VmbAPI::IFrameObserverPtr frameObserver); // en continu, evenement nouvelle frame => actualisation de l'affichage
 
 private:
 	// Our controller that wraps API access
@@ -52,7 +52,7 @@ private:
 	bool                        m_bIsStreaming;
 
 };
-
+*/
 #endif // CAMERAPIKE_H
 
 

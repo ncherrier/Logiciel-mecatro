@@ -1,9 +1,10 @@
-/*
+
 #include <iostream> // TODO: remove after tests
 #include <QtWidgets/QApplication>
-//#include <QPushButton>
-//#include <QGridLayout>
+#include <QPushButton>
+#include <QGridLayout>
 #include "TakePictureTest.h"
+#include "SynchronousGrab.h"
 
 using namespace std;
 
@@ -23,17 +24,19 @@ setWindowTitle("Test : take picture");
 
 // Button
 
-//goButton = new QPushButton("Take picture");
+goButton = new QPushButton("Take picture");
 
 // Slots
 
-//QObject::connect(goButton, SIGNAL(clicked()), this, SLOT(takePicture()));
+QObject::connect(goButton, SIGNAL(clicked()), this, SLOT(takePicture()));
 
 // Layout
-
+/*
 QGridLayout *layout = new QGridLayout;
 layout->addWidget(goButton,1,1);
 setLayout(layout);
+SynchronousGrab sync = SynchronousGrab::SynchronousGrab(this,0);
+QImage imagetest = sync.GetImage();*/
 
 }
 
@@ -41,4 +44,3 @@ setLayout(layout);
 TakePictureTest::~TakePictureTest() {
 // What TODO ?
 }
-*/

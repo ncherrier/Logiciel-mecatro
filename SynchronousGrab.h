@@ -86,7 +86,7 @@ private:
 	//
 	void CopyToImage(VmbUchar_t *pInBuffer, QImage &OutImage);
 
-	private slots:
+	public slots:
 	QImage SynchronousGrab::GetImage();
 	void SynchronousGrab::SaveImage(QImage tmpImage, QString directory, int numImage);
 

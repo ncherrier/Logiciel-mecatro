@@ -247,7 +247,7 @@ void SynchronousGrab::UpdateCameraListBox()
 //
 void SynchronousGrab::Log(std::string strMsg, VmbErrorType eErr)
 {
-	strMsg += "..." + m_pApiController->ErrorCodeToMessage(eErr);
+	//strMsg += "..." + m_pApiController->ErrorCodeToMessage(eErr);
 	//ui.m_ListLog->insertItem(0, QString::fromStdString(strMsg));
 }
 

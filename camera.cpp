@@ -23,7 +23,7 @@ AVT::VmbAPI::VimbaSystem &system = AVT::VmbAPI::VimbaSystem::GetInstance();
 return a.exec();
 }*/
 
-
+/*
 CameraPike::CameraPike(): AVT::VmbAPI::Camera() {
 AVT::VmbAPI::CameraPtrVector available_cameras;// = new AVT::VmbAPI::CameraPtrVector();
 AVT::VmbAPI::CameraPtr camera;
@@ -103,7 +103,7 @@ return true;
 return false;
 }
 
-// Pour toutes les fonctions suivantes : nécessite d'avoir appelé start_acquisition avant !!
+// Pour toutes les fonctions suivantes : necessite d'avoir appele start_acquisition avant !!
 
 AVT::VmbAPI::FramePtr CameraPike::take_picture(){
 AVT::VmbAPI::FramePtr frame;
@@ -133,3 +133,4 @@ return;
 //return frame;
 // TODO : affichage de l'image en question (actualiser)
 }
+*/
