@@ -27,6 +27,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 =============================================================================*/
 
 #include <sstream>
+#include <iostream>
 #include "SynchronousGrab.h"
 using AVT::VmbAPI::FramePtr;
 using AVT::VmbAPI::CameraPtrVector;
@@ -76,62 +77,69 @@ QImage SynchronousGrab::GetImage()
 {
 	VmbErrorType    err;
 	FramePtr pFrame;
-	err = m_pApiController->AcquireSingleImage(m_cameras[0], pFrame);
-	if (VmbErrorSuccess == err)
-	{
-		// See if it is not corrupt
-		VmbFrameStatusType eReceiveStatus;
-		err = pFrame->GetReceiveStatus(eReceiveStatus);
-		if (VmbErrorSuccess == err
-			&& VmbFrameStatusComplete == eReceiveStatus)
+	if (m_cameras.size() > 0){
+		err = m_pApiController->AcquireSingleImage(m_cameras[0], pFrame);
+		if (VmbErrorSuccess == err)
 		{
-			// Set up Qt image
-			QImage  tmpImage(m_pApiController->GetWidth(),
-				m_pApiController->GetHeight(),
-				VmbPixelFormatRgb8 == m_pApiController->GetPixelFormat() ? QImage::Format_RGB888 : QImage::Format_Indexed8);
-
-			if (VmbPixelFormatRgb8 != m_pApiController->GetPixelFormat())
+			// See if it is not corrupt
+			VmbFrameStatusType eReceiveStatus;
+			err = pFrame->GetReceiveStatus(eReceiveStatus);
+			if (VmbErrorSuccess == err
+				&& VmbFrameStatusComplete == eReceiveStatus)
 			{
-				//tmpImage.setNumColors(256);
-				for (int i = 0; i < 256; i++)
-				{
-					tmpImage.setColor(i, qRgb(i, i, i));
-				}
-			}
+				// Set up Qt image
+				QImage  tmpImage(m_pApiController->GetWidth(),
+					m_pApiController->GetHeight(),
+					VmbPixelFormatRgb8 == m_pApiController->GetPixelFormat() ? QImage::Format_RGB888 : QImage::Format_Indexed8);
 
-			VmbUchar_t *pBuffer;
-			err = pFrame->GetImage(pBuffer);
-			if (VmbErrorSuccess == err)
-			{
-				VmbUint32_t nSize;
-				err = pFrame->GetImageSize(nSize);
-				if (VmbErrorSuccess == err)
+				if (VmbPixelFormatRgb8 != m_pApiController->GetPixelFormat())
 				{
-					VmbPixelFormatType ePixelFormat = m_pApiController->GetPixelFormat();
-					if (VmbPixelFormatMono8 == ePixelFormat
-						|| VmbPixelFormatRgb8 == ePixelFormat)
+					//tmpImage.setNumColors(256);
+					for (int i = 0; i < 256; i++)
 					{
-						// Copy it
-						// We need that because Qt might repaint the view after we have released the frame already
-						CopyToImage(pBuffer, tmpImage);
-						return tmpImage;
+						tmpImage.setColor(i, qRgb(i, i, i));
 					}
 				}
-			}
 
-			Log("Starting Acquisition", err);
-			m_bIsStreaming = VmbErrorSuccess == err;
+				VmbUchar_t *pBuffer;
+				err = pFrame->GetImage(pBuffer);
+				if (VmbErrorSuccess == err)
+				{
+					VmbUint32_t nSize;
+					err = pFrame->GetImageSize(nSize);
+					if (VmbErrorSuccess == err)
+					{
+						VmbPixelFormatType ePixelFormat = m_pApiController->GetPixelFormat();
+						if (VmbPixelFormatMono8 == ePixelFormat
+							|| VmbPixelFormatRgb8 == ePixelFormat)
+						{
+							// Copy it
+							// We need that because Qt might repaint the view after we have released the frame already
+							CopyToImage(pBuffer, tmpImage);
+							return tmpImage;
+						}
+					}
+				}
+
+				Log("Starting Acquisition", err);
+				m_bIsStreaming = VmbErrorSuccess == err;
+			}
+			else
+			{
+				// If we receive an incomplete image we do nothing
+				err = VmbErrorOther;
+			}
 		}
-		else
-		{
-			// If we receive an incomplete image we do nothing
-			err = VmbErrorOther;
+		else {
+			std::cerr << "Pas de camera trouvee" << std::endl;
+			return QImage();
 		}
 
 	}
 	else
 	{
 		Log("Please select a camera.");
+		return QImage();
 	}
 }
 
@@ -235,7 +243,7 @@ void SynchronousGrab::UpdateCameraListBox()
 		}
 	}
 
-	ui.m_ButtonStartStop->setEnabled(0 < m_cameras.size() || m_bIsStreaming);
+	//ui.m_ButtonStartStop->setEnabled(0 < m_cameras.size() || m_bIsStreaming);
 }
 
 //

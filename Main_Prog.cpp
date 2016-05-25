@@ -33,8 +33,7 @@ bool startCycle() {
 //*****************For tests only*****************
 //cout << "hello! in MainProg::MainFunction" << endl;
 
-//TakePictureTest *tak = new TakePictureTest();
-//tak->show();
+
 //************************************************
 
 
@@ -134,11 +133,11 @@ int main(int argc, char *argv[])
 	// Add video
 	QCamera webcam(getWebcamInfo());
 	QWidget * videoContainer = new QWidget();
-	QVideoWidget * videoWidget = new QVideoWidget(videoContainer);
-	videoWidget->resize(200, 120);
+	//QVideoWidget * videoWidget = new QVideoWidget(videoContainer);
+	//videoWidget->resize(200, 120);
 
-	webcam.setViewfinder(videoWidget);
-	webcam.start();
+	//webcam.setViewfinder(videoWidget);
+	//webcam.start();
 
 	// Label
 	//QLabel *label = new QLabel("Vérifiez que le cadrage vous convient, puis passez à l'étape suivante.");
@@ -161,6 +160,9 @@ int main(int argc, char *argv[])
 
 	wizard.setWindowTitle("GigaProxyPhoto");
 	wizard.show();
+
+	TakePictureTest *tak = new TakePictureTest();
+	tak->show();
 
 	return app->exec();
 }
