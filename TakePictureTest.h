@@ -9,14 +9,15 @@
 
 #include <QWidget>
 #include <QPushButton>
+#include "SynchronousGrab.h"
 
 class TakePictureTest : public QWidget
 {
 	 Q_OBJECT //!\ Build -> run QMAKE before building and running
 
-public:
-	TakePictureTest();
-	virtual ~TakePictureTest();
+	public:
+		TakePictureTest();
+		virtual ~TakePictureTest();
 
     public slots:
 	    void takePicture();

@@ -5,14 +5,14 @@
 #include <QGridLayout>
 #include "TakePictureTest.h"
 #include "SynchronousGrab.h"
+//#include <QObject>
 
 /*
 using namespace std;
 
 // Slot
 void TakePictureTest::takePicture() {
-std::cout << "TODO : take picture" << std::endl;
-// TODO !!
+
 }
 
 // Default Constructor
@@ -36,13 +36,18 @@ QObject::connect(goButton, SIGNAL(clicked()), this, SLOT(takePicture()));
 QGridLayout *layout = new QGridLayout;
 layout->addWidget(goButton,1,1);
 setLayout(layout);
-SynchronousGrab sync = SynchronousGrab::SynchronousGrab(this,0);
+
+SynchronousGrab sync = SynchronousGrab::SynchronousGrab();
 QImage imagetest = sync.GetImage();
 QLabel label;
 label.resize(imagetest.size());
 label.setPixmap(QPixmap::fromImage(imagetest));
 label.setWindowTitle(QObject::tr("Miracle ?"));
 label.show();
+
+QTimer *timer = new QTimer(this);
+QObject::connect(timer, SIGNAL(timeout()), &label, SLOT(setPixmap(QPixmap::fromImage(sync.GetImage()))));
+timer->start(100); // toutes les 100ms (10 fois par seconde)
 
 }
 
