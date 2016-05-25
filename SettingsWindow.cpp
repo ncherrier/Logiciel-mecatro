@@ -13,7 +13,6 @@
 #include "FramingWindow.h" // TODO: remove after tests
 #include "SettingsWindow.h"
 #include "ProcessWindow.h"
-#include "Main_Prog.h"
 #include "SerialCommunication.h"
 #include "cameraSettingsWindow.h"
 
