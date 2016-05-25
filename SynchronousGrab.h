@@ -27,7 +27,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 =============================================================================*/
 
 
-/*
+
 #ifndef SYNCHRONOUSGRABQT_H
 #define SYNCHRONOUSGRABQT_H
 
@@ -105,4 +105,3 @@ public slots:
 
 #endif // SYNCHRONOUSGRABQT_H
 
-*/
