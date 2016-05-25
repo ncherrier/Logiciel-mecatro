@@ -6,6 +6,7 @@
 #include "TakePictureTest.h"
 #include "SynchronousGrab.h"
 
+
 using namespace std;
 
 // Slot
@@ -49,3 +50,4 @@ label.show();
 TakePictureTest::~TakePictureTest() {
 // What TODO ?
 }
+

@@ -9,23 +9,24 @@ QT += serialport
 QT += quick qml multimedia multimediawidgets # for the webcam
 
 SOURCES += \
-    IndustrialCamera/camera.cpp \
-    IndustrialCamera/camera_settings.cpp \
-    GraphicalUserInterface/FramingWindow.cpp \
-    GraphicalUserInterface/SettingsWindow.cpp \
-    GraphicalUserInterface/cameraSettingsWindow.cpp \
-    GraphicalUserInterface/ProcessWindow.cpp \
-    MainProg.cpp \
+    camera.cpp \
+    camera_settings.cpp \
+    FramingWindow.cpp \
+    SettingsWindow.cpp \
+    cameraSettingsWindow.cpp \
+    ProcessWindow.cpp \
+    Main_Prog.cpp \
     TakePictureTest.cpp \
-    SerialCommunication.cpp
+    SerialCommunication.cpp \
+    GPPizard.cpp
 
 HEADERS += \
-    IndustrialCamera/camera.h \
-    GraphicalUserInterface/FramingWindow.h \
-    GraphicalUserInterface/SettingsWindow.h \
-    GraphicalUserInterface/cameraSettingsWindow.h \
-    GraphicalUserInterface/ProcessWindow.h \
-    MainProg.h \
+    camera.h \
+    FramingWindow.h \
+    SettingsWindow.h \
+    cameraSettingsWindow.h \
+    ProcessWindow.h \
+    Main_Prog.h \
     SerialCommunication.h \
     TakePictureTest.h \
     Vimba_2.0/VimbaCPP/Include/AncillaryData.h \
@@ -58,7 +59,8 @@ HEADERS += \
     Vimba_2.0/VimbaCPP/Include/VimbaCPP.h \
     Vimba_2.0/VimbaCPP/Include/VimbaCPPCommon.h \
     Vimba_2.0/VimbaCPP/Include/VimbaSystem.h \
-    Vimba_2.0/VimbaCPP/Include/VimbaSystem.hpp
+    Vimba_2.0/VimbaCPP/Include/VimbaSystem.hpp \
+    GPPWizard.h
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/Vimba_2.0/VimbaC/Lib/Win32 -lVimbaC
 #else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/Vimba_2.0/VimbaC/Lib/Win32 -lVimbaCd

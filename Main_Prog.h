@@ -1,3 +1,5 @@
+/*
+
 #ifndef MAINPROG_H
 #define MAINPROG_H
 
@@ -6,7 +8,7 @@
 #include "FramingWindow.h"
 #include "SettingsWindow.h"
 #include "ProcessWindow.h"
-/*
+
 class MainProg : public QObject
 {
 
@@ -26,6 +28,8 @@ virtual ~MainProg(); // Default destructor
 private:
 int mainFunction();
 
-};*/
+};
 
 #endif // MAINPROG_H
+
+*/

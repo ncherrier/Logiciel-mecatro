@@ -23,7 +23,7 @@ public:
 
 	public slots:
 	void goToFramingWindow();
-	void openCameraSettings(); // open CameraSettingsWindow (settings for the industrial camera)
+    //void openCameraSettings(); // open CameraSettingsWindow (settings for the industrial camera)
 
 	void startCycle(); // to take the global picture
 

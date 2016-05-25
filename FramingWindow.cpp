@@ -1,6 +1,6 @@
 /* Fenetre pour le cadrage
 * (affiche le signal de la webcam ;
-* accès aux reglages de la webcam (?)) */
+* acces aux reglages de la webcam (?)) */
 
 #include "FramingWindow.h"
 #include "SettingsWindow.h"
@@ -40,7 +40,7 @@ FramingWindow::FramingWindow() : QWidget()
 	// setCentralWidget(&videoContainer);
 	QVideoWidget videoWidget(&videoContainer);
 	videoWidget.resize(800, 480); // video size
-	camera.setViewfinder(&videoWidget); //Intègre la vidéo au videoWidget
+	camera.setViewfinder(&videoWidget); //Integre la video au videoWidget
 	camera.start();
 	// provisory
 	cout << "camera started" << endl;
@@ -60,7 +60,7 @@ FramingWindow::FramingWindow() : QWidget()
 
 	// Tips
 
-	//QString userTip = "Utiliser la webcam pour le cadrage, puis cliquer sur Next. Au besoin, régler la webcam. (Ces réglages n'interviennent pas dans la photo finale.)";
+	//QString userTip = "Utiliser la webcam pour le cadrage, puis cliquer sur Next. Au besoin, regler la webcam. (Ces reglages n'interviennent pas dans la photo finale.)";
 
 
 

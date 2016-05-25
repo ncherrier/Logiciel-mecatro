@@ -26,6 +26,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =============================================================================*/
 
+
+/*
 #ifndef SYNCHRONOUSGRABQT_H
 #define SYNCHRONOUSGRABQT_H
 
@@ -86,7 +88,7 @@ private:
 	//
 	void CopyToImage(VmbUchar_t *pInBuffer, QImage &OutImage);
 
-	public slots:
+public slots:
 	QImage SynchronousGrab::GetImage();
 	void SynchronousGrab::SaveImage(QImage tmpImage, QString directory, int numImage);
 
@@ -99,4 +101,8 @@ private:
 	void OnCameraListChanged(int reason);
 };
 
+
+
 #endif // SYNCHRONOUSGRABQT_H
+
+*/

@@ -2,6 +2,8 @@
 #ifndef CAMERASETTINGSWINDOW_H
 #define CAMERASETTINGSWINDOW_H
 
+
+
 #include <QWidget>
 #include <QApplication>
 #include <QDialog>
@@ -41,6 +43,8 @@ private:
 	// pixelColorFilter // variables possibles : BayerRG BayerGB BayerGR BayerBG
 
 };
+
+
 
 #endif // CAMERASETTINGSWINDOW_H
 

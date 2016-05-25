@@ -2,6 +2,8 @@
 * with the industrial camera.
 * Can we take a picture ? */
 
+
+
 #ifndef TAKEPICTURETEST_H
 #define TAKEPICTURETEST_H
 
@@ -25,3 +27,4 @@ public:
 };
 
 #endif // TAKEPICTURETEST_H
+
