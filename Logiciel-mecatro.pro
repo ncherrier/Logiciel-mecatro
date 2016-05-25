@@ -18,7 +18,7 @@ SOURCES += \
     Main_Prog.cpp \
     TakePictureTest.cpp \
     SerialCommunication.cpp \
-    GPPizard.cpp
+    GPPWizard.cpp
 
 HEADERS += \
     camera.h \
@@ -26,7 +26,6 @@ HEADERS += \
     SettingsWindow.h \
     cameraSettingsWindow.h \
     ProcessWindow.h \
-    Main_Prog.h \
     SerialCommunication.h \
     TakePictureTest.h \
     Vimba_2.0/VimbaCPP/Include/AncillaryData.h \

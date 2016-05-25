@@ -8,12 +8,14 @@
 #include "ProcessWindow.h"
 #include "SerialCommunication.h"
 #include "TakePictureTest.h" // for tests only
-#include <QWizard>
-#include <QWizardPage>
+//#include <QWizard>
+//#include <QWizardPage>
 // For videos
 #include <QtMultimedia>
 #include <QtMultimediaWidgets>
 #include <QVideoWidget>
+#include "GPPWizard.h"
+
 
 using namespace std;
 
@@ -22,13 +24,13 @@ using namespace std;
 // will be called by the User Interface
 // take subpictures and communicate with Electronics to move the Industrial camera
 // returns true if the process was executed normally
-bool startCycle() {
-
-    cout << "call startCycle()" << endl;
+//bool startCycle() {
+//
+//    cout << "call startCycle()" << endl;
 	// TODO: change return so that one can know whether everything went good or not (or use exceptions ?)
-
-	return true;
-}
+//
+//	return true;
+//}
 
 //*****************For tests only*****************
 //cout << "hello! in MainProg::MainFunction" << endl;
@@ -114,56 +116,11 @@ int main(int argc, char *argv[])
 	cout << "hello! in main" << endl;
 	QApplication *app = new QApplication(argc, argv);
 
-	//*****************QWizard creation****************
-/*
-	QWizard wizard;
+    GPPWizard * GPP = new GPPWizard();
+    GPP->show();
 
-	//Page 0: Intro
-	//Page 1: Framing
-	//contains video from webcam
-	//Page 2: "Settings": focus, exposure time
-	//contains videos from webcam and industrial camera
-	//Page 3: In process
-	//Enables user to stop the process
-
-	wizard.addPage(createIntroPage());
-
-
-
-	QWizardPage * framingPage = createFramingPage();
-	// Add video
-	QCamera webcam(getWebcamInfo());
-	QWidget * videoContainer = new QWidget();
-	//QVideoWidget * videoWidget = new QVideoWidget(videoContainer);
-	//videoWidget->resize(200, 120);
-
-	//webcam.setViewfinder(videoWidget);
-	//webcam.start();
-
-	// Label
-	//QLabel *label = new QLabel("Verifiez que le cadrage vous convient, puis passez a l'etape suivante.");
-	//label->setWordWrap(true);
-
-	// Layout
-	//QGridLayout *framingPageLayout = new QGridLayout;
-	//framingPageLayout->addWidget(label);
-    //framingPageLayout->addWidget(videoContainer);
-	//framingPage->setLayout(framingPageLayout);
-    framingPage->layout()->addWidget(videoContainer);
-
-	wizard.addPage(framingPage);
-
-
-
-
-	wizard.addPage(createSettingsPage());
-	wizard.addPage(createInProcessPage());
-
-	wizard.setWindowTitle("GigaProxyPhoto");
-    wizard.show();*/
-
-	TakePictureTest *tak = new TakePictureTest();
-	tak->show();
+    //TakePictureTest *tak = new TakePictureTest();
+    //tak->show();
 
 	return app->exec();
 }
