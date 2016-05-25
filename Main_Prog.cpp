@@ -122,6 +122,40 @@ int main(int argc, char *argv[])
     //TakePictureTest *tak = new TakePictureTest();
     //tak->show();
 
+
+    //TEST !!!!
+    //Permet de détecter la caméra
+    QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
+    QCameraInfo const firstCam = cameras[0];
+    //QCameraInfo const secondCam = cameras[1];
+    QCamera camera(firstCam);
+    //
+
+    QWidget w;
+
+    //QWidget videoContainer(&w);
+    //w.setCentralWidget(&videoContainer);
+    QWidget videoContainer;
+
+    // création d'un QVideoWidget avec videoContainer comme parent
+    QVideoWidget videoWidget(&videoContainer);
+
+    videoWidget.resize(600, 360); //Taille de la vidéo
+
+    camera.setViewfinder(&videoWidget); //Intègre la vidéo au videoWidget
+    camera.start();
+
+    QGridLayout *layout = new QGridLayout;
+    layout->addWidget(&videoContainer);
+    w.setLayout(layout);
+
+    w.resize(600, 360); //Taille de la fenêtre
+    //w.show();
+
+
+    w.show();
+
+    //FIN TEST
 	return app->exec();
 }
 

@@ -1,3 +1,4 @@
+
 TARGET=declarative-camera
 
 QT += core gui
@@ -7,6 +8,9 @@ QT += widgets # Indispensable pour interface graphique !!!
 QT += serialport
 
 QT += quick qml multimedia multimediawidgets # for the webcam
+
+target.path = $$[QT_INSTALL_EXAMPLES]/multimedia/declarative-camera
+INSTALLS += target
 
 SOURCES += \
     camera.cpp \

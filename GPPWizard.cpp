@@ -48,19 +48,7 @@ QWizardPage * GPPWizard::createFramingPage()
     QLabel *label = new QLabel("Verifiez que le cadrage vous convient, puis passez a l'etape suivante.");
     label->setWordWrap(true);
 
-    // Webcam
-    QCamera camera(getWebcamInfo());
 
-    // create new window
-    QWidget * windowWithVideo = new QWidget();
-
-    QWidget * videoContainer = new QWidget(windowWithVideo);
-    QVideoWidget * videoWidget = new QVideoWidget(videoContainer);
-    videoWidget->resize(200,120);
-    camera.setViewfinder(videoWidget);
-    camera.start();
-
-    windowWithVideo->show();
 
     //cout << "Camera started" << endl;
 
@@ -151,6 +139,26 @@ GPPWizard::GPPWizard() : QWizard()
 
     setWindowTitle("GigaProxyPhoto");
     show();
+
+    // Webcam
+
+    QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
+    QCameraInfo const firstCam = cameras[0];
+    //QCameraInfo const secondCam = cameras[1];
+    QCamera camera(firstCam);
+
+    // create new window
+    //QWidget * windowWithVideo = new QWidget();
+
+    //QWidget * videoContainer = new QWidget(windowWithVideo);
+    //QVideoWidget * videoWidget = new QVideoWidget(videoContainer);
+    //videoWidget->resize(200,120);
+    //camera.setViewfinder(videoWidget);
+
+    //windowWithVideo->resize(400,400);
+    //camera.start();
+    //windowWithVideo->show();
+
 
 
 }
