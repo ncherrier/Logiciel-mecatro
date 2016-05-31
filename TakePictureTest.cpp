@@ -49,7 +49,7 @@ label->setPixmap(QPixmap::fromImage(imagetest));
 timer = new QTimer(this);
 timer->setInterval(1000); // toutes les 100ms (10 fois par seconde)
 //QObject::connect(timer, SIGNAL(timeout()), label, SLOT(setPixmap(QPixmap::fromImage(sync.GetImage()))));
-QObject::connect(goButton, SIGNAL(clicked()), label, SLOT(setPixmap(QPixmap::fromImage(sync.GetImage()))));
+QObject::connect(goButton, SIGNAL(clicked()), label, SLOT(setText("Essai")));
 timer->start();
 label->setVisible(true);
 
