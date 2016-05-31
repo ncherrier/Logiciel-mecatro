@@ -73,7 +73,7 @@ SynchronousGrab::~SynchronousGrab()
 }
 
 
-QImage SynchronousGrab::GetImage()
+std::string SynchronousGrab::GetImage(QImage *imagerecup)
 {
 	std::string res = "Rien du tout";
 	VmbErrorType    err;
@@ -119,7 +119,7 @@ QImage SynchronousGrab::GetImage()
 							// Copy it
 							// We need that because Qt might repaint the view after we have released the frame already
 							CopyToImage(pBuffer, tmpImage);
-							return tmpImage;
+							imagerecup = &tmpImage;
 							res = "Jusqu au bout";
 						}
 					}
@@ -136,16 +136,16 @@ QImage SynchronousGrab::GetImage()
 		}
 		else {
 			res = "Pas de camera trouvee";
-			return QImage();
+			imagerecup = &QImage();
 		}
 
 	}
 	else
 	{
 		Log("Please select a camera.");
-		return QImage();
+		imagerecup = &QImage();
 	}
-	//return res;
+	return res;
 }
 
 void SynchronousGrab::SaveImage(QImage tmpImage, QString directory, int numImage){
