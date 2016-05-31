@@ -57,8 +57,7 @@ private:
 	std::vector<std::string>    m_cameras;
 	// Are we streaming?
 	bool                        m_bIsStreaming;
-	QImage *m_imagerecup;
-
+	
 
 	//
 	// Queries and lists all known camera
@@ -92,9 +91,8 @@ private:
 	void CopyToImage(VmbUchar_t *pInBuffer, QImage &OutImage);
 
 public slots:
-	bool SynchronousGrab::GetImage();
+	QImage SynchronousGrab::GetImage();
 	void SynchronousGrab::SaveImage(QImage tmpImage, QString directory, int numImage);
-	bool SynchronousGrab::GetCameraNumber();
 
 	QImage* GetImageRecup();
 	//
