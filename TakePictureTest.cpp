@@ -12,8 +12,9 @@ using namespace std;
 
 // Slot
 void TakePictureTest::takePicture() {
-	QImage imagetest;
-	imagetest = sync->GetImage();
+	//QImage imagetest;
+	//bool res = sync->GetImage();
+	int nb = sync->GetCameraNumber();
 	//QImage* imagerecup = sync->GetImageRecup();
 	/*if (res) {
 		label->setPixmap(QPixmap::fromImage(imagetest));
