@@ -5,13 +5,15 @@
 
 #include <QWidget>
 #include <QWizard>
-
+#include "SerialCommunication.h"
+/*
 class GPPWizard : public QWizard
 {
     Q_OBJECT
 
 public:
     GPPWizard();
+	QCameraInfo const getWebcamInfo();
 
 public slots:
     bool goUp();
@@ -27,5 +29,5 @@ private:
     QWizardPage *createSettingsPage();
     QWizardPage *createInProcessPage();
 };
-
+*/
 #endif // GPPWIZARD_H

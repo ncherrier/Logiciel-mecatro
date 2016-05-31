@@ -44,12 +44,6 @@ using namespace std;
 //fra->show();
 //cout << "FramingWindow shown" << endl;
 
-//Permet de detecter la camera // TODO: ameliorer...
-QCameraInfo const getWebcamInfo(){
-    QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
-    QCameraInfo const firstcam = cameras[0];
-	return firstcam;
-}
 
 /*
 QWizardPage *createIntroPage()
@@ -116,11 +110,11 @@ int main(int argc, char *argv[])
 	cout << "hello! in main" << endl;
 	QApplication *app = new QApplication(argc, argv);
 
-    GPPWizard * GPP = new GPPWizard();
-    GPP->show();
+//    GPPWizard * GPP = new GPPWizard();
+  //  GPP->show();
 
-    //TakePictureTest *tak = new TakePictureTest();
-    //tak->show();
+    TakePictureTest *tak = new TakePictureTest();
+    tak->show();
 
 
     //TEST !!!!

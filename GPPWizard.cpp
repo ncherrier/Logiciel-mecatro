@@ -5,10 +5,10 @@
 #include <QVideoWidget>
 #include "cameraSettingsWindow.h"
 #include <iostream> // for tests
-#include <Main_Prog.cpp>
+//#include <Main_Prog.cpp>
 
 // Slots
-
+/*
 void GPPWizard::openCameraSettings() {
     std::cout << "TODO: open cameraSettingsWindow" << std::endl;
     CameraSettingsWindow *cam = new CameraSettingsWindow(this);
@@ -38,6 +38,13 @@ QWizardPage * GPPWizard::createIntroPage()
     page->setTitle("Bienvenue");
 
     return page;
+}
+
+//Permet de detecter la camera // TODO: ameliorer...
+QCameraInfo const getWebcamInfo(){
+	QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
+	QCameraInfo const firstcam = cameras[0];
+	return firstcam;
 }
 
 QWizardPage * GPPWizard::createFramingPage()
@@ -163,3 +170,4 @@ GPPWizard::GPPWizard() : QWizard()
 
 }
 
+*/

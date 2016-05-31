@@ -75,12 +75,15 @@ SynchronousGrab::~SynchronousGrab()
 
 QImage SynchronousGrab::GetImage()
 {
+	std::string res = "Rien du tout";
 	VmbErrorType    err;
 	FramePtr pFrame;
 	if (m_cameras.size() > 0){
+		res = "Camera trouvee";
 		err = m_pApiController->AcquireSingleImage(m_cameras[0], pFrame);
 		if (VmbErrorSuccess == err)
 		{
+			res = "Acquisition reussie";
 			// See if it is not corrupt
 			VmbFrameStatusType eReceiveStatus;
 			err = pFrame->GetReceiveStatus(eReceiveStatus);
@@ -117,6 +120,7 @@ QImage SynchronousGrab::GetImage()
 							// We need that because Qt might repaint the view after we have released the frame already
 							CopyToImage(pBuffer, tmpImage);
 							return tmpImage;
+							res = "Jusqu au bout";
 						}
 					}
 				}
@@ -131,7 +135,7 @@ QImage SynchronousGrab::GetImage()
 			}
 		}
 		else {
-			std::cerr << "Pas de camera trouvee" << std::endl;
+			res = "Pas de camera trouvee";
 			return QImage();
 		}
 
@@ -141,6 +145,7 @@ QImage SynchronousGrab::GetImage()
 		Log("Please select a camera.");
 		return QImage();
 	}
+	//return res;
 }
 
 void SynchronousGrab::SaveImage(QImage tmpImage, QString directory, int numImage){
@@ -255,6 +260,7 @@ void SynchronousGrab::UpdateCameraListBox()
 //
 void SynchronousGrab::Log(std::string strMsg, VmbErrorType eErr)
 {
+	std::cout << strMsg << std::endl;
 	//strMsg += "..." + m_pApiController->ErrorCodeToMessage(eErr);
 	//ui.m_ListLog->insertItem(0, QString::fromStdString(strMsg));
 }
@@ -267,5 +273,6 @@ void SynchronousGrab::Log(std::string strMsg, VmbErrorType eErr)
 //
 void SynchronousGrab::Log(std::string strMsg)
 {
+	std::cout << strMsg << std::endl;
 	//ui.m_ListLog->insertItem(0, QString::fromStdString(strMsg));
 }

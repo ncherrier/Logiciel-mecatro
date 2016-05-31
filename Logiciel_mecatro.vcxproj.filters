@@ -113,9 +113,6 @@
     <ClCompile Include="GeneratedFiles\Debug\moc_GPPWizard.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_GPPWizard.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="logiciel_mecatro.ui">
@@ -137,9 +134,6 @@
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="cameraSettingsWindow.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="Main_Prog.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="ProcessWindow.h">
