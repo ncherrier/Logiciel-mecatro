@@ -9,7 +9,7 @@ prior written consent of Allied Vision Technologies is prohibited.
 File:        ApiController.h
 
 Description: Implementation file for the ApiController helper class that
-demonstrates how to implement a synchronous single image
+demonstrates how to implement an asynchronous, continuous image
 acquisition with VimbaCPP.
 
 -------------------------------------------------------------------------------
@@ -32,9 +32,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <string>
 
-#include "Vimba_2.0/VimbaCPP/Include/VimbaCPP.h"
+#include <Vimba_2.0/VimbaCPP/Include/VimbaCPP.h>
 
-#include "CameraObserver.h"
+#include <CameraObserver.h>
+#include <FrameObserver.h>
 
 namespace AVT {
 	namespace VmbAPI {
@@ -63,41 +64,17 @@ namespace AVT {
 				// Opens the given camera
 				// Sets the maximum possible Ethernet packet size
 				// Adjusts the image format
-				// Calls the API convenience function to start single image acquisition
+				// Sets up the observer that will be notified on every incoming frame
+				// Calls the API convenience function to start image acquisition
 				// Closes the camera in case of failure
 				//
 				// Parameters:
-				//  [in]    rStrCameraID        The ID of the camera to work on
-				//  [out]   rpFrame             The frame that will be filled. Does not need to be initialized.
+				//  [in]    rStrCameraID    The ID of the camera to open as reported by Vimba
 				//
 				// Returns:
 				//  An API status code
 				//
-				VmbErrorType        AcquireSingleImage(const std::string &rStrCameraID, FramePtr &rpFrame);
-
-				//
-				// Gets the width of a frame
-				//
-				// Returns:
-				//  The width as integer
-				//
-				int                 GetWidth()          const;
-
-				//
-				// Gets the height of a frame
-				//
-				// Returns:
-				//  The height as integer
-				//
-				int                 GetHeight()         const;
-
-				//
-				// Gets the pixel format of a frame
-				//
-				// Returns:
-				//  The pixel format as enum
-				//
-				VmbPixelFormatType  GetPixelFormat()    const;
+				VmbErrorType        StartContinuousImageAcquisition(const std::string &rStrCameraID);
 
 				//
 				// Calls the API convenience function to stop image acquisition
@@ -106,12 +83,73 @@ namespace AVT {
 				// Returns:
 				//  An API status code
 				//
-				CameraPtrVector     GetCameraList()     const;
+				VmbErrorType        StopContinuousImageAcquisition();
+
+				//
+				// Gets the width of a frame
+				//
+				// Returns:
+				//  The width as integer
+				//
+				int                 GetWidth() const;
+
+				//
+				// Gets the height of a frame
+				//
+				// Returns:
+				//  The height as integer
+				//
+				int                 GetHeight() const;
+
+				//
+				// Gets the pixel format of a frame
+				//
+				// Returns:
+				//  The pixel format as enum
+				//
+				VmbPixelFormatType  GetPixelFormat() const;
+
+				//
+				// Gets all cameras known to Vimba
+				//
+				// Returns:
+				//  A vector of camera shared pointers
+				//
+				CameraPtrVector     GetCameraList();
+
+				//
+				// Gets the oldest frame that has not been picked up yet
+				//
+				// Returns:
+				//  A frame shared pointer
+				//
+				FramePtr            GetFrame();
+
+				//
+				// Queues a given frame to be filled by the API
+				//
+				// Parameters:
+				//  [in]    pFrame          The frame to queue
+				//
+				// Returns:
+				//  An API status code
+				//
+				VmbErrorType        QueueFrame(FramePtr pFrame);
+
+				//
+				// Clears all remaining frames that have not been picked up
+				//
+				void                ClearFrameQueue();
+
+				//
+				// Returns the camera observer as QObject pointer to connect their signals to the view's slots
+				//
+				QObject*            GetCameraObserver();
 
 				//
 				// Returns the frame observer as QObject pointer to connect their signals to the view's slots
 				//
-				QObject*            GetCameraObserver();
+				QObject*            GetFrameObserver();
 
 				//
 				// Translates Vimba error codes to readable error messages
@@ -131,20 +169,21 @@ namespace AVT {
 				//  The version as string
 				//
 				std::string         GetVersion() const;
-
 			private:
 				// A reference to our Vimba singleton
-				VimbaSystem &       m_system;
+				VimbaSystem&                m_system;
 				// The currently streaming camera
-				CameraPtr           m_pCamera;
+				CameraPtr                   m_pCamera;
+				// Every camera has its own frame observer
+				IFrameObserverPtr           m_pFrameObserver;
 				// Our camera observer
-				CameraObserver*     m_pCameraObserver;
+				ICameraListObserverPtr      m_pCameraObserver;
 				// The current pixel format
-				VmbInt64_t          m_nPixelFormat;
+				VmbInt64_t                  m_nPixelFormat;
 				// The current width
-				VmbInt64_t          m_nWidth;
+				VmbInt64_t                  m_nWidth;
 				// The current height
-				VmbInt64_t          m_nHeight;
+				VmbInt64_t                  m_nHeight;
 			};
 
 		}

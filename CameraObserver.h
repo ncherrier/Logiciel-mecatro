@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <QObject>
 
-#include "Vimba_2.0/VimbaCPP/Include/VimbaCPP.h"
+#include <Vimba_2.0/VimbaCPP/Include/VimbaCPP.h>
 
 namespace AVT {
 	namespace VmbAPI {

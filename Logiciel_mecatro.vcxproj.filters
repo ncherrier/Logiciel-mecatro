@@ -92,15 +92,6 @@
     <ClCompile Include="GeneratedFiles\Release\moc_CameraObserver.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="SynchronousGrab.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_SynchronousGrab.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_SynchronousGrab.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_cameraSettingsWindow.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
@@ -112,6 +103,24 @@
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_GPPWizard.cpp">
       <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameObserver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_FrameObserver.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_FrameObserver.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="AsynchronousGrab.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_AsynchronousGrab.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_AsynchronousGrab.cpp">
+      <Filter>Generated Files\Release</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -148,10 +157,13 @@
     <CustomBuild Include="CameraObserver.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="SynchronousGrab.h">
+    <CustomBuild Include="GPPWizard.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="GPPWizard.h">
+    <CustomBuild Include="FrameObserver.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="AsynchronousGrab.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>

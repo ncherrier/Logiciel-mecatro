@@ -9,7 +9,7 @@ prior written consent of Allied Vision Technologies is prohibited.
 File:        ApiController.cpp
 
 Description: Implementation file for the ApiController helper class that
-demonstrates how to implement a synchronous single image
+demonstrates how to implement an asynchronous, continuous image
 acquisition with VimbaCPP.
 
 -------------------------------------------------------------------------------
@@ -27,12 +27,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =============================================================================*/
 
-
+#include <ApiController.h>
 #include <sstream>
 #include <iostream>
-
-#include "ApiController.h"
-
 #include "Vimba_2.0/VimbaCPP_Examples/Common/StreamSystemInfo.h"
 #include "Vimba_2.0/VimbaCPP_Examples/Common/ErrorCodeToMessage.h"
 
@@ -40,7 +37,7 @@ namespace AVT {
 	namespace VmbAPI {
 		namespace Examples {
 
-			enum { NUM_FRAMES = 3, };
+			enum    { NUM_FRAMES = 3, };
 
 			ApiController::ApiController()
 				// Get a reference to the Vimba singleton
@@ -61,12 +58,11 @@ namespace AVT {
 			// Returns:
 			//  A descriptive string representation of the error code
 			//
-			/*
 			std::string ApiController::ErrorCodeToMessage(VmbErrorType eErr) const
 			{
-				return AVT::VmbAPI::Examples::ErrorCodeToMessage(eErr);
+				return ""; // AVT::VmbAPI::Examples::ErrorCodeToMessage(eErr);
 			}
-			*/
+
 			//
 			// Starts the Vimba API and loads all transport layers
 			//
@@ -82,9 +78,9 @@ namespace AVT {
 				if (VmbErrorSuccess == res)
 				{
 					// This will be wrapped in a shared_ptr so we don't delete it
-					m_pCameraObserver = new CameraObserver();
+					SP_SET(m_pCameraObserver, new CameraObserver());
 					// Register an observer whose callback routine gets triggered whenever a camera is plugged in or out
-					res = m_system.RegisterCameraListObserver(ICameraListObserverPtr(m_pCameraObserver));
+					res = m_system.RegisterCameraListObserver(m_pCameraObserver);
 				}
 
 				return res;
@@ -98,22 +94,46 @@ namespace AVT {
 				// Release Vimba
 				m_system.Shutdown();
 			}
+			/*** helper function to set image size to a value that is dividable by modulo 2.
+			\note this is needed because VimbaImageTransform does not support odd values for some input formats
+			*/
+			inline VmbErrorType SetValueIntMod2(const CameraPtr &camera, const std::string &featureName, VmbInt64_t &storage)
+			{
+				VmbErrorType    res;
+				FeaturePtr      pFeature;
+				res = SP_ACCESS(camera)->GetFeatureByName(featureName.c_str(), pFeature);
+				if (VmbErrorSuccess == res)
+				{
+					VmbInt64_t minValue, maxValue;
+					res = SP_ACCESS(pFeature)->GetRange(minValue, maxValue);
+					if (VmbErrorSuccess == res)
+					{
+						maxValue = (maxValue >> 1) << 1; // mod 2 dividable
+						res = SP_ACCESS(pFeature)->SetValue(maxValue);
+						if (VmbErrorSuccess == res)
+						{
+							storage = maxValue;
+						}
+					}
+				}
+				return res;
+			}
 
 			//
 			// Opens the given camera
 			// Sets the maximum possible Ethernet packet size
 			// Adjusts the image format
-			// Calls the API convenience function to start single image acquisition
+			// Sets up the observer that will be notified on every incoming frame
+			// Calls the API convenience function to start image acquisition
 			// Closes the camera in case of failure
 			//
 			// Parameters:
-			//  [in]    rStrCameraID        The ID of the camera to work on
-			//  [out]   rpFrame             The frame that will be filled. Does not need to be initialized.
+			//  [in]    rStrCameraID    The ID of the camera to open as reported by Vimba
 			//
 			// Returns:
 			//  An API status code
 			//
-			VmbErrorType ApiController::AcquireSingleImage(const std::string &rStrCameraID, FramePtr &rpFrame)
+			VmbErrorType ApiController::StartContinuousImageAcquisition(const std::string &rStrCameraID)
 			{
 				// Open the desired camera by its ID
 				VmbErrorType res = m_system.OpenCameraByID(rStrCameraID.c_str(), VmbAccessModeFull, m_pCamera);
@@ -122,61 +142,47 @@ namespace AVT {
 					// Set the GeV packet size to the highest possible value
 					// (In this example we do not test whether this cam actually is a GigE cam)
 					FeaturePtr pCommandFeature;
-					if (VmbErrorSuccess == m_pCamera->GetFeatureByName("GVSPAdjustPacketSize", pCommandFeature))
+					if (VmbErrorSuccess == SP_ACCESS(m_pCamera)->GetFeatureByName("GVSPAdjustPacketSize", pCommandFeature))
 					{
-						if (VmbErrorSuccess == pCommandFeature->RunCommand())
+						if (VmbErrorSuccess == SP_ACCESS(pCommandFeature)->RunCommand())
 						{
 							bool bIsCommandDone = false;
 							do
 							{
-								if (VmbErrorSuccess != pCommandFeature->IsCommandDone(bIsCommandDone))
+								if (VmbErrorSuccess != SP_ACCESS(pCommandFeature)->IsCommandDone(bIsCommandDone))
 								{
 									break;
 								}
 							} while (false == bIsCommandDone);
 						}
 					}
-					FeaturePtr pFormatFeature;
-					// Save the current width
-					res = m_pCamera->GetFeatureByName("Width", pFormatFeature);
+					res = SetValueIntMod2(m_pCamera, "Width", m_nWidth);
 					if (VmbErrorSuccess == res)
 					{
-						res = pFormatFeature->GetValue(m_nWidth);
+						res = SetValueIntMod2(m_pCamera, "Height", m_nHeight);
 						if (VmbErrorSuccess == res)
 						{
-							// Save the current height
-							res = m_pCamera->GetFeatureByName("Height", pFormatFeature);
+							// Store currently selected image format
+							FeaturePtr pFormatFeature;
+							res = SP_ACCESS(m_pCamera)->GetFeatureByName("PixelFormat", pFormatFeature);
 							if (VmbErrorSuccess == res)
 							{
-								pFormatFeature->GetValue(this->m_nHeight);
+								res = SP_ACCESS(pFormatFeature)->GetValue(m_nPixelFormat);
 								if (VmbErrorSuccess == res)
 								{
-									// Set pixel format. For the sake of simplicity we only support Mono and RGB in this example.
-									res = m_pCamera->GetFeatureByName("PixelFormat", pFormatFeature);
-									if (VmbErrorSuccess == res)
-									{
-										// Try to set RGB
-										res = pFormatFeature->SetValue(VmbPixelFormatRgb8);
-										if (VmbErrorSuccess != res)
-										{
-											// Fall back to Mono
-											res = pFormatFeature->SetValue(VmbPixelFormatMono8);
-										}
-
-										// Read back the currently selected pixel format
-										pFormatFeature->GetValue(m_nPixelFormat);
-
-										if (VmbErrorSuccess == res)
-										{
-											// Acquire
-											res = m_pCamera->AcquireSingleImage(rpFrame, 2000);
-										}
-									}
+									// Create a frame observer for this camera (This will be wrapped in a shared_ptr so we don't delete it)
+									SP_SET(m_pFrameObserver, new FrameObserver(m_pCamera));
+									// Start streaming
+									res = SP_ACCESS(m_pCamera)->StartContinuousImageAcquisition(NUM_FRAMES, m_pFrameObserver);
 								}
 							}
 						}
 					}
-					m_pCamera->Close();
+					if (VmbErrorSuccess != res)
+					{
+						// If anything fails after opening the camera we close it
+						SP_ACCESS(m_pCamera)->Close();
+					}
 				}
 
 				return res;
@@ -189,7 +195,22 @@ namespace AVT {
 			// Returns:
 			//  An API status code
 			//
-			CameraPtrVector ApiController::GetCameraList() const
+			VmbErrorType ApiController::StopContinuousImageAcquisition()
+			{
+				// Stop streaming
+				SP_ACCESS(m_pCamera)->StopContinuousImageAcquisition();
+
+				// Close camera
+				return  m_pCamera->Close();
+			}
+
+			//
+			// Gets all cameras known to Vimba
+			//
+			// Returns:
+			//  A vector of camera shared pointers
+			//
+			CameraPtrVector ApiController::GetCameraList()
 			{
 				CameraPtrVector cameras;
 				// Get all known cameras
@@ -235,11 +256,52 @@ namespace AVT {
 			}
 
 			//
-			// Returns the frame observer as QObject pointer to connect their signals to the view's slots
+			// Gets the oldest frame that has not been picked up yet
+			//
+			// Returns:
+			//  A frame shared pointer
+			//
+			FramePtr ApiController::GetFrame()
+			{
+				return SP_DYN_CAST(m_pFrameObserver, FrameObserver)->GetFrame();
+			}
+
+			//
+			// Clears all remaining frames that have not been picked up
+			//
+			void ApiController::ClearFrameQueue()
+			{
+				SP_DYN_CAST(m_pFrameObserver, FrameObserver)->ClearFrameQueue();
+			}
+
+			//
+			// Queues a given frame to be filled by the API
+			//
+			// Parameters:
+			//  [in]    pFrame          The frame to queue
+			//
+			// Returns:
+			//  An API status code
+			//
+			VmbErrorType ApiController::QueueFrame(FramePtr pFrame)
+			{
+				return SP_ACCESS(m_pCamera)->QueueFrame(pFrame);
+			}
+
+			//
+			// Returns the camera observer as QObject pointer to connect their signals to the view's slots
 			//
 			QObject* ApiController::GetCameraObserver()
 			{
-				return m_pCameraObserver;
+				return SP_DYN_CAST(m_pCameraObserver, CameraObserver).get();
+			}
+
+			//
+			// Returns the frame observer as QObject pointer to connect their signals to the view's slots
+			//
+			QObject* ApiController::GetFrameObserver()
+			{
+				return SP_DYN_CAST(m_pFrameObserver, FrameObserver).get();
 			}
 
 			//
@@ -254,6 +316,7 @@ namespace AVT {
 				os << m_system;
 				return os.str();
 			}
+
 		}
 	}
 } // namespace AVT::VmbAPI::Examples

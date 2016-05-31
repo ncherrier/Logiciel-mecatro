@@ -26,7 +26,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =============================================================================*/
 
-#include "CameraObserver.h"
+#include <CameraObserver.h>
 
 namespace AVT {
 	namespace VmbAPI {

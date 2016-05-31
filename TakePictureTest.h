@@ -9,7 +9,7 @@
 
 #include <QWidget>
 #include <QPushButton>
-#include "SynchronousGrab.h"
+#include "AsynchronousGrab.h"
 
 class TakePictureTest : public QWidget
 {
@@ -20,13 +20,13 @@ class TakePictureTest : public QWidget
 		virtual ~TakePictureTest();
 
     public slots:
-	    void takePicture();
+	    void takePicture(QImage image);
 
 	private:
 	  QPushButton *goButton;
 	  QLabel *label;
 	  QTimer *timer;
-	  SynchronousGrab *sync;
+	  AsynchronousGrab *sync;
 	  QImage *image;
 
 };
