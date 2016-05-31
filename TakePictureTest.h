@@ -26,6 +26,7 @@ class TakePictureTest : public QWidget
 	  QPushButton *goButton;
 	  QLabel *label;
 	  QTimer *timer;
+	  SynchronousGrab *sync;
 
 };
 

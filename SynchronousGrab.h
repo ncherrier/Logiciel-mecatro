@@ -50,6 +50,7 @@ public:
 	SynchronousGrab(QWidget *parent = 0, Qt::WindowFlags flags = 0);
 	~SynchronousGrab();
 
+
 private:
 	Ui::Logiciel_mecatroClass    ui;
 	// Our controller that wraps API access
@@ -58,6 +59,7 @@ private:
 	std::vector<std::string>    m_cameras;
 	// Are we streaming?
 	bool                        m_bIsStreaming;
+	
 
 	//
 	// Queries and lists all known camera
@@ -94,6 +96,7 @@ public slots:
 	QImage SynchronousGrab::GetImage();
 	void SynchronousGrab::SaveImage(QImage tmpImage, QString directory, int numImage);
 
+	QImage* GetImageRecup();
 	//
 	// This event handler (Qt slot) is triggered through a Qt signal posted by the camera observer
 	//

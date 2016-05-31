@@ -43,7 +43,6 @@ SynchronousGrab::SynchronousGrab(QWidget *parent, Qt::WindowFlags flags)
 	//ui.m_LabelStream->setAlignment(Qt::AlignCenter);
 	// Connect GUI events with event handlers
 	//QObject::connect(ui.m_ButtonStartStop, SIGNAL(clicked()), this, SLOT(OnBnClickedButtonStartstop()));
-
 	// Start Vimba
 	VmbErrorType err = m_pApiController->StartUp();
 	Log("Starting Vimba", err);
@@ -148,9 +147,15 @@ QImage SynchronousGrab::GetImage()
 	//return res;
 }
 
+
 void SynchronousGrab::SaveImage(QImage tmpImage, QString directory, int numImage){
 	QString imagePath = directory + QString::number(numImage) + "JPG";
 	tmpImage.save(imagePath);
+}
+
+QImage* SynchronousGrab::GetImageRecup(){
+	//return m_imagerecup;
+	return new QImage();
 }
 
 //
