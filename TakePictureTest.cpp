@@ -12,6 +12,8 @@ using namespace std;
 
 // Slot
 void TakePictureTest::takePicture() {
+	image = &(sync->GetImage());
+	label->setPixmap(QPixmap::fromImage(*image));
 }
 
 // Default Constructor
@@ -26,10 +28,6 @@ setWindowTitle("Test : take picture");
 
 goButton = new QPushButton("Take picture");
 
-// Slots
-
-//QObject::connect(goButton, SIGNAL(clicked()), this, SLOT(takePicture()));
-
 // Layout
 SynchronousGrab sync = SynchronousGrab::SynchronousGrab();
 QImage imagetest = sync.GetImage();
@@ -37,11 +35,11 @@ label = new QLabel;
 label->setFixedWidth(200);
 label->setFixedHeight(200);
 label->setPixmap(QPixmap::fromImage(imagetest));
-timer = new QTimer(this);
-timer->setInterval(1000); // toutes les 100ms (10 fois par seconde)
+//timer = new QTimer(this);
+//timer->setInterval(1000); */ // toutes les 100ms (10 fois par seconde)
 //QObject::connect(timer, SIGNAL(timeout()), label, SLOT(setPixmap(QPixmap::fromImage(sync.GetImage()))));
-QObject::connect(goButton, SIGNAL(clicked()), label, SLOT(setText("Essai")));
-timer->start();
+QObject::connect(goButton, SIGNAL(clicked()), this, SLOT(takePicture()));
+//timer->start();
 label->setVisible(true);
 
 

@@ -112,11 +112,11 @@ int main(int argc, char *argv[])
 
 //    GPPWizard * GPP = new GPPWizard();
   //  GPP->show();
-
+	
     TakePictureTest *tak = new TakePictureTest();
     tak->show();
-
-
+	
+	/*
     //TEST !!!!
     //Permet de détecter la caméra
     QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
@@ -148,7 +148,7 @@ int main(int argc, char *argv[])
 
 
     w.show();
-
+	*/
     //FIN TEST
 	return app->exec();
 }

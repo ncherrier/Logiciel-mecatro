@@ -27,6 +27,7 @@ class TakePictureTest : public QWidget
 	  QLabel *label;
 	  QTimer *timer;
 	  SynchronousGrab *sync;
+	  QImage *image;
 
 };
 
