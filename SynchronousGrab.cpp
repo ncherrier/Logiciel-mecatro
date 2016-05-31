@@ -71,22 +71,18 @@ SynchronousGrab::~SynchronousGrab()
 	m_pApiController = NULL;
 }
 
-bool SynchronousGrab::GetCameraNumber(){
-	m_cameras = {};
-	return m_cameras.empty();
-}
 
-
-bool SynchronousGrab::GetImage()
+QImage SynchronousGrab::GetImage()
 {
-	bool res = false;
+	std::string res = "Rien du tout";
 	VmbErrorType    err;
 	FramePtr pFrame;
-	/*
 	if (m_cameras.size() > 0){
+		res = "Camera trouvee";
 		err = m_pApiController->AcquireSingleImage(m_cameras[0], pFrame);
 		if (VmbErrorSuccess == err)
 		{
+			res = "Acquisition reussie";
 			// See if it is not corrupt
 			VmbFrameStatusType eReceiveStatus;
 			err = pFrame->GetReceiveStatus(eReceiveStatus);
@@ -122,8 +118,8 @@ bool SynchronousGrab::GetImage()
 							// Copy it
 							// We need that because Qt might repaint the view after we have released the frame already
 							CopyToImage(pBuffer, tmpImage);
-							m_imagerecup = &tmpImage;
-							res = true;
+							return tmpImage;
+							res = "Jusqu au bout";
 						}
 					}
 				}
@@ -138,15 +134,19 @@ bool SynchronousGrab::GetImage()
 			}
 		}
 		else {
+			res = "Pas de camera trouvee";
+			return QImage();
 		}
 
 	}
 	else
 	{
 		Log("Please select a camera.");
-	}*/
-	return res;
+		return QImage();
+	}
+	//return res;
 }
+
 
 void SynchronousGrab::SaveImage(QImage tmpImage, QString directory, int numImage){
 	QString imagePath = directory + QString::number(numImage) + "JPG";
@@ -154,7 +154,8 @@ void SynchronousGrab::SaveImage(QImage tmpImage, QString directory, int numImage
 }
 
 QImage* SynchronousGrab::GetImageRecup(){
-	return m_imagerecup;
+	//return m_imagerecup;
+	return new QImage();
 }
 
 //
