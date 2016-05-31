@@ -22,7 +22,9 @@ SOURCES += \
     Main_Prog.cpp \
     TakePictureTest.cpp \
     SerialCommunication.cpp \
-    GPPWizard.cpp
+    GPPWizard.cpp \
+    SynchronousGrab.cpp \
+    ApiController.cpp
 
 HEADERS += \
     camera.h \
@@ -32,6 +34,8 @@ HEADERS += \
     ProcessWindow.h \
     SerialCommunication.h \
     TakePictureTest.h \
+    SynchronousGrab.h \
+    ApiController.h \
     Vimba_2.0/VimbaCPP/Include/AncillaryData.h \
     Vimba_2.0/VimbaCPP/Include/BasicLockable.h \
     Vimba_2.0/VimbaCPP/Include/Camera.h \

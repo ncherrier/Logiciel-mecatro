@@ -31,12 +31,14 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef SYNCHRONOUSGRABQT_H
 #define SYNCHRONOUSGRABQT_H
 
+/*
 #include <QMainWindow>
 #include <QtWidgets>
 
 #include "GeneratedFiles/ui_logiciel_mecatro.h"
 
 #include "ApiController.h"
+
 
 using AVT::VmbAPI::Examples::ApiController;
 
@@ -99,7 +101,7 @@ public slots:
 	//  [in]    reason          The reason why the callback of the observer was triggered (plug-in, plug-out, ...)
 	//
 	void OnCameraListChanged(int reason);
-};
+};*/
 
 
 
