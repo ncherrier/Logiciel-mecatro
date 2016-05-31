@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_TakePictureTest_t {
-    QByteArrayData data[4];
-    char stringdata0[46];
+    QByteArrayData data[3];
+    char stringdata0[29];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -31,12 +31,10 @@ static const qt_meta_stringdata_TakePictureTest_t qt_meta_stringdata_TakePicture
     {
 QT_MOC_LITERAL(0, 0, 15), // "TakePictureTest"
 QT_MOC_LITERAL(1, 16, 11), // "takePicture"
-QT_MOC_LITERAL(2, 28, 0), // ""
-QT_MOC_LITERAL(3, 29, 16) // "SynchronousGrab*"
+QT_MOC_LITERAL(2, 28, 0) // ""
 
     },
-    "TakePictureTest\0takePicture\0\0"
-    "SynchronousGrab*"
+    "TakePictureTest\0takePicture\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -54,10 +52,10 @@ static const uint qt_meta_data_TakePictureTest[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   19,    2, 0x0a /* Public */,
+       1,    0,   19,    2, 0x0a /* Public */,
 
  // slots: parameters
-    QMetaType::Void, 0x80000000 | 3,    2,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -68,21 +66,11 @@ void TakePictureTest::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         TakePictureTest *_t = static_cast<TakePictureTest *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->takePicture((*reinterpret_cast< SynchronousGrab*(*)>(_a[1]))); break;
+        case 0: _t->takePicture(); break;
         default: ;
         }
-    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        switch (_id) {
-        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 0:
-            switch (*reinterpret_cast<int*>(_a[1])) {
-            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-            case 0:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< SynchronousGrab* >(); break;
-            }
-            break;
-        }
     }
+    Q_UNUSED(_a);
 }
 
 const QMetaObject TakePictureTest::staticMetaObject = {
@@ -115,7 +103,7 @@ int TakePictureTest::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         _id -= 1;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 1)
-            qt_static_metacall(this, _c, _id, _a);
+            *reinterpret_cast<int*>(_a[0]) = -1;
         _id -= 1;
     }
     return _id;

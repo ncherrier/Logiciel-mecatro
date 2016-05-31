@@ -20,12 +20,13 @@ class TakePictureTest : public QWidget
 		virtual ~TakePictureTest();
 
     public slots:
-	    void takePicture(SynchronousGrab *);
+	    void takePicture();
 
 	private:
 	  QPushButton *goButton;
 	  QLabel *label;
 	  QTimer *timer;
+	  SynchronousGrab *sync;
 
 };
 

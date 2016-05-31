@@ -43,7 +43,6 @@ SynchronousGrab::SynchronousGrab(QWidget *parent, Qt::WindowFlags flags)
 	//ui.m_LabelStream->setAlignment(Qt::AlignCenter);
 	// Connect GUI events with event handlers
 	//QObject::connect(ui.m_ButtonStartStop, SIGNAL(clicked()), this, SLOT(OnBnClickedButtonStartstop()));
-
 	// Start Vimba
 	VmbErrorType err = m_pApiController->StartUp();
 	Log("Starting Vimba", err);
@@ -72,18 +71,22 @@ SynchronousGrab::~SynchronousGrab()
 	m_pApiController = NULL;
 }
 
+bool SynchronousGrab::GetCameraNumber(){
+	m_cameras = {};
+	return m_cameras.empty();
+}
 
-std::string SynchronousGrab::GetImage(QImage *imagerecup)
+
+bool SynchronousGrab::GetImage()
 {
-	std::string res = "Rien du tout";
+	bool res = false;
 	VmbErrorType    err;
 	FramePtr pFrame;
+	/*
 	if (m_cameras.size() > 0){
-		res = "Camera trouvee";
 		err = m_pApiController->AcquireSingleImage(m_cameras[0], pFrame);
 		if (VmbErrorSuccess == err)
 		{
-			res = "Acquisition reussie";
 			// See if it is not corrupt
 			VmbFrameStatusType eReceiveStatus;
 			err = pFrame->GetReceiveStatus(eReceiveStatus);
@@ -119,8 +122,8 @@ std::string SynchronousGrab::GetImage(QImage *imagerecup)
 							// Copy it
 							// We need that because Qt might repaint the view after we have released the frame already
 							CopyToImage(pBuffer, tmpImage);
-							imagerecup = &tmpImage;
-							res = "Jusqu au bout";
+							m_imagerecup = &tmpImage;
+							res = true;
 						}
 					}
 				}
@@ -135,22 +138,23 @@ std::string SynchronousGrab::GetImage(QImage *imagerecup)
 			}
 		}
 		else {
-			res = "Pas de camera trouvee";
-			imagerecup = &QImage();
 		}
 
 	}
 	else
 	{
 		Log("Please select a camera.");
-		imagerecup = &QImage();
-	}
+	}*/
 	return res;
 }
 
 void SynchronousGrab::SaveImage(QImage tmpImage, QString directory, int numImage){
 	QString imagePath = directory + QString::number(numImage) + "JPG";
 	tmpImage.save(imagePath);
+}
+
+QImage* SynchronousGrab::GetImageRecup(){
+	return m_imagerecup;
 }
 
 //

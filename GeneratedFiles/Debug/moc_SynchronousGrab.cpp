@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_SynchronousGrab_t {
-    QByteArrayData data[4];
-    char stringdata0[44];
+    QByteArrayData data[6];
+    char stringdata0[66];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,13 +30,15 @@ struct qt_meta_stringdata_SynchronousGrab_t {
 static const qt_meta_stringdata_SynchronousGrab_t qt_meta_stringdata_SynchronousGrab = {
     {
 QT_MOC_LITERAL(0, 0, 15), // "SynchronousGrab"
-QT_MOC_LITERAL(1, 16, 19), // "OnCameraListChanged"
-QT_MOC_LITERAL(2, 36, 0), // ""
-QT_MOC_LITERAL(3, 37, 6) // "reason"
+QT_MOC_LITERAL(1, 16, 13), // "GetImageRecup"
+QT_MOC_LITERAL(2, 30, 7), // "QImage*"
+QT_MOC_LITERAL(3, 38, 0), // ""
+QT_MOC_LITERAL(4, 39, 19), // "OnCameraListChanged"
+QT_MOC_LITERAL(5, 59, 6) // "reason"
 
     },
-    "SynchronousGrab\0OnCameraListChanged\0"
-    "\0reason"
+    "SynchronousGrab\0GetImageRecup\0QImage*\0"
+    "\0OnCameraListChanged\0reason"
 };
 #undef QT_MOC_LITERAL
 
@@ -46,7 +48,7 @@ static const uint qt_meta_data_SynchronousGrab[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -54,10 +56,12 @@ static const uint qt_meta_data_SynchronousGrab[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   19,    2, 0x0a /* Public */,
+       1,    0,   24,    3, 0x0a /* Public */,
+       4,    1,   25,    3, 0x0a /* Public */,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::Int,    3,
+    0x80000000 | 2,
+    QMetaType::Void, QMetaType::Int,    5,
 
        0        // eod
 };
@@ -68,7 +72,9 @@ void SynchronousGrab::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         SynchronousGrab *_t = static_cast<SynchronousGrab *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->OnCameraListChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 0: { QImage* _r = _t->GetImageRecup();
+            if (_a[0]) *reinterpret_cast< QImage**>(_a[0]) = _r; }  break;
+        case 1: _t->OnCameraListChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -99,13 +105,13 @@ int SynchronousGrab::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 2)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }
