@@ -113,8 +113,8 @@ int main(int argc, char *argv[])
 //    GPPWizard * GPP = new GPPWizard();
   //  GPP->show();
 
-    //TakePictureTest *tak = new TakePictureTest();
-    //tak->show();
+    TakePictureTest *tak = new TakePictureTest();
+    tak->show();
 
 	return app->exec();
 }

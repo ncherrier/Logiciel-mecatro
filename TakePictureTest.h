@@ -2,7 +2,7 @@
 * with the industrial camera.
 * Can we take a picture ? */
 
-/*
+
 
 #ifndef TAKEPICTURETEST_H
 #define TAKEPICTURETEST_H
@@ -24,6 +24,8 @@ class TakePictureTest : public QWidget
 
 	private:
 	  QPushButton *goButton;
+	  QLabel *label;
+	  QTimer *timer;
 
 };
 
@@ -31,4 +33,3 @@ class TakePictureTest : public QWidget
 
 #endif // TAKEPICTURETEST_H
 
-*/
