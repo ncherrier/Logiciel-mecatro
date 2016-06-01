@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_TakePictureTest_t {
-    QByteArrayData data[3];
-    char stringdata0[29];
+    QByteArrayData data[4];
+    char stringdata0[35];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -31,10 +31,11 @@ static const qt_meta_stringdata_TakePictureTest_t qt_meta_stringdata_TakePicture
     {
 QT_MOC_LITERAL(0, 0, 15), // "TakePictureTest"
 QT_MOC_LITERAL(1, 16, 11), // "takePicture"
-QT_MOC_LITERAL(2, 28, 0) // ""
+QT_MOC_LITERAL(2, 28, 0), // ""
+QT_MOC_LITERAL(3, 29, 5) // "image"
 
     },
-    "TakePictureTest\0takePicture\0"
+    "TakePictureTest\0takePicture\0\0image"
 };
 #undef QT_MOC_LITERAL
 
@@ -52,10 +53,10 @@ static const uint qt_meta_data_TakePictureTest[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   19,    2, 0x0a /* Public */,
+       1,    1,   19,    2, 0x0a /* Public */,
 
  // slots: parameters
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::QImage,    3,
 
        0        // eod
 };
@@ -66,11 +67,10 @@ void TakePictureTest::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         TakePictureTest *_t = static_cast<TakePictureTest *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->takePicture(); break;
+        case 0: _t->takePicture((*reinterpret_cast< QImage(*)>(_a[1]))); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject TakePictureTest::staticMetaObject = {
