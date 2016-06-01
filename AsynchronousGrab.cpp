@@ -27,6 +27,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 =============================================================================*/
 
 #include <sstream>
+#include <QFile>
+#include <QTextStream>
 
 #include "AsynchronousGrab.h"
 #include "Vimba_2.0\VimbaImageTransform\Include\VmbTransform.h"
@@ -47,7 +49,7 @@ AsynchronousGrab::AsynchronousGrab(QWidget *parent, Qt::WindowFlags flags)
 
 	// Start Vimba
 	VmbErrorType err = m_ApiController.StartUp();
-	setWindowTitle(QString("AsynchronousGrab (Qt version) Vimba Version V") + QString::fromStdString(m_ApiController.GetVersion()));
+	//setWindowTitle(QString("AsynchronousGrab (Qt version) Vimba Version V") + QString::fromStdString(m_ApiController.GetVersion()));
 	Log("Starting Vimba", err);
 
 	if (VmbErrorSuccess == err)
@@ -341,6 +343,13 @@ void AsynchronousGrab::Log(std::string strMsg, VmbErrorType eErr)
 {
 	//strMsg += "..." + m_ApiController.ErrorCodeToMessage(eErr);
 	//ui.m_ListLog->insertItem(0, QString::fromStdString(strMsg));
+	QString filename = "C:/Data.txt";
+	QFile file(filename);
+	if (file.open(QIODevice::ReadWrite))
+	{
+		QTextStream stream(&file);
+		stream << QString::fromUtf8(strMsg.c_str()) << endl;
+	}
 }
 
 //
@@ -352,4 +361,11 @@ void AsynchronousGrab::Log(std::string strMsg, VmbErrorType eErr)
 void AsynchronousGrab::Log(std::string strMsg)
 {
 	//ui.m_ListLog->insertItem(0, QString::fromStdString(strMsg));
+	QString filename = "C:/Data.txt";
+	QFile file(filename);
+	if (file.open(QIODevice::ReadWrite))
+	{
+		QTextStream stream(&file);
+		stream << QString::fromUtf8(strMsg.c_str()) << endl;
+	}
 }

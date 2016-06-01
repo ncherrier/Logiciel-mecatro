@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_TakePictureTest_t {
     QByteArrayData data[4];
-    char stringdata0[35];
+    char stringdata0[39];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,12 +30,12 @@ struct qt_meta_stringdata_TakePictureTest_t {
 static const qt_meta_stringdata_TakePictureTest_t qt_meta_stringdata_TakePictureTest = {
     {
 QT_MOC_LITERAL(0, 0, 15), // "TakePictureTest"
-QT_MOC_LITERAL(1, 16, 11), // "takePicture"
-QT_MOC_LITERAL(2, 28, 0), // ""
-QT_MOC_LITERAL(3, 29, 5) // "image"
+QT_MOC_LITERAL(1, 16, 15), // "OnImageReceived"
+QT_MOC_LITERAL(2, 32, 0), // ""
+QT_MOC_LITERAL(3, 33, 5) // "image"
 
     },
-    "TakePictureTest\0takePicture\0\0image"
+    "TakePictureTest\0OnImageReceived\0\0image"
 };
 #undef QT_MOC_LITERAL
 
@@ -67,7 +67,7 @@ void TakePictureTest::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         TakePictureTest *_t = static_cast<TakePictureTest *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->takePicture((*reinterpret_cast< QImage(*)>(_a[1]))); break;
+        case 0: _t->OnImageReceived((*reinterpret_cast< QImage(*)>(_a[1]))); break;
         default: ;
         }
     }
