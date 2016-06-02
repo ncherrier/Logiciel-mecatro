@@ -6,6 +6,7 @@
 * Acces au choix de dossier de destination.
 * */
 
+/*
 #include <QApplication>
 #include <QPushButton>
 #include <iostream>
@@ -31,10 +32,10 @@ void SettingsWindow::goToFramingWindow() {
 	this->close();
 }
 
-/*void SettingsWindow::openCameraSettings() {
-	CameraSettingsWindow *cam = new CameraSettingsWindow(this);
-	cam->exec();
-}*/
+//void SettingsWindow::openCameraSettings() {
+//	CameraSettingsWindow *cam = new CameraSettingsWindow(this);
+//	cam->exec();
+//}
 
 void SettingsWindow::startCycle() {
 	// TODO !!
@@ -115,6 +116,6 @@ SettingsWindow::SettingsWindow() {
 
 }
 
-
+*/
 
 

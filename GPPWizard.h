@@ -5,8 +5,13 @@
 
 #include <QWidget>
 #include <QWizard>
+
 #include "SerialCommunication.h"
-/*
+
+#include <QtMultimedia>
+
+#include "SettingsPage.h"
+
 class GPPWizard : public QWizard
 {
     Q_OBJECT
@@ -28,6 +33,20 @@ private:
     QWizardPage *createFramingPage();
     QWizardPage *createSettingsPage();
     QWizardPage *createInProcessPage();
+
+    QWizardPage *introPage;
+    QWizardPage *framingPage;
+    QWizardPage *settingsPage;
+    QWizardPage *inProcessPage;
+
+    int getWishedXPos();
+    int getWishedYPos();
+
+    // camera position (instruction to be given to Arduino)
+    // as a percentage
+    //int wishedXPos;
+    //int wishedYPos;
+
 };
-*/
+
 #endif // GPPWIZARD_H

@@ -7,7 +7,7 @@
 #include "AsynchronousGrab.h"
 //#include <QObject>
 
-
+/*
 using namespace std;
 
 // Slot
@@ -49,3 +49,4 @@ TakePictureTest::~TakePictureTest() {
 // What TODO ?
 }
 
+*/

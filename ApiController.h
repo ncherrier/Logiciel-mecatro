@@ -27,6 +27,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =============================================================================*/
 
+/*
 #ifndef AVT_VMBAPI_EXAMPLES_APICONTROLLER
 #define AVT_VMBAPI_EXAMPLES_APICONTROLLER
 
@@ -191,3 +192,4 @@ namespace AVT {
 } // namespace AVT::VmbAPI::Examples
 
 #endif
+*/

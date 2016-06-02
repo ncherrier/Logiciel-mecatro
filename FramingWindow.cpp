@@ -1,7 +1,7 @@
 /* Fenetre pour le cadrage
 * (affiche le signal de la webcam ;
 * acces aux reglages de la webcam (?)) */
-
+/*
 #include "FramingWindow.h"
 #include "SettingsWindow.h"
 #include <QApplication>
@@ -13,13 +13,13 @@ using namespace std;
 
 // Slots
 
-/*void FramingWindow::goToSettingsWindow() {
+//void FramingWindow::goToSettingsWindow() {
 // SettingsWindow *set = new SettingsWindow();
 // set->show();
 // this->close();
 // ****** TEST!!! ******
 
-}*/
+}
 
 // Constructors and destructors
 
@@ -75,14 +75,14 @@ FramingWindow::FramingWindow() : QWidget()
 
 	// QGridLayout *layout = new QGridLayout;
 
-	/*layout->addWidget(&videoWidget, 1, 1);
-	layout->addWidget(cancelButton, 2, 1);
-	layout->addWidget(nextButton, 2, 2);
+    //layout->addWidget(&videoWidget, 1, 1);
+    //layout->addWidget(cancelButton, 2, 1);
+    //layout->addWidget(nextButton, 2, 2);
 
-	setLayout(layout);*/
+    //setLayout(layout);
 }
 
 // Default destructor
 //FramingWindow::~FramingWindow(){
 // what TODO ??
-//}
+//}*/

@@ -6,6 +6,7 @@
 * Acces au choix de dossier de destination.
 * */
 
+/*
 #ifndef SETTINGSWINDOW_H
 #define SETTINGSWINDOW_H
 
@@ -48,3 +49,4 @@ private:
 };
 
 #endif // SETTINGSWINDOW_H
+*/

@@ -1,4 +1,4 @@
-
+/*
 
 #include "ProcessWindow.h"
 #include "SettingsWindow.h"
@@ -40,3 +40,4 @@ ProcessWindow::ProcessWindow()
 	setLayout(layout);
 }
 
+*/
