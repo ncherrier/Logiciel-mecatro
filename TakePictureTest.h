@@ -3,13 +3,13 @@
 * Can we take a picture ? */
 
 
-/*
+
 #ifndef TAKEPICTURETEST_H
 #define TAKEPICTURETEST_H
 
 #include <QWidget>
 #include <QPushButton>
-#include "AsynchronousGrab.h"
+#include "FocusWindow.h"
 
 class TakePictureTest : public QWidget
 {
@@ -21,14 +21,11 @@ class TakePictureTest : public QWidget
 		void Log(std::string strMsg);
 
     public slots:
-		void OnImageReceived(QImage* image);
+		void takePicture();
 
 	private:
 	  QPushButton *goButton;
-	  QLabel *label;
-	  QTimer *timer;
-	  AsynchronousGrab *sync;
-	  QImage *image;
+	  FocusWindow * focus;
 
 };
 
@@ -36,4 +33,3 @@ class TakePictureTest : public QWidget
 
 #endif // TAKEPICTURETEST_H
 
-*/

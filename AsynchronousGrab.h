@@ -45,7 +45,7 @@ public:
 	AsynchronousGrab(QWidget *parent = 0, Qt::WindowFlags flags = 0);
 	~AsynchronousGrab();
 
-private:
+public:
 	// The Qt GUI
 	//Ui::AsynchronousGrabClass ui;
 	// Our controller that wraps API access
