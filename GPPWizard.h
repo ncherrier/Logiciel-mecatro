@@ -10,11 +10,11 @@
 #include <QtMultimedia> // useful?
 
 #include "SettingsPage.h"
-#include "FocusWindow.h"
+//#include "FocusWindow.h"
 
 class GPPWizard : public QWizard
 {
-    Q_OBJECT
+   // Q_OBJECT
 
 public:
     GPPWizard();
@@ -35,7 +35,7 @@ private:
     QWizardPage *settingsPage;
     QWizardPage *inProcessPage;
 
-	FocusWindow * focuswindow;
+	//FocusWindow * focuswindow;
 
     int getWishedXPos();
     int getWishedYPos();
