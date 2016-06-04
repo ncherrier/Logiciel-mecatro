@@ -25,7 +25,7 @@ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =============================================================================*/
-
+/*
 
 #ifndef ASYNCHRONOUSGRABQT_H
 #define ASYNCHRONOUSGRABQT_H
@@ -114,3 +114,4 @@ signals:
 };
 
 #endif // ASYNCHRONOUSGRABQT_H 
+*/

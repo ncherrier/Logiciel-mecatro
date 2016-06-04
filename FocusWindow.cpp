@@ -1,4 +1,4 @@
-
+/*
 #include <QtWidgets/QApplication>
 #include <QGridLayout>
 #include "FocusWindow.h"
@@ -14,7 +14,7 @@
 void FocusWindow::OnImageReceived(QImage* image) {
 	Log("OnImageReceived called");
 	label->setPixmap(QPixmap::fromImage(*image).scaled(label->size(), Qt::KeepAspectRatio));
-	Log("Image actualisée !");
+	Log("Image actualisee !");
 }
 
 void FocusWindow::SaveImage(){
@@ -33,7 +33,7 @@ void FocusWindow::SaveImage(){
 	else{
 		Log("Sauvegarde echouee");
 	}
-	Log("Reprise du flux vidéo");
+	Log("Reprise du flux video");
 	sync->OnBnClickedButtonStartstop();
 }
 
@@ -73,7 +73,7 @@ FocusWindow::FocusWindow()
 	else{
 		Log("Sauvegarde echouee");
 	}
-	Log("Reprise du flux vidéo");
+	Log("Reprise du flux video");
 	sync->OnBnClickedButtonStartstop();
 }
 
@@ -93,3 +93,4 @@ void FocusWindow::Log(std::string strMsg)
 	}
 
 }
+*/
