@@ -4,10 +4,14 @@
 #define SETTINGSPAGE_H
 
 #include <QWizardPage>
+
 #include <QSpinBox>
 #include <QPushButton>
-#include <QGridLayout>
 #include <QLabel>
+#include "SerialCommunication.h"
+
+#include <QGridLayout>
+
 #include "SerialCommunication.h"
 
 class SettingsPage : public QWizardPage

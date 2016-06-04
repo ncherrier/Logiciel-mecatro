@@ -3,12 +3,11 @@
 #ifndef GPPWIZARD_H
 #define GPPWIZARD_H
 
-#include <QWidget>
 #include <QWizard>
 
 #include "SerialCommunication.h"
 
-#include <QtMultimedia>
+#include <QtMultimedia> // useful?
 
 #include "SettingsPage.h"
 #include "FocusWindow.h"
@@ -19,13 +18,9 @@ class GPPWizard : public QWizard
 
 public:
     GPPWizard();
-	QCameraInfo const getWebcamInfo();
+    QCameraInfo const getWebcamInfo(); // useful???
 
 public slots:
-    //bool goUp();
-    //bool goDown();
-    //bool goLeft();
-    //bool goRight();
     void openCameraSettings();
 
 private:
