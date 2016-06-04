@@ -21,10 +21,10 @@ public:
 	QCameraInfo const getWebcamInfo();
 
 public slots:
-    bool goUp();
-    bool goDown();
-    bool goLeft();
-    bool goRight();
+    //bool goUp();
+    //bool goDown();
+    //bool goLeft();
+    //bool goRight();
     void openCameraSettings();
 
 private:

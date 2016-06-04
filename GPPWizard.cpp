@@ -27,21 +27,21 @@ void GPPWizard::openCameraSettings() {
 
 
 // give instructions to move camera
-bool GPPWizard::goUp() {
-    return SerialCommunication::goUp();
-}
+//bool GPPWizard::goUp() {
+//    return SerialCommunication::goUp();
+//}
 
-bool GPPWizard::goDown() {
-    return SerialCommunication::goDown();
-}
+//bool GPPWizard::goDown() {
+//    return SerialCommunication::goDown();
+//}
 
-bool GPPWizard::goLeft() {
-    return SerialCommunication::goLeft();
-}
+//bool GPPWizard::goLeft() {
+//    return SerialCommunication::goLeft();
+//}
 
-bool GPPWizard::goRight() {
-    return SerialCommunication::goRight();
-}
+//bool GPPWizard::goRight() {
+//    return SerialCommunication::goRight();
+//}
 
 QWizardPage * GPPWizard::createIntroPage()
 {

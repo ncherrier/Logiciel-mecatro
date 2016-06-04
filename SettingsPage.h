@@ -1,3 +1,5 @@
+// To focus and to open camera setting window (exposure time)
+
 #ifndef SETTINGSPAGE_H
 #define SETTINGSPAGE_H
 
