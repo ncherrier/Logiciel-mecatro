@@ -1,21 +1,14 @@
 #include "GPPWizard.h"
-//#include <QPushButton>
+
 #include <QtMultimedia>
 #include <QtMultimediaWidgets>
 #include <QVideoWidget>
+
 #include "cameraSettingsWindow.h"
+
 #include <iostream> // for tests
-//#include <Main_Prog.cpp>
 
-int GPPWizard::getWishedXPos(){
-    return -1; //TODO
-}
-
-int GPPWizard::getWishedYPos(){
-    return -1; //TODO
-}
-
-// Slots
+// SLOTS
 
 void GPPWizard::openCameraSettings() {
     std::cout << "TODO: open cameraSettingsWindow" << std::endl;
@@ -24,25 +17,18 @@ void GPPWizard::openCameraSettings() {
     // TODO: uncomment - & solve bug
 }
 
+// End of SLOTS
 
-
-// give instructions to move camera
-bool GPPWizard::goUp() {
-    return SerialCommunication::goUp();
+//Permet de detecter la camera // TODO: ameliorer...
+QCameraInfo const getWebcamInfo(){
+    QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
+    QCameraInfo const firstcam = cameras[0];
+    return firstcam;
 }
 
-bool GPPWizard::goDown() {
-    return SerialCommunication::goDown();
-}
+// Wizard creation
 
-bool GPPWizard::goLeft() {
-    return SerialCommunication::goLeft();
-}
-
-bool GPPWizard::goRight() {
-    return SerialCommunication::goRight();
-}
-
+// Introduction page
 QWizardPage * GPPWizard::createIntroPage()
 {
     QWizardPage *page = new QWizardPage;
@@ -51,12 +37,7 @@ QWizardPage * GPPWizard::createIntroPage()
     return page;
 }
 
-//Permet de detecter la camera // TODO: ameliorer...
-QCameraInfo const getWebcamInfo(){
-	QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
-	QCameraInfo const firstcam = cameras[0];
-	return firstcam;
-}
+
 
 QWizardPage * GPPWizard::createFramingPage()
 {
@@ -158,4 +139,5 @@ GPPWizard::GPPWizard() : QWizard()
 
 }
 
+// End of wizard creation
 

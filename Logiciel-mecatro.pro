@@ -15,10 +15,7 @@ INSTALLS += target
 SOURCES += \
     camera.cpp \
     camera_settings.cpp \
-    FramingWindow.cpp \
-    SettingsWindow.cpp \
     cameraSettingsWindow.cpp \
-    ProcessWindow.cpp \
     Main_Prog.cpp \
     TakePictureTest.cpp \
     SerialCommunication.cpp \
@@ -30,10 +27,7 @@ SOURCES += \
 
 HEADERS += \
     camera.h \
-    FramingWindow.h \
-    SettingsWindow.h \
     cameraSettingsWindow.h \
-    ProcessWindow.h \
     SerialCommunication.h \
     TakePictureTest.h \
     AsynchronousGrab.h \

@@ -1,11 +1,17 @@
+// To focus and to open camera setting window (exposure time)
+
 #ifndef SETTINGSPAGE_H
 #define SETTINGSPAGE_H
 
 #include <QWizardPage>
+
 #include <QSpinBox>
 #include <QPushButton>
-#include <QGridLayout>
 #include <QLabel>
+
+#include <QGridLayout>
+
+#include "SerialCommunication.h"
 
 class SettingsPage : public QWizardPage
 {

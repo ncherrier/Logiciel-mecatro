@@ -1,3 +1,5 @@
+// In main programm
+
 #include "SerialCommunication.h"
 
 #include <iostream> // TODO: remove after tests
@@ -13,6 +15,8 @@ using namespace std;
 
 
 bool SerialCommunication::connectSerialPort(){
+
+    cout << "calling SerialCommunication::connectSerialPort()" << endl;
 
 	int portCount = QSerialPortInfo::availablePorts().count();
 
@@ -79,7 +83,7 @@ bool SerialCommunication::sendMessage(QByteArray c){
 
 }
 
-
+// Permet de lire un "a"
 bool SerialCommunication::read(){
 	QTextStream standardOutput(stdout);
 
@@ -139,35 +143,40 @@ bool SerialCommunication::emergencyStop() {
 
 // Move camera
 
-bool SerialCommunication::goUp(){
-	cout << "calling SerialCommunication::goUp()" << endl;
-	return sendMessage("u"); // voir avec l'elec
-}
+//bool SerialCommunication::goUp(){
+    //cout << "calling SerialCommunication::goUp()" << endl;
+    //return sendMessage("u"); // voir avec l'elec
+//}
 
-bool SerialCommunication::goDown(){
-	cout << "calling SerialCommunication::goDown()" << endl;
-	return sendMessage("d"); // voir avec l"elec
-}
+//bool SerialCommunication::goDown(){
+    //cout << "calling SerialCommunication::goDown()" << endl;
+    //return sendMessage("d"); // voir avec l"elec
+//}
 
-bool SerialCommunication::goLeft(){
-	cout << "calling SerialCommunication::goLeft()" << endl;
-	return sendMessage("l"); // voir avec l'elec
-}
+//bool SerialCommunication::goLeft(){
+//	cout << "calling SerialCommunication::goLeft()" << endl;
+//	return sendMessage("l"); // voir avec l'elec
+//}
 
-bool SerialCommunication::goRight(){
-	cout << "calling SerialCommunication::goRight()" << endl;
-	return sendMessage("r"); // voir avec l'elec
-}
+//bool SerialCommunication::goRight(){
+//	cout << "calling SerialCommunication::goRight()" << endl;
+//	return sendMessage("r"); // voir avec l'elec
+//}
 
 bool SerialCommunication::goTo(int x, int y){
-cout << "calling SerialCommunication::goTo(" << x << "," << y << ")" << endl;
-bool res = sendMessage("b");
-const char* x_char = (char *) x; // WARNING "integer of different size"
-res = res&&sendMessage(x_char);
-const char* y_char = (char *) y;
-res = res&&sendMessage(y_char);
-return res;
-// TODO: verifier protocole de communication avec elec
+
+    cout << "calling SerialCommunication::goTo(" << x << "," << y << ")" << endl;
+
+    const char* x_char = (char *) x; // WARNING "integer of different size"
+    const char* y_char = (char *) y;
+
+    return (sendMessage("b") && sendMessage(x_char) && sendMessage(y_char));
+    // TODO: verifier protocole de communication avec elec
+}
+
+bool SerialCommunication::startCycle() {
+    cout << "calling SerialCommunication::startCycle()" << endl;
+    return sendMessage("a");
 }
 
 bool SerialCommunication::pictureTaken() {

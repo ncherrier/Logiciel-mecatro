@@ -3,12 +3,11 @@
 #ifndef GPPWIZARD_H
 #define GPPWIZARD_H
 
-#include <QWidget>
 #include <QWizard>
 
 #include "SerialCommunication.h"
 
-#include <QtMultimedia>
+#include <QtMultimedia> // useful?
 
 #include "SettingsPage.h"
 
@@ -18,13 +17,9 @@ class GPPWizard : public QWizard
 
 public:
     GPPWizard();
-	QCameraInfo const getWebcamInfo();
+    QCameraInfo const getWebcamInfo(); // useful???
 
 public slots:
-    bool goUp();
-    bool goDown();
-    bool goLeft();
-    bool goRight();
     void openCameraSettings();
 
 private:
@@ -38,9 +33,6 @@ private:
     QWizardPage *framingPage;
     QWizardPage *settingsPage;
     QWizardPage *inProcessPage;
-
-    int getWishedXPos();
-    int getWishedYPos();
 
     // camera position (instruction to be given to Arduino)
     // as a percentage
