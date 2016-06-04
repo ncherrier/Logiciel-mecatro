@@ -25,7 +25,7 @@ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =============================================================================*/
-/*
+
 #include <sstream>
 #include <QFile>
 #include <QTextStream>
@@ -377,4 +377,3 @@ void AsynchronousGrab::Log(std::string strMsg)
 		stream << QString::fromUtf8(strMsg.c_str()) << endl;
 	}
 }
-*/
