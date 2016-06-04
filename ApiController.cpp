@@ -26,7 +26,7 @@ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =============================================================================*/
-
+/*
 #include <ApiController.h>
 #include <sstream>
 #include <iostream>
@@ -94,9 +94,9 @@ namespace AVT {
 				// Release Vimba
 				m_system.Shutdown();
 			}
-			/*** helper function to set image size to a value that is dividable by modulo 2.
-			\note this is needed because VimbaImageTransform does not support odd values for some input formats
-			*/
+            // helper function to set image size to a value that is dividable by modulo 2.
+            //note this is needed because VimbaImageTransform does not support odd values for some input formats
+
 			inline VmbErrorType SetValueIntMod2(const CameraPtr &camera, const std::string &featureName, VmbInt64_t &storage)
 			{
 				VmbErrorType    res;
@@ -319,4 +319,5 @@ namespace AVT {
 
 		}
 	}
-} // namespace AVT::VmbAPI::Examples
+}*/ // namespace AVT::VmbAPI::Examples
+

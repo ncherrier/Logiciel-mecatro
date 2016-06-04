@@ -1,4 +1,4 @@
-
+/*
 #ifndef PROCESSWINDOW_H
 #define PROCESSWINDOW_H
 
@@ -23,3 +23,4 @@ private:
 };
 
 #endif // PROCESSWINDOW_H
+*/

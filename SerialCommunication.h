@@ -27,6 +27,7 @@ public:
 	static bool goDown();
 	static bool goLeft();
 	static bool goRight();
+    static bool goTo(int, int);
 	// static bool goTo(int,int); // move camera (e. g. to focus). Args = percentage // utile ??
 	// About pictures...
 	//static bool startCycle(); // start the cycle to take a (global) picture

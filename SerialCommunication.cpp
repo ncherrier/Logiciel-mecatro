@@ -159,11 +159,16 @@ bool SerialCommunication::goRight(){
 	return sendMessage("r"); // voir avec l'elec
 }
 
-/*bool SerialCommunication::goTo(int x, int y){
+bool SerialCommunication::goTo(int x, int y){
 cout << "calling SerialCommunication::goTo(" << x << "," << y << ")" << endl;
-return (sendMessage("c") && sendMessage(x) && sendMessage(y));
+bool res = sendMessage("b");
+const char* x_char = (char *) x; // WARNING "integer of different size"
+res = res&&sendMessage(x_char);
+const char* y_char = (char *) y;
+res = res&&sendMessage(y_char);
+return res;
 // TODO: verifier protocole de communication avec elec
-}*/
+}
 
 bool SerialCommunication::pictureTaken() {
 	cout << "calling SerialCommunication::pictureTaken()" << endl;

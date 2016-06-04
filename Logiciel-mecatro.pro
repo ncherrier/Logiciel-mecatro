@@ -23,8 +23,10 @@ SOURCES += \
     TakePictureTest.cpp \
     SerialCommunication.cpp \
     GPPWizard.cpp \
-    SynchronousGrab.cpp \
-    ApiController.cpp
+    AsynchronousGrab.cpp \
+    ApiController.cpp \
+    FrameObserver.cpp \
+    SettingsPage.cpp
 
 HEADERS += \
     camera.h \
@@ -34,8 +36,10 @@ HEADERS += \
     ProcessWindow.h \
     SerialCommunication.h \
     TakePictureTest.h \
-    SynchronousGrab.h \
+    AsynchronousGrab.h \
     ApiController.h \
+    FrameObserver.h \
+    GPPWizard.h \
     Vimba_2.0/VimbaCPP/Include/AncillaryData.h \
     Vimba_2.0/VimbaCPP/Include/BasicLockable.h \
     Vimba_2.0/VimbaCPP/Include/Camera.h \
@@ -67,7 +71,7 @@ HEADERS += \
     Vimba_2.0/VimbaCPP/Include/VimbaCPPCommon.h \
     Vimba_2.0/VimbaCPP/Include/VimbaSystem.h \
     Vimba_2.0/VimbaCPP/Include/VimbaSystem.hpp \
-    GPPWizard.h
+    SettingsPage.h
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/Vimba_2.0/VimbaC/Lib/Win32 -lVimbaC
 #else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/Vimba_2.0/VimbaC/Lib/Win32 -lVimbaCd

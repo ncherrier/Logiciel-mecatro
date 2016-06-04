@@ -25,7 +25,7 @@ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =============================================================================*/
-
+/*
 #include <sstream>
 #include <QFile>
 #include <QTextStream>
@@ -159,17 +159,17 @@ void AsynchronousGrab::OnFrameReady(int status)
 					{
 						// Copy it
 						// We need that because Qt might repaint the view after we have released the frame already
-						/*
-						if (ui.m_ColorProcessingCheckBox->checkState() == Qt::Checked)
-						{
-							static const VmbFloat_t Matrix[] = { 8.0f, 0.1f, 0.1f, // this matrix just makes a quick color to mono conversion
-								0.1f, 0.8f, 0.1f,
-								0.0f, 0.0f, 1.0f };
-							if (VmbErrorSuccess != CopyToImage(pBuffer, ePixelFormat, m_Image, Matrix))
-							{
-								ui.m_ColorProcessingCheckBox->setChecked(false);
-							}
-						} */
+
+                        //if (ui.m_ColorProcessingCheckBox->checkState() == Qt::Checked)
+                        //{
+                        //	static const VmbFloat_t Matrix[] = { 8.0f, 0.1f, 0.1f, // this matrix just makes a quick color to mono conversion
+                        //		0.1f, 0.8f, 0.1f,
+                        //		0.0f, 0.0f, 1.0f };
+                        //	if (VmbErrorSuccess != CopyToImage(pBuffer, ePixelFormat, m_Image, Matrix))
+                        //	{
+                        //		ui.m_ColorProcessingCheckBox->setChecked(false);
+                        //	}
+                        //}
 						//else
 						//{
 						Log("4");
@@ -238,7 +238,8 @@ void AsynchronousGrab::OnCameraListChanged(int reason)
 //  [in]    ePixelFormat    The pixel format of the frame
 //  [out]   OutImage        The filled Qt image
 //
-VmbErrorType AsynchronousGrab::CopyToImage(VmbUchar_t *pInBuffer, VmbPixelFormat_t ePixelFormat, QImage &pOutImage, const float *Matrix /*= NULL */)
+VmbErrorType AsynchronousGrab::CopyToImage(VmbUchar_t *pInBuffer, VmbPixelFormat_t ePixelFormat, QImage &pOutImage, const float *Matrix //= NULL
+                                           )
 {
 	const int           nHeight = m_ApiController.GetHeight();
 	const int           nWidth = m_ApiController.GetWidth();
@@ -376,3 +377,4 @@ void AsynchronousGrab::Log(std::string strMsg)
 		stream << QString::fromUtf8(strMsg.c_str()) << endl;
 	}
 }
+*/

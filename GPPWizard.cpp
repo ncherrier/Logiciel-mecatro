@@ -7,13 +7,24 @@
 #include <iostream> // for tests
 //#include <Main_Prog.cpp>
 
+int GPPWizard::getWishedXPos(){
+    return -1; //TODO
+}
+
+int GPPWizard::getWishedYPos(){
+    return -1; //TODO
+}
+
 // Slots
-/*
+
 void GPPWizard::openCameraSettings() {
     std::cout << "TODO: open cameraSettingsWindow" << std::endl;
-    CameraSettingsWindow *cam = new CameraSettingsWindow(this);
-    cam->exec();
+    //CameraSettingsWindow *cam = new CameraSettingsWindow(this);
+    //cam->exec();
+    // TODO: uncomment - & solve bug
 }
+
+
 
 // give instructions to move camera
 bool GPPWizard::goUp() {
@@ -51,7 +62,7 @@ QWizardPage * GPPWizard::createFramingPage()
 {
     // Basics
     QWizardPage *page = new QWizardPage;
-    page->setTitle("cadrage");
+    page->setTitle("Cadrage");
     QLabel *label = new QLabel("Verifiez que le cadrage vous convient, puis passez a l'etape suivante.");
     label->setWordWrap(true);
 
@@ -81,35 +92,7 @@ QWizardPage * GPPWizard::createFramingPage()
 
 QWizardPage * GPPWizard::createSettingsPage()
 {
-    QWizardPage * page = new QWizardPage;
-    page->setTitle("Mise au point et reglages");
-
-    QPushButton * upButton = new QPushButton("^");
-    QPushButton * leftButton = new QPushButton("<");
-    QPushButton * downButton = new QPushButton("v");
-    QPushButton * rightButton = new QPushButton(">");
-
-    QPushButton * cameraSettingsButton = new QPushButton("Indus. camera settings");
-
-    QGridLayout * layout = new QGridLayout(page);
-
-
-
-    // connect signals and slots
-    QObject::connect(upButton, SIGNAL(clicked()), this, SLOT(goUp()));
-    QObject::connect(downButton, SIGNAL(clicked()), this, SLOT(goDown()));
-    QObject::connect(leftButton, SIGNAL(clicked()), this, SLOT(goLeft()));
-    QObject::connect(rightButton, SIGNAL(clicked()), this, SLOT(goRight()));
-    QObject::connect(cameraSettingsButton, SIGNAL(clicked()), this, SLOT(openCameraSettings()));
-
-    layout->addWidget(upButton);
-    layout->addWidget(leftButton);
-    layout->addWidget(downButton);
-    layout->addWidget(rightButton);
-    layout->addWidget(cameraSettingsButton);
-
-    page->setLayout(layout);
-
+    QWizardPage * page = new SettingsPage();
     return page;
 }
 
@@ -122,10 +105,15 @@ QWizardPage * GPPWizard::createInProcessPage()
 
 GPPWizard::GPPWizard() : QWizard()
 {
-    addPage(createIntroPage());
+    introPage = createIntroPage();
+    framingPage = createFramingPage();
+    settingsPage = createSettingsPage();
+    inProcessPage = createInProcessPage();
+
+    addPage(introPage);
+
 
     // Framing page
-    QWizardPage * framingPage = createFramingPage();
 
     // Add video
     //QCamera webcam(getWebcamInfo());
@@ -145,7 +133,7 @@ GPPWizard::GPPWizard() : QWizard()
     addPage(createInProcessPage());
 
     setWindowTitle("GigaProxyPhoto");
-    show();
+    setFixedSize(700, 600);
 
     // Webcam
 
@@ -166,8 +154,8 @@ GPPWizard::GPPWizard() : QWizard()
     //camera.start();
     //windowWithVideo->show();
 
-
+    show();
 
 }
 
-*/
+

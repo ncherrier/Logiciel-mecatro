@@ -1,4 +1,7 @@
+//TODO: uncomment .ccp and .h - and solve bug.
+//(usefull only if it's possible to set exposure time on Mako)
 
+/*
 #ifndef CAMERASETTINGSWINDOW_H
 #define CAMERASETTINGSWINDOW_H
 
@@ -49,3 +52,4 @@ private:
 #endif // CAMERASETTINGSWINDOW_H
 
 
+*/

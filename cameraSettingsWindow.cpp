@@ -1,4 +1,8 @@
+//TODO: uncomment .ccp and .h - and solve bug.
+//(usefull only if it's possible to set exposure time on Mako)
 
+
+/*
 #include "cameraSettingsWindow.h"
 #include <QGridLayout>
 #include <iostream> // for tests only
@@ -70,3 +74,4 @@ CameraSettingsWindow::CameraSettingsWindow(QWidget *parent) :QDialog(parent) {
 	reset();
 
 }
+*/

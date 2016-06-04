@@ -26,6 +26,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =============================================================================*/
 
+/*
 #ifndef ASYNCHRONOUSGRABQT_H
 #define ASYNCHRONOUSGRABQT_H
 
@@ -112,4 +113,4 @@ signals:
 	void ImageReceivedSignal(QImage* imagereceived);
 };
 
-#endif // ASYNCHRONOUSGRABQT_H
+#endif // ASYNCHRONOUSGRABQT_H */

@@ -9,7 +9,7 @@
 #include <QFile>
 #include <QTextStream>
 
-
+/*
 using namespace std;
 
 // Slot
@@ -68,3 +68,4 @@ void TakePictureTest::Log(std::string strMsg)
 		stream << QString::fromUtf8(strMsg.c_str()) << endl;
 	}
 }
+*/

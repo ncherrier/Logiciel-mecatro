@@ -1,4 +1,4 @@
-#ifndef FRAMINGWINDOW_H
+/*#ifndef FRAMINGWINDOW_H
 #define FRAMINGWINDOW_H
 
 #include <QPushButton>
@@ -33,3 +33,4 @@ private:
 
 #endif // FRAMINGWINDOW_H
 
+*/
