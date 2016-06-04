@@ -11,6 +11,7 @@
 #include <QtMultimedia>
 
 #include "SettingsPage.h"
+#include "FocusWindow.h"
 
 class GPPWizard : public QWizard
 {
@@ -38,6 +39,8 @@ private:
     QWizardPage *framingPage;
     QWizardPage *settingsPage;
     QWizardPage *inProcessPage;
+
+	FocusWindow * focuswindow;
 
     int getWishedXPos();
     int getWishedYPos();

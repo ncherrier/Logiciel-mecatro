@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_AsynchronousGrab_t {
-    QByteArrayData data[9];
-    char stringdata0[126];
+    QByteArrayData data[10];
+    char stringdata0[134];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,18 +32,19 @@ static const qt_meta_stringdata_AsynchronousGrab_t qt_meta_stringdata_Asynchrono
 QT_MOC_LITERAL(0, 0, 16), // "AsynchronousGrab"
 QT_MOC_LITERAL(1, 17, 19), // "ImageReceivedSignal"
 QT_MOC_LITERAL(2, 37, 0), // ""
-QT_MOC_LITERAL(3, 38, 13), // "imagereceived"
-QT_MOC_LITERAL(4, 52, 26), // "OnBnClickedButtonStartstop"
-QT_MOC_LITERAL(5, 79, 12), // "OnFrameReady"
-QT_MOC_LITERAL(6, 92, 6), // "status"
-QT_MOC_LITERAL(7, 99, 19), // "OnCameraListChanged"
-QT_MOC_LITERAL(8, 119, 6) // "reason"
+QT_MOC_LITERAL(3, 38, 7), // "QImage*"
+QT_MOC_LITERAL(4, 46, 13), // "imagereceived"
+QT_MOC_LITERAL(5, 60, 26), // "OnBnClickedButtonStartstop"
+QT_MOC_LITERAL(6, 87, 12), // "OnFrameReady"
+QT_MOC_LITERAL(7, 100, 6), // "status"
+QT_MOC_LITERAL(8, 107, 19), // "OnCameraListChanged"
+QT_MOC_LITERAL(9, 127, 6) // "reason"
 
     },
     "AsynchronousGrab\0ImageReceivedSignal\0"
-    "\0imagereceived\0OnBnClickedButtonStartstop\0"
-    "OnFrameReady\0status\0OnCameraListChanged\0"
-    "reason"
+    "\0QImage*\0imagereceived\0"
+    "OnBnClickedButtonStartstop\0OnFrameReady\0"
+    "status\0OnCameraListChanged\0reason"
 };
 #undef QT_MOC_LITERAL
 
@@ -64,17 +65,17 @@ static const uint qt_meta_data_AsynchronousGrab[] = {
        1,    1,   34,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    0,   37,    2, 0x08 /* Private */,
-       5,    1,   38,    2, 0x08 /* Private */,
-       7,    1,   41,    2, 0x08 /* Private */,
+       5,    0,   37,    2, 0x0a /* Public */,
+       6,    1,   38,    2, 0x0a /* Public */,
+       8,    1,   41,    2, 0x0a /* Public */,
 
  // signals: parameters
-    QMetaType::Void, QMetaType::QImage,    3,
+    QMetaType::Void, 0x80000000 | 3,    4,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,    6,
-    QMetaType::Void, QMetaType::Int,    8,
+    QMetaType::Void, QMetaType::Int,    7,
+    QMetaType::Void, QMetaType::Int,    9,
 
        0        // eod
 };
@@ -85,7 +86,7 @@ void AsynchronousGrab::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         AsynchronousGrab *_t = static_cast<AsynchronousGrab *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->ImageReceivedSignal((*reinterpret_cast< QImage(*)>(_a[1]))); break;
+        case 0: _t->ImageReceivedSignal((*reinterpret_cast< QImage*(*)>(_a[1]))); break;
         case 1: _t->OnBnClickedButtonStartstop(); break;
         case 2: _t->OnFrameReady((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 3: _t->OnCameraListChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
@@ -95,7 +96,7 @@ void AsynchronousGrab::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         int *result = reinterpret_cast<int *>(_a[0]);
         void **func = reinterpret_cast<void **>(_a[1]);
         {
-            typedef void (AsynchronousGrab::*_t)(QImage );
+            typedef void (AsynchronousGrab::*_t)(QImage * );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&AsynchronousGrab::ImageReceivedSignal)) {
                 *result = 0;
             }
@@ -140,7 +141,7 @@ int AsynchronousGrab::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void AsynchronousGrab::ImageReceivedSignal(QImage _t1)
+void AsynchronousGrab::ImageReceivedSignal(QImage * _t1)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);

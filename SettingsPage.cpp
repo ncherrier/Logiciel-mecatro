@@ -32,7 +32,6 @@ void SettingsPage::restoreToActualValues() {
 
 SettingsPage::SettingsPage() : QWizardPage()
 {
-
     setTitle("Mise au point et reglages");
 
     label = new QLabel("Faites la mise au point (a l'aide du bouton poussoir) et au besoin reglez la caméra industrielle. \nVous pouvez deplacer la camera : precisez la position voulue sous forme de pourcentage. Le coin superieur gauche correspond à 0 0, le coin inferieur droit à 100 100.");
@@ -67,6 +66,7 @@ SettingsPage::SettingsPage() : QWizardPage()
     //TODO: uncomment follwing line - bug to solve in cameraSettingsWindow.h & .cpp
     //(usefull only if it's possible to set exposure time on Mako)
     //QObject::connect(cameraSettingsButton, SIGNAL(clicked()), this, SLOT(openCameraSettings()));
+
 
     layout->addWidget(label);
     layout->addWidget(XPosBox);

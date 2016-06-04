@@ -18,9 +18,10 @@ class TakePictureTest : public QWidget
 	public:
 		TakePictureTest();
 		virtual ~TakePictureTest();
+		void Log(std::string strMsg);
 
     public slots:
-		void OnImageReceived(QImage image);
+		void OnImageReceived(QImage* image);
 
 	private:
 	  QPushButton *goButton;

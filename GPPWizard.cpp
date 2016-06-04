@@ -110,6 +110,8 @@ GPPWizard::GPPWizard() : QWizard()
     settingsPage = createSettingsPage();
     inProcessPage = createInProcessPage();
 
+	focuswindow = new FocusWindow();
+
     addPage(introPage);
 
 

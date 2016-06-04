@@ -25,7 +25,7 @@ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =============================================================================*/
-/*
+
 #include <sstream>
 #include <QFile>
 #include <QTextStream>
@@ -80,7 +80,7 @@ void AsynchronousGrab::OnBnClickedButtonStartstop()
 {
 	VmbErrorType err;
 	//int nRow = ui.m_ListBoxCameras->currentRow();
-
+	Log("OnBnClickedButtonStartstop called");
 	if (m_cameras.size() > 0)
 	{
 		if (false == m_bIsStreaming)
@@ -90,6 +90,7 @@ void AsynchronousGrab::OnBnClickedButtonStartstop()
 			// Set up Qt image
 			if (VmbErrorSuccess == err)
 			{
+				Log("Success");
 				m_Image = QImage(m_ApiController.GetWidth(),
 					m_ApiController.GetHeight(),
 					QImage::Format_RGB888);
@@ -129,6 +130,7 @@ void AsynchronousGrab::OnBnClickedButtonStartstop()
 //
 void AsynchronousGrab::OnFrameReady(int status)
 {
+	Log("OnFrameReady called");
 	if (true == m_bIsStreaming)
 	{
 		// Pick up frame
@@ -141,14 +143,17 @@ void AsynchronousGrab::OnFrameReady(int status)
 		// See if it is not corrupt
 		if (VmbFrameStatusComplete == status)
 		{
+			Log("1");
 			VmbUchar_t *pBuffer;
 			VmbErrorType err = SP_ACCESS(pFrame)->GetImage(pBuffer);
 			if (VmbErrorSuccess == err)
 			{
+				Log("2");
 				VmbUint32_t nSize;
 				err = SP_ACCESS(pFrame)->GetImageSize(nSize);
 				if (VmbErrorSuccess == err)
 				{
+					Log("3");
 					VmbPixelFormatType ePixelFormat = m_ApiController.GetPixelFormat();
 					if (!m_Image.isNull())
 					{
@@ -167,8 +172,10 @@ void AsynchronousGrab::OnFrameReady(int status)
                         //}
 						//else
 						//{
+						Log("4");
 							CopyToImage(pBuffer, ePixelFormat, m_Image);
-							emit ImageReceivedSignal(m_Image);
+							emit ImageReceivedSignal(&m_Image);
+							Log("5 : signal emis");
 						//}
 
 						// Display it
@@ -346,7 +353,7 @@ void AsynchronousGrab::Log(std::string strMsg, VmbErrorType eErr)
 	//ui.m_ListLog->insertItem(0, QString::fromStdString(strMsg));
 	QString filename = "C:/Data.txt";
 	QFile file(filename);
-	if (file.open(QIODevice::ReadWrite))
+	if (file.open(QIODevice::ReadWrite | QIODevice::Append))
 	{
 		QTextStream stream(&file);
 		stream << QString::fromUtf8(strMsg.c_str()) << endl;
@@ -364,10 +371,9 @@ void AsynchronousGrab::Log(std::string strMsg)
 	//ui.m_ListLog->insertItem(0, QString::fromStdString(strMsg));
 	QString filename = "C:/Data.txt";
 	QFile file(filename);
-	if (file.open(QIODevice::ReadWrite))
+	if (file.open(QIODevice::ReadWrite | QIODevice::Append))
 	{
 		QTextStream stream(&file);
 		stream << QString::fromUtf8(strMsg.c_str()) << endl;
 	}
 }
-*/
