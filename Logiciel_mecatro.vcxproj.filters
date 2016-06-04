@@ -74,9 +74,6 @@
     <ClCompile Include="GPPWizard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_GPPWizard.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
     <ClCompile Include="FrameObserver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

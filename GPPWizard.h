@@ -20,9 +20,6 @@ public:
     GPPWizard();
     QCameraInfo const getWebcamInfo(); // useful???
 
-public slots:
-    void openCameraSettings();
-
 private:
     // functions to create the 4 pages of the wizard
     QWizardPage *createIntroPage();
