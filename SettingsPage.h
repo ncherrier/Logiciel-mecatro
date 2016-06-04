@@ -8,6 +8,7 @@
 #include <QPushButton>
 #include <QGridLayout>
 #include <QLabel>
+#include "SerialCommunication.h"
 
 class SettingsPage : public QWizardPage
 {

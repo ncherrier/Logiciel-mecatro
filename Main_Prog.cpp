@@ -3,9 +3,6 @@
 #include <iostream> // for tests
 #include <QtWidgets/QApplication>
 #include "cameraSettingsWindow.h"
-#include "SettingsWindow.h"
-#include "FramingWindow.h"
-#include "ProcessWindow.h"
 #include "SerialCommunication.h"
 #include "TakePictureTest.h" // for tests only
 //#include <QWizard>
