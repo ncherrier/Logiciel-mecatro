@@ -4,15 +4,16 @@
 #include <QPushButton>
 #include <QGridLayout>
 #include "TakePictureTest.h"
-#include "AsynchronousGrab.h"
-//#include <QObject>
+#include <QObject>
+#include <QFile>
+#include <QTextStream>
 
-/*
+
 using namespace std;
 
 // Slot
-void TakePictureTest::OnImageReceived(QImage image) {
-	label->setPixmap(QPixmap::fromImage(image).scaled(label->size(), Qt::KeepAspectRatio));
+void TakePictureTest::takePicture() {
+	
 }
 
 // Default Constructor
@@ -26,20 +27,13 @@ TakePictureTest::TakePictureTest()
 	// Button
 
 	goButton = new QPushButton("GO !!");
-
-	sync = new AsynchronousGrab();
-	QImage *imagetest = new QImage();
-	label = new QLabel;
-	label->setFixedWidth(400);
-	label->setFixedHeight(400);
-	QObject::connect(goButton, SIGNAL(clicked()), sync, SLOT(OnBnClickedButtonStartstop()));
-	QObject::connect(sync, SIGNAL(ImageReceivedSignal(imagetest)), this, SLOT(OnImageReceived(*imagetest)));
-	label->setVisible(true);
+	focus = new FocusWindow();
+	connect(goButton, SIGNAL(clicked()), focus, SLOT(SaveImage()));
+	
 
 	// Layout
 	QGridLayout *layout = new QGridLayout;
 	layout->addWidget(goButton, 1, 1);
-	layout->addWidget(label,0,1);
 	setLayout(layout);
 
 }
@@ -49,4 +43,14 @@ TakePictureTest::~TakePictureTest() {
 // What TODO ?
 }
 
-*/
+void TakePictureTest::Log(std::string strMsg)
+{
+	QString filename = "C:/Data.txt";
+	QFile file(filename);
+	if (file.open(QIODevice::ReadWrite | QIODevice::Append))
+	{
+		QTextStream stream(&file);
+		stream << QString::fromUtf8(strMsg.c_str()) << endl;
+	}
+}
+

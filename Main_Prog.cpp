@@ -19,16 +19,17 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    /*cout << "hello! in main" << endl;
+    cout << "hello! in main" << endl;
 	QApplication *app = new QApplication(argc, argv);
+
 
     // WIZARD (fenetre principale)
     GPPWizard * GPP = new GPPWizard();
     GPP->show();
-	
+    // FIN WIZARD
+
     //TakePictureTest *tak = new TakePictureTest();
     //tak->show();
-	
 
     //WEBCAM !!!!
 
@@ -60,11 +61,10 @@ int main(int argc, char *argv[])
     w.resize(600, 360); //Taille de la fenêtre
 
     w.show();
-
     //FIN WEBCAM
-    return app->exec();*/
 
 
+    return app->exec();
 }
 
 

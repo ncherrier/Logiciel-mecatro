@@ -10,6 +10,7 @@
 #include <QtMultimedia> // useful?
 
 #include "SettingsPage.h"
+#include "FocusWindow.h"
 
 class GPPWizard : public QWizard
 {
@@ -33,6 +34,11 @@ private:
     QWizardPage *framingPage;
     QWizardPage *settingsPage;
     QWizardPage *inProcessPage;
+
+	FocusWindow * focuswindow;
+
+    int getWishedXPos();
+    int getWishedYPos();
 
     // camera position (instruction to be given to Arduino)
     // as a percentage
