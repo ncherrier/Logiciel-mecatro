@@ -88,7 +88,7 @@ private:
 	//
 	VmbErrorType CopyToImage(VmbUchar_t *pInBuffer, VmbPixelFormat_t ePixelFormat, QImage &pOutImage, const float *Matrix = NULL);
 
-	private slots:
+	public slots:
 	// The event handler for starting / stopping acquisition
 	void OnBnClickedButtonStartstop();
 
@@ -109,7 +109,7 @@ private:
 	void OnCameraListChanged(int reason);
 
 signals:
-	void ImageReceivedSignal(QImage imagereceived);
+	void ImageReceivedSignal(QImage* imagereceived);
 };
 
 #endif // ASYNCHRONOUSGRABQT_H

@@ -5,14 +5,18 @@
 #include <QGridLayout>
 #include "TakePictureTest.h"
 #include "AsynchronousGrab.h"
-//#include <QObject>
+#include <QObject>
+#include <QFile>
+#include <QTextStream>
 
 
 using namespace std;
 
 // Slot
-void TakePictureTest::OnImageReceived(QImage image) {
-	label->setPixmap(QPixmap::fromImage(image).scaled(label->size(), Qt::KeepAspectRatio));
+void TakePictureTest::OnImageReceived(QImage* image) {
+	Log("OnImageReceived called");
+	label->setPixmap(QPixmap::fromImage(*image).scaled(label->size(), Qt::KeepAspectRatio));
+	Log("Image actualisée !");
 }
 
 // Default Constructor
@@ -28,12 +32,17 @@ TakePictureTest::TakePictureTest()
 	goButton = new QPushButton("GO !!");
 
 	sync = new AsynchronousGrab();
+	Log("Sync object created");
+	QObject::connect(sync, SIGNAL(ImageReceivedSignal(QImage*)), this, SLOT(OnImageReceived(QImage*)));
 	QImage *imagetest = new QImage();
 	label = new QLabel;
 	label->setFixedWidth(400);
 	label->setFixedHeight(400);
+	Log("Label created");
 	QObject::connect(goButton, SIGNAL(clicked()), sync, SLOT(OnBnClickedButtonStartstop()));
-	QObject::connect(sync, SIGNAL(ImageReceivedSignal(imagetest)), this, SLOT(OnImageReceived(*imagetest)));
+	Log("Button connected");
+	sync->OnBnClickedButtonStartstop();
+	Log("Sync connected with label");
 	label->setVisible(true);
 
 	// Layout
@@ -49,3 +58,13 @@ TakePictureTest::~TakePictureTest() {
 // What TODO ?
 }
 
+void TakePictureTest::Log(std::string strMsg)
+{
+	QString filename = "C:/Data.txt";
+	QFile file(filename);
+	if (file.open(QIODevice::ReadWrite | QIODevice::Append))
+	{
+		QTextStream stream(&file);
+		stream << QString::fromUtf8(strMsg.c_str()) << endl;
+	}
+}
