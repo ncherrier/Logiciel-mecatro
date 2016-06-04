@@ -60,7 +60,7 @@ class IMEXPORT ICameraListObserver
     //
     // Purpose:     Destroys an instance of class ICameraListObserver
     //
-    virtual ~ICameraListObserver() {}
+    //virtual ~ICameraListObserver() {}
 
   protected:
     ICameraListObserver() { /*No default ctor*/ }

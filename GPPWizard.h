@@ -10,18 +10,15 @@
 #include <QtMultimedia> // useful?
 
 #include "SettingsPage.h"
-#include "FocusWindow.h"
+//#include "FocusWindow.h"
 
 class GPPWizard : public QWizard
 {
-    Q_OBJECT
+   // Q_OBJECT
 
 public:
     GPPWizard();
     QCameraInfo const getWebcamInfo(); // useful???
-
-public slots:
-    void openCameraSettings();
 
 private:
     // functions to create the 4 pages of the wizard

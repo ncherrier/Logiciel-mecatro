@@ -44,22 +44,7 @@
     <ClCompile Include="SerialCommunication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FramingWindow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="cameraSettingsWindow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ProcessWindow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SettingsWindow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="camera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="camera_settings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TakePictureTest.cpp">
@@ -67,18 +52,6 @@
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_TakePictureTest.cpp">
       <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_FramingWindow.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_SettingsWindow.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_ProcessWindow.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_ProcessWindow.cpp">
-      <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="ApiController.cpp">
       <Filter>Source Files</Filter>
@@ -100,9 +73,6 @@
     </ClCompile>
     <ClCompile Include="GPPWizard.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_GPPWizard.cpp">
-      <Filter>Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="FrameObserver.cpp">
       <Filter>Source Files</Filter>
@@ -151,19 +121,7 @@
     <CustomBuild Include="TakePictureTest.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="FramingWindow.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="SettingsWindow.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="camera.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="cameraSettingsWindow.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="ProcessWindow.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="SerialCommunication.h">

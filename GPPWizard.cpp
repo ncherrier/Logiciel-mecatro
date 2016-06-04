@@ -4,20 +4,8 @@
 #include <QtMultimediaWidgets>
 #include <QVideoWidget>
 
-#include "cameraSettingsWindow.h"
-
 #include <iostream> // for tests
 
-// SLOTS
-
-void GPPWizard::openCameraSettings() {
-    std::cout << "TODO: open cameraSettingsWindow" << std::endl;
-    //CameraSettingsWindow *cam = new CameraSettingsWindow(this);
-    //cam->exec();
-    // TODO: uncomment - & solve bug
-}
-
-// End of SLOTS
 
 //Permet de detecter la camera // TODO: ameliorer...
 QCameraInfo const getWebcamInfo(){

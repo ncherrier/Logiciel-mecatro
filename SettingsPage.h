@@ -8,6 +8,7 @@
 #include <QSpinBox>
 #include <QPushButton>
 #include <QLabel>
+#include "SerialCommunication.h"
 
 #include <QGridLayout>
 

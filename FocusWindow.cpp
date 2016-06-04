@@ -23,7 +23,8 @@ void FocusWindow::SaveImage(){
 	QImage img = sync->m_Image;
 	nb_photos++;
 	Log("Saving image");
-	QString imgpath = dirpath + "/photo" + QString::number(nb_photos) + ".PNG";
+	QString format = "png";
+	QString imgpath = dirpath + "\photo" + QString::number(nb_photos) + "." +format;
 	//QString imgpath = "photo.png";
 	Log(imgpath.toStdString());
 	bool res = img.save(imgpath);
@@ -54,8 +55,10 @@ FocusWindow::FocusWindow()
 
 	// Prepare for saving
 	nb_photos = 0;
+	dirpath = QFileDialog::getExistingDirectory(this, tr("Open Directory"), "C:\\", QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
 	sync->OnBnClickedButtonStartstop();
+<<<<<<< HEAD
 	dirpath = QFileDialog::getExistingDirectory(this, tr("Open Directory"), "C:/", QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
 	Log("SaveImage called");
@@ -75,6 +78,8 @@ FocusWindow::FocusWindow()
 	}
 	Log("Reprise du flux video");
 	sync->OnBnClickedButtonStartstop();
+=======
+>>>>>>> 998579c7d459e7d2b85e7a152908d688469c65e9
 }
 
 // Default destructor
