@@ -41,68 +41,73 @@ SerialCommunication::SerialCommunication()
     , m_standardOutput(stdout)
     , m_bytesWritten(0)
 {
-    cout << "SerialCommunication constructor called" << endl;
+   cout << "SerialCommunication constructor called" << endl;
 
-     m_serialPortName = "Arduino";
+   m_serialPortName = "Arduino";
 
-    m_serialPort = new QSerialPort(this);
+   m_serialPort = new QSerialPort(this);
 
    connectSerialPort();
 
+   // pour la lecture
    QObject::connect(m_serialPort, &QSerialPort::readyRead, this, &SerialCommunication::handleReadyRead);
+
 }
 
 // Default destructor
 SerialCommunication::~SerialCommunication() {
-    m_serialPort->close();
+    //m_serialPort->close(); // utile ???
 }
 
 
+// Ecriture - low-level
+void SerialCommunication::write(QByteArray c){
 
-// Low-level communication (read and write - TODO)
+    cout << "calling SerialCommunication::write" << endl;
 
-bool SerialCommunication::sendMessage(QByteArray c){
+    // TODO: ouvrir le port ?
+    //if (!m_serialPort->open(QIODevice::ReadWrite)) {
+    //    m_standardOutput << QObject::tr("Failed to open port %1, error: %2").arg(m_serialPortName).arg(m_serialPort->errorString()) << endl;
+    //    return;
+    //}
 
-	cout << "calling SerialCommunication::sendMessage" << endl;
+    m_writeData = c;
 
-    // TODO: ouvrir le port ? deja fait dans connectSerialPort (dans le constructeur)
+    m_bytesWritten = m_serialPort->write(m_writeData); // ecriture proprement dite
 
-    if (!m_serialPort->open(QIODevice::ReadWrite)) {
-        m_standardOutput << QObject::tr("Failed to open port %1, error: %2").arg(m_serialPortName).arg(m_serialPort->errorString()) << endl;
-		return false;
-	}
-    m_writeData = c; //Caractere a choisir
+    // verification : message correctement transmis ?
 
-    m_bytesWritten = m_serialPort->write(m_writeData);
-
+    // verifier les problemes possibles
     if (m_bytesWritten == -1) {
         //standardOutput << QObject::tr("Failed to write the data to port %1, error: %2").arg(m_serialPortName).arg(m_serialPort->errorString()) << endl;
-		return false;
+        return;
 	}
     else if (m_bytesWritten != m_writeData.size()) {
         //standardOutput << QObject::tr("Failed to write all the data to port %1, error: %2").arg(m_serialPortName).arg(m_serialPort->errorString()) << endl;
-		return false;
+        return;
 	}
     else if (!m_serialPort->waitForBytesWritten(5000)) {
         //standardOutput << QObject::tr("Operation timed out or an error occurred for port %1, error: %2").arg(serialPortName).arg(serialPort->errorString()) << endl;
-		return false;
+        return;
 	}
 
+    // si on arrive ici, c'est que tout s'est bien passe
     m_standardOutput << QObject::tr("Data successfully sent to port %1").arg(m_serialPortName) << endl;
-    //m_serialPort->close(); // a rajouter ??? choix a faire :
+
+    // TODO: fermer le port ???
+    //m_serialPort->close();
+    // choix a faire :
     // a chaque fois, ouvrir le port/ecrire/fermer, ou bien
     // ouvrir une fois pour toutes, ecrire les differents messages, fermer le port a la fin seulement
     // (question des performances ? i.e. du temps)
 
-	return true;
-
 }
 
-// ci-dessous version fonctionnelle (pas tres propre; "statique"; tout code a la volee
+// ci-dessous version fonctionnelle de secours (pas tres propre; "statique" ; tout code a la volee)
 /*
-bool SerialCommunication::sendMessage(QByteArray c){
+bool SerialCommunication::write(QByteArray c){
 
-    cout << "calling SerialCommunication::sendMessage" << endl;
+    cout << "calling SerialCommunication::write" << endl;
 
     QTextStream standardOutput(stdout);
 
@@ -147,6 +152,42 @@ bool SerialCommunication::sendMessage(QByteArray c){
 
 }*/
 
+
+// Ecriture - higher-level functions
+
+void SerialCommunication::emergencyStop() {
+	cout << "calling SerialCommunication::emergencyStop()" << endl;
+    write("s");
+}
+
+void SerialCommunication::moveCameraTo(int x, int y){
+
+    cout << "calling SerialCommunication::goTo(" << x << "," << y << ")" << endl;
+
+    //TODO: fabriquer la bonne chaine de caracteres (pas sure de ce code-ci)
+    const char* x_char = (char *) x; // WARNING "integer of different size"
+    const char* y_char = (char *) y;
+
+    write("b");
+    write(x_char);
+    write(y_char);
+
+    // TODO: verifier protocole de communication avec elec
+
+}
+
+void SerialCommunication::startCycle() {
+    cout << "calling SerialCommunication::startCycle()" << endl;
+    write("a");
+}
+
+void SerialCommunication::moveCameraToNextPosition() {
+    cout << "calling SerialCommunication::moveCameraToNextPosition()" << endl;
+    write("o"); // "OK"
+}
+
+// Lecture
+
 void SerialCommunication::handleReadyRead() {
 
     m_readData = m_serialPort->readAll();
@@ -161,91 +202,3 @@ void SerialCommunication::handleReadyRead() {
     // on peut rajouter d'autres signaux...
 
 }
-
-// Permet de lire un "a"
-// lecture synchrone (blocking)
-// preferer lecture asynchrone ?
-bool SerialCommunication::read(){
-	QTextStream standardOutput(stdout);
-
-	int portCount = QSerialPortInfo::availablePorts().count();
-
-	if (portCount == 0) {
-		standardOutput << "No serial port found" << endl;
-		return 1;
-	}
-
-	QSerialPort serialPort;
-	QString serialPortName = "Arduino";
-	serialPort.setPort(QSerialPortInfo::availablePorts()[0]);
-
-	serialPort.setBaudRate(QSerialPort::Baud9600);
-
-	if (!serialPort.open(QIODevice::ReadWrite)) {
-		standardOutput << QObject::tr("Failed to open port %1, error: %2").arg(serialPortName).arg(serialPort.errorString()) << endl;
-		return 1;
-	}
-
-	//Lecture
-
-	//QByteArray readData = serialPort.readAll();
-
-	bool isReading = false;
-
-	while (serialPort.waitForReadyRead(-1) & !isReading)
-		if (serialPort.readAll() == "a") {
-			standardOutput << "Message bien recu" << endl;
-			// Emission du signal pour prendre une photo, mais je ne sais pas si c'est bien la qu'il faut l'envoyer
-			emit MvtFinished();
-			isReading = true;
-		}
-	standardOutput << serialPort.readAll() << endl;
-
-
-	/* //Message d'erreur
-	if (serialPort.error() == QSerialPort::ReadError) {
-	standardOutput << QObject::tr("Failed to read from port %1, error: %2").arg(serialPortName).arg(serialPort.errorString()) << endl;
-	return 1;
-	} else if (serialPort.error() == QSerialPort::TimeoutError && readData.isEmpty()) {
-	standardOutput << QObject::tr("No data was currently available for reading from port %1").arg(serialPortName) << endl;
-	return 0;
-	}
-	*/
-
-	standardOutput << QObject::tr("Data successfully received from port %1").arg(serialPortName) << endl;
-}
-
-
-// Higher-level functions
-// Try several times ? a reflechir
-
-void SerialCommunication::emergencyStop() {
-	cout << "calling SerialCommunication::emergencyStop()" << endl;
-    sendMessage("s");
-}
-
-void SerialCommunication::moveCameraTo(int x, int y){
-
-    cout << "calling SerialCommunication::goTo(" << x << "," << y << ")" << endl;
-
-    const char* x_char = (char *) x; // WARNING "integer of different size"
-    const char* y_char = (char *) y;
-
-    sendMessage("b");
-    sendMessage(x_char);
-    sendMessage(y_char);
-    // TODO: verifier protocole de communication avec elec
-    //TODO: fabriquer la bonne chaine de caracteres
-}
-
-void SerialCommunication::startCycle() {
-    cout << "calling SerialCommunication::startCycle()" << endl;
-    sendMessage("a");
-}
-
-void SerialCommunication::moveCameraToNextPosition() {
-    cout << "calling SerialCommunication::moveCameraToNextPosition()" << endl;
-    sendMessage("o"); // "OK"
-}
-
-

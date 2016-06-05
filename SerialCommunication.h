@@ -11,8 +11,6 @@ class SerialCommunication : public QWidget
 	// Comment this when on release, uncomment when debug
     Q_OBJECT
 
-	// All static functions below return true if everything went good
-
 private:
     QString         m_serialPortName; // utile ???
     QSerialPort     *m_serialPort;
@@ -22,16 +20,16 @@ private:
     qint64          m_bytesWritten;
     //QTimer          m_timer; // utile ???
 
-	// Low-level communication
+    // Se connecter a un port (appele dans constructeur)
+    // returns true if no problem (pas tres utile en vrai)
     bool connectSerialPort();
-    bool sendMessage(QByteArray);
-    bool read(); // reads an "a"
+
+    // Ecriture - low-level
+    void write(QByteArray);
 
 public slots:
-    // Lecture
-    void handleReadyRead(); // low-level
 
-    // Ecriture
+    // Ecriture - high-level
     void moveCameraToNextPosition(); // after picture has been taken: tell elec to move camera (over serial port)
     // "o"
     void moveCameraTo(int, int);
@@ -40,14 +38,17 @@ public slots:
     // "s"
     void startCycle(); // start the cycle to take a (global) picture
     // "a"
-    // > utile ?
+
+    // Lecture
+    void handleReadyRead();
 
 public:
-
+    // Constructor and destructor
 	SerialCommunication();
     virtual ~SerialCommunication();
 
 signals:
+    // Suite a la lecture
 	void MvtFinished();
     void CycleFinished();
 
