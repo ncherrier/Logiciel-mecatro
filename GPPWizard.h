@@ -32,7 +32,7 @@ private:
     QWizardPage *settingsPage;
     QWizardPage *inProcessPage;
 
-	//FocusWindow * focuswindow;
+    //FocusWindow * focuswindow;
 
     int getWishedXPos();
     int getWishedYPos();

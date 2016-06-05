@@ -22,7 +22,8 @@ void SettingsPage::moveCamera(){
     realXPos = getWishedXPos();
     realYPos = getWishedYPos();
     // actual movement: communicate with Arduino
-    SerialCommunication::goTo(realXPos, realYPos);
+    //SerialCommunication::goTo(realXPos, realYPos);
+    std::cout << "TODO!" << std::endl;
 }
 
 void SettingsPage::restoreToActualValues() {

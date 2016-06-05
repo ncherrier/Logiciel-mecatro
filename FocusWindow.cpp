@@ -1,4 +1,4 @@
-
+/*
 #include <QtWidgets/QApplication>
 #include <QGridLayout>
 #include "FocusWindow.h"
@@ -14,7 +14,7 @@
 void FocusWindow::OnImageReceived(QImage* image) {
 	Log("OnImageReceived called");
 	label->setPixmap(QPixmap::fromImage(*image).scaled(label->size(), Qt::KeepAspectRatio));
-	Log("Image actualisée !");
+	Log("Image actualisee !");
 }
 
 void FocusWindow::SaveImage(){
@@ -61,6 +61,28 @@ FocusWindow::FocusWindow()
 	dirpath = QFileDialog::getExistingDirectory(this, tr("Open Directory"), "C:/", QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
 	sync->OnBnClickedButtonStartstop();
+<<<<<<< HEAD
+	dirpath = QFileDialog::getExistingDirectory(this, tr("Open Directory"), "C:/", QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+
+	Log("SaveImage called");
+	sync->OnBnClickedButtonStartstop();
+	QImage img = sync->m_Image;
+	nb_photos++;
+	Log("Saving image");
+	QString imgpath = dirpath + "/photo" + QString::number(nb_photos) + ".PNG";
+	//QString imgpath = "photo.png";
+	Log(imgpath.toStdString());
+	bool res = img.save(imgpath);
+	if (res) {
+		Log("Sauvegarde reussie");
+	}
+	else{
+		Log("Sauvegarde echouee");
+	}
+	Log("Reprise du flux video");
+	sync->OnBnClickedButtonStartstop();
+=======
+>>>>>>> 998579c7d459e7d2b85e7a152908d688469c65e9
 }
 
 // Default destructor
@@ -79,3 +101,4 @@ void FocusWindow::Log(std::string strMsg)
 	}
 
 }
+*/

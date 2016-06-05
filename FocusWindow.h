@@ -1,11 +1,11 @@
-
+/*
 #ifndef FOCUSWINDOW_H
 #define FOCUSWINDOW_H
 
 #include <QWidget>
 #include <QPushButton>
 #include <QLabel>
-#include "AsynchronousGrab.h"
+//#include "AsynchronousGrab.h"
 
 class FocusWindow : public QWidget
 {
@@ -13,7 +13,7 @@ class FocusWindow : public QWidget
 
 	public:
 		FocusWindow();
-		virtual ~FocusWindow();
+        virtual ~FocusWindow();
 		void Log(std::string strMsg);
 
 	public slots:
@@ -34,3 +34,4 @@ class FocusWindow : public QWidget
 
 
 #endif // FOCUSWINDOW_H
+*/

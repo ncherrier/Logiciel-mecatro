@@ -13,8 +13,6 @@ target.path = $$[QT_INSTALL_EXAMPLES]/multimedia/declarative-camera
 INSTALLS += target
 
 SOURCES += \
-    camera.cpp \
-    camera_settings.cpp \
     cameraSettingsWindow.cpp \
     Main_Prog.cpp \
     TakePictureTest.cpp \
@@ -23,10 +21,11 @@ SOURCES += \
     AsynchronousGrab.cpp \
     ApiController.cpp \
     FrameObserver.cpp \
-    SettingsPage.cpp
+    SettingsPage.cpp \
+    FocusWindow.cpp \
+    CameraObserver.cpp
 
 HEADERS += \
-    camera.h \
     cameraSettingsWindow.h \
     SerialCommunication.h \
     TakePictureTest.h \
@@ -34,6 +33,8 @@ HEADERS += \
     ApiController.h \
     FrameObserver.h \
     GPPWizard.h \
+    FocusWindow.h \
+    CameraObserver.h \
     Vimba_2.0/VimbaCPP/Include/AncillaryData.h \
     Vimba_2.0/VimbaCPP/Include/BasicLockable.h \
     Vimba_2.0/VimbaCPP/Include/Camera.h \
