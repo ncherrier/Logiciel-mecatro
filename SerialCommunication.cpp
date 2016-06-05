@@ -15,7 +15,7 @@ using namespace std;
 
 // Default constructor, inherits QObject()
 SerialCommunication::SerialCommunication()
-    : QObject()
+    : QWidget()
     , m_standardOutput(stdout)
     , m_bytesWritten(0)
 {
@@ -164,6 +164,8 @@ bool SerialCommunication::read(){
 	while (serialPort.waitForReadyRead(-1) & !isReading)
 		if (serialPort.readAll() == "a") {
 			standardOutput << "Message bien recu" << endl;
+			// Emission du signal pour prendre une photo, mais je ne sais pas si c'est bien là qu'il faut l'envoyer
+			emit MvtFinished();
 			isReading = true;
 		}
 	standardOutput << serialPort.readAll() << endl;

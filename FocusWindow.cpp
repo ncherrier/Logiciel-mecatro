@@ -1,4 +1,4 @@
-/*
+
 #include <QtWidgets/QApplication>
 #include <QGridLayout>
 #include "FocusWindow.h"
@@ -21,7 +21,7 @@ void FocusWindow::SaveImage(){
 	Log("SaveImage called");
 	sync->OnBnClickedButtonStartstop();
 	//QImage img = sync->m_Image;
-	AVTBitmap bitmap = sync->bitmap;
+	AVTBitmap* bitmap = &(sync->bitmap);
 	nb_photos++;
 	Log("Saving image");
 	//QString format = "png";
@@ -29,7 +29,7 @@ void FocusWindow::SaveImage(){
 	Log(imgpath.toStdString());
 
 	//bool res = img.save(imgpath);
-	unsigned char res = AVTWriteBitmapToFile(&bitmap, imgpath.toStdString().c_str());
+	unsigned char res = AVTWriteBitmapToFile(bitmap, imgpath.toStdString().c_str());
 	if (res) {
 		Log("Sauvegarde reussie");
 		emit PictureTaken();
@@ -61,28 +61,7 @@ FocusWindow::FocusWindow()
 	dirpath = QFileDialog::getExistingDirectory(this, tr("Open Directory"), "C:/", QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
 	sync->OnBnClickedButtonStartstop();
-<<<<<<< HEAD
-	dirpath = QFileDialog::getExistingDirectory(this, tr("Open Directory"), "C:/", QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
-	Log("SaveImage called");
-	sync->OnBnClickedButtonStartstop();
-	QImage img = sync->m_Image;
-	nb_photos++;
-	Log("Saving image");
-	QString imgpath = dirpath + "/photo" + QString::number(nb_photos) + ".PNG";
-	//QString imgpath = "photo.png";
-	Log(imgpath.toStdString());
-	bool res = img.save(imgpath);
-	if (res) {
-		Log("Sauvegarde reussie");
-	}
-	else{
-		Log("Sauvegarde echouee");
-	}
-	Log("Reprise du flux video");
-	sync->OnBnClickedButtonStartstop();
-=======
->>>>>>> 998579c7d459e7d2b85e7a152908d688469c65e9
 }
 
 // Default destructor
@@ -101,4 +80,3 @@ void FocusWindow::Log(std::string strMsg)
 	}
 
 }
-*/

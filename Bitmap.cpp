@@ -28,6 +28,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <QFile>
+#include <QTextStream>
 
 #include "Bitmap.h"
 
@@ -84,10 +86,12 @@ unsigned char AVTCreateBitmap(AVTBitmap * const pBitmap, const void* pBuffer)
 	if (pBitmap->colorCode == (pBitmap->colorCode & THREE_CHANNEL))
 	{
 		nNumColors = 3;
+		Log("3 couleurs");
 	}
 	else
 	{
 		nNumColors = 1;
+		Log("1 couleur");
 	}
 
 	// Bitmap padding always is a multiple of four Bytes. If data is not we need to pad with zeros.
@@ -100,6 +104,7 @@ unsigned char AVTCreateBitmap(AVTBitmap * const pBitmap, const void* pBuffer)
 	if (ColorCodeRGB24 != pBitmap->colorCode)
 	{
 		nPaletteSize = 256;
+		Log("Palette size 256");
 	}
 
 	nHeaderSize = BMP_HEADER_SIZE + nPaletteSize * 4;
@@ -163,6 +168,7 @@ unsigned char AVTCreateBitmap(AVTBitmap * const pBitmap, const void* pBuffer)
 	// RGB -> BGR (a Windows bitmap is BGR)
 	if (ColorCodeRGB24 == pBitmap->colorCode)
 	{
+		Log("ColorCode RGB 24");
 		pCurSrc = (unsigned char*)pBuffer;
 		for (y = 0; y<pBitmap->height; ++y, pCurBitmapBuf += nPadLength)
 		{
@@ -187,6 +193,7 @@ unsigned char AVTCreateBitmap(AVTBitmap * const pBitmap, const void* pBuffer)
 	// Mono8
 	else
 	{
+		Log("Mono ?");
 		if (0 == nPadLength)
 		{
 			memcpy(pCurBitmapBuf, pBuffer, pBitmap->bufferSize);
@@ -251,17 +258,32 @@ unsigned char AVTReleaseBitmap(AVTBitmap * const pBitmap)
 //
 unsigned char AVTWriteBitmapToFile(AVTBitmap const * const pBitmap, char const * const pFileName)
 {
+	Log("AVTWriteBitmapToFile");
 	FILE *file;
 	if (NULL != pBitmap
 		&& NULL != pBitmap->buffer
 		&& NULL != pFileName)
 	{
+		Log("Inside if write bitmap to file");
 		file = fopen(pFileName, "wb");
 		fwrite(pBitmap->buffer, 1, pBitmap->bufferSize, file);
 		fclose(file);
 
 		return 1;
 	}
+	Log("Didn't entered if");
 
 	return 0;
+}
+
+void Log(std::string strMsg)
+{
+	QString filename = "C:/Data.txt";
+	QFile file(filename);
+	if (file.open(QIODevice::ReadWrite | QIODevice::Append))
+	{
+		QTextStream stream(&file);
+		stream << QString::fromUtf8(strMsg.c_str()) << endl;
+	}
+
 }

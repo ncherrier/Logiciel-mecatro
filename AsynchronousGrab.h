@@ -25,7 +25,7 @@ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =============================================================================*/
-/*
+
 
 #ifndef ASYNCHRONOUSGRABQT_H
 #define ASYNCHRONOUSGRABQT_H
@@ -54,9 +54,9 @@ public:
 	// Are we streaming?
 	bool m_bIsStreaming;
 	// Our Qt image to display
-	QImage m_Image;
+	QImage* m_Image;
 
-	AVTBitmap bitmap;
+	AVTBitmap* bitmap;
 
 	//
 	// Queries and lists all known camera
@@ -115,4 +115,3 @@ signals:
 };
 
 #endif // ASYNCHRONOUSGRABQT_H 
-*/

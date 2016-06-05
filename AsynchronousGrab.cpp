@@ -26,7 +26,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =============================================================================*/
 
-/*
+
 #include <sstream>
 #include <QFile>
 #include <QTextStream>
@@ -92,7 +92,7 @@ void AsynchronousGrab::OnBnClickedButtonStartstop()
 			if (VmbErrorSuccess == err)
 			{
 				Log("Success");
-				m_Image = QImage(m_ApiController.GetWidth(),
+				m_Image = new QImage(m_ApiController.GetWidth(),
 					m_ApiController.GetHeight(),
 					QImage::Format_RGB888);
 
@@ -108,7 +108,7 @@ void AsynchronousGrab::OnBnClickedButtonStartstop()
 			err = m_ApiController.StopContinuousImageAcquisition();
 			// Clear all frames that we have not picked up so far
 			m_ApiController.ClearFrameQueue();
-			m_Image = QImage();
+			m_Image = new QImage();
 			Log("Stopping Acquisition", err);
 		}
 
@@ -164,7 +164,7 @@ void AsynchronousGrab::OnFrameReady(int status)
 						{
 							Log("3");
 							VmbPixelFormatType ePixelFormat = m_ApiController.GetPixelFormat();
-							if (!m_Image.isNull())
+							if (!(*m_Image).isNull())
 							{
 								if ((VmbPixelFormatMono8 != ePixelFormat)
 									&& (VmbPixelFormatRgb8 != ePixelFormat))
@@ -172,7 +172,7 @@ void AsynchronousGrab::OnFrameReady(int status)
 									Log("ERREUR : Pas bon pixel format");
 								}
 								Log("4");
-								CopyToImage(pBuffer, ePixelFormat, m_Image);
+								CopyToImage(pBuffer, ePixelFormat, *m_Image);
 
 								AVTBitmap bitmap;
 								if (VmbPixelFormatRgb8 == ePixelFormat)
@@ -194,10 +194,10 @@ void AsynchronousGrab::OnFrameReady(int status)
 								}
 								else
 								{
-									emit ImageReceivedSignal(&m_Image);
+									emit ImageReceivedSignal(m_Image);
 								}
 
-								emit ImageReceivedSignal(&m_Image);
+								emit ImageReceivedSignal(m_Image);
 								Log("5 : signal emis");
 							}
 						}
@@ -397,4 +397,3 @@ void AsynchronousGrab::Log(std::string strMsg)
 		stream << QString::fromUtf8(strMsg.c_str()) << endl;
 	}
 }
-*/

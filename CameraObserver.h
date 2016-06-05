@@ -25,7 +25,7 @@ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =============================================================================*/
-/*
+
 #ifndef AVT_VMBAPI_EXAMPLES_CAMERAOBSERVER
 #define AVT_VMBAPI_EXAMPLES_CAMERAOBSERVER
 
@@ -66,4 +66,3 @@ namespace AVT {
 } // namespace AVT::VmbAPI::Examples
 
 #endif
-*/

@@ -10,7 +10,8 @@
 #include <QtMultimedia> // useful?
 
 #include "SettingsPage.h"
-//#include "FocusWindow.h"
+#include "FocusWindow.h"
+#include "SerialCommunication.h"
 
 class GPPWizard : public QWizard
 {
@@ -32,7 +33,8 @@ private:
     QWizardPage *settingsPage;
     QWizardPage *inProcessPage;
 
-    //FocusWindow * focuswindow;
+    FocusWindow * focuswindow;
+	SerialCommunication * serialcomm;
 
     int getWishedXPos();
     int getWishedYPos();

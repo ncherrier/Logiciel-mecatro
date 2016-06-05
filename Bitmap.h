@@ -84,4 +84,6 @@ unsigned char AVTReleaseBitmap(AVTBitmap * const pBitmap);
 //
 unsigned char AVTWriteBitmapToFile(AVTBitmap const * const pBitmap, char const * const pFileName);
 
+void Log(std::string strMsg);
+
 #endif
