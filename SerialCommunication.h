@@ -17,6 +17,7 @@ private:
     QString         m_serialPortName; // utile ???
     QSerialPort     *m_serialPort;
     QByteArray      m_writeData;
+    QByteArray      m_readData;
     QTextStream     m_standardOutput;
     qint64          m_bytesWritten;
     //QTimer          m_timer; // utile ???
@@ -27,6 +28,10 @@ private:
     bool read(); // reads an "a"
 
 public slots:
+    // Lecture
+    void handleReadyRead(); // low-level
+
+    // Ecriture
     void moveCameraToNextPosition(); // after picture has been taken: tell elec to move camera (over serial port)
     // "o"
     void moveCameraTo(int, int);
@@ -40,11 +45,11 @@ public slots:
 public:
 
 	SerialCommunication();
-
-	// Higher-level functions
+    virtual ~SerialCommunication();
 
 signals:
 	void MvtFinished();
+    void CycleFinished();
 
 };
 

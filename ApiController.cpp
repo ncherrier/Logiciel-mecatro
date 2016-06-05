@@ -26,7 +26,7 @@ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =============================================================================*/
-
+/*
 #include <ApiController.h>
 #include <sstream>
 #include <iostream>
@@ -324,15 +324,15 @@ namespace AVT {
 
 			void ApiController::Log(std::string strMsg)
 			{
-				/* UNCOMMENT TO DEBUG
+                // UNCOMMENT TO DEBUG
 				//ui.m_ListLog->insertItem(0, QString::fromStdString(strMsg));
-				QString filename = "C:/Data.txt";
-				QFile file(filename);
-				if (file.open(QIODevice::ReadWrite | QIODevice::Append))
-				{
-					QTextStream stream(&file);
-					stream << QString::fromUtf8(strMsg.c_str()) << endl;
-				}*/
+                //QString filename = "C:/Data.txt";
+                //QFile file(filename);
+                //if (file.open(QIODevice::ReadWrite | QIODevice::Append))
+                //{
+                //	QTextStream stream(&file);
+                //	stream << QString::fromUtf8(strMsg.c_str()) << endl;
+                //}
 			}
 
 
@@ -340,3 +340,4 @@ namespace AVT {
 	}
 } // namespace AVT::VmbAPI::Examples
 
+*/

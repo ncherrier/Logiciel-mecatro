@@ -1,4 +1,4 @@
-
+/*
 #include <QtWidgets/QApplication>
 #include <QGridLayout>
 #include "FocusWindow.h"
@@ -75,8 +75,8 @@ FocusWindow::~FocusWindow() {
 
 void FocusWindow::Log(std::string strMsg)
 {
-	/* UNCOMMENT TO DEBUG
-	QString filename = "C:/Data.txt";
+    /* UNCOMMENT TO DEBUG
+    QString filename = "C:/Data.txt";
 	QFile file(filename);
 	if (file.open(QIODevice::ReadWrite | QIODevice::Append))
 	{
@@ -84,4 +84,4 @@ void FocusWindow::Log(std::string strMsg)
 		stream << QString::fromUtf8(strMsg.c_str()) << endl;
 	}
 	*/
-}
+//}

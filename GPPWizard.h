@@ -33,7 +33,7 @@ private:
     QWizardPage *settingsPage;
     QWizardPage *inProcessPage;
 
-    FocusWindow * focuswindow;
+    //FocusWindow * focuswindow;
 	SerialCommunication * serialcomm;
 
     int getWishedXPos();

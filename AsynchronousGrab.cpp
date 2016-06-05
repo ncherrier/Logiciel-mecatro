@@ -26,7 +26,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =============================================================================*/
 
-
+/*
 #include <sstream>
 #include <QFile>
 #include <QTextStream>
@@ -358,13 +358,15 @@ void AsynchronousGrab::Log(std::string strMsg, VmbErrorType eErr)
 //
 void AsynchronousGrab::Log(std::string strMsg)
 {
-	/* UNCOMMENT TO DEBUG 
+    // UNCOMMENT TO DEBUG
 	//ui.m_ListLog->insertItem(0, QString::fromStdString(strMsg));
-	QString filename = "C:/Data.txt";
-	QFile file(filename);
-	if (file.open(QIODevice::ReadWrite | QIODevice::Append))
-	{
-		QTextStream stream(&file);
-		stream << QString::fromUtf8(strMsg.c_str()) << endl;
-	} */
+    //QString filename = "C:/Data.txt";
+    //QFile file(filename);
+    //if (file.open(QIODevice::ReadWrite | QIODevice::Append))
+    //{
+    //	QTextStream stream(&file);
+    //	stream << QString::fromUtf8(strMsg.c_str()) << endl;
+    //}
 }
+
+*/

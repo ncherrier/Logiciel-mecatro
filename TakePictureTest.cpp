@@ -1,4 +1,4 @@
-
+/*
 #include <iostream> // TODO: remove after tests
 #include <QtWidgets/QApplication>
 #include <QPushButton>
@@ -54,3 +54,4 @@ void TakePictureTest::Log(std::string strMsg)
 	}
 }
 
+*/
