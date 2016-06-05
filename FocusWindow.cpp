@@ -8,12 +8,14 @@
 #include <QTextStream>
 #include <QFileDialog>
 #include "Bitmap.h"
+#include <QBuffer>
 
 
 // Slot
 void FocusWindow::OnImageReceived(QImage* image) {
 	Log("OnImageReceived called");
 	label->setPixmap(QPixmap::fromImage(*image).scaled(label->size(), Qt::KeepAspectRatio));
+	m_img = image;
 	Log("Image actualisee !");
 }
 
@@ -21,16 +23,26 @@ void FocusWindow::SaveImage(){
 	Log("SaveImage called");
 	if (sync->m_bIsStreaming){
 		sync->OnBnClickedButtonStartstop();
-		//QImage img = sync->m_Image;
-		AVTBitmap* bitmap = sync->bitmap;
+		
+		//AVTBitmap bitmap = sync->bitmap;
 		nb_photos++;
 		Log("Saving image");
 		//QString format = "png";
 		QString imgpath = dirpath + "/photo" + QString::number(nb_photos) + ".png";
+		//QString imgpath = "test.png";
 		Log(imgpath.toStdString());
-
+		
+		QPixmap pixmap = QPixmap::fromImage(*m_img);
+		QSize bla = pixmap.size();
+		Log(std::to_string(bla.height()));
+		Log(std::to_string(bla.width()));
+		//QByteArray bytes;
+		//QBuffer buffer(&bytes);
+		//buffer.open(QIODevice::WriteOnly);
+		//bool res = pixmap.save(&buffer, "PNG");
+		bool res = pixmap.save(imgpath, "PNG");
 		//bool res = img.save(imgpath);
-		unsigned char res = AVTWriteBitmapToFile(bitmap, imgpath.toStdString().c_str());
+		//unsigned char res = AVTWriteBitmapToFile(&bitmap, imgpath.toStdString().c_str());
 		if (res) {
 			Log("Sauvegarde reussie");
 			emit PictureTaken();
@@ -50,6 +62,7 @@ FocusWindow::FocusWindow()
 	setFixedSize(533,400);
 	setWindowTitle("Apercu du capteur");
 	label = new QLabel;
+	m_img = new QImage;
 	sync = new AsynchronousGrab();
 	Log("Sync object created");
 	QObject::connect(sync, SIGNAL(ImageReceivedSignal(QImage*)), this, SLOT(OnImageReceived(QImage*)));

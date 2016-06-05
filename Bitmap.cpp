@@ -108,7 +108,7 @@ unsigned char AVTCreateBitmap(AVTBitmap * const pBitmap, const void* pBuffer)
 	}
 
 	nHeaderSize = BMP_HEADER_SIZE + nPaletteSize * 4;
-	pBitmapBuffer = (unsigned char*)malloc(nHeaderSize + pBitmap->bufferSize + (nPadLength * pBitmap->height));
+	pBitmapBuffer = (unsigned char*)(nHeaderSize + pBitmap->bufferSize + (nPadLength * pBitmap->height));
 	nFileSize = nHeaderSize + pBitmap->bufferSize + (nPadLength * pBitmap->height);
 
 	// File size
@@ -265,10 +265,9 @@ unsigned char AVTWriteBitmapToFile(AVTBitmap const * const pBitmap, char const *
 		&& NULL != pFileName)
 	{
 		Log("Inside if write bitmap to file");
-		//file = fopen(pFileName, "wb");
-		//fwrite(pBitmap->buffer, 1, pBitmap->bufferSize, file);
-		//fclose(file);
-
+		file = fopen(pFileName, "wb");
+		fwrite(pBitmap->buffer, 1, pBitmap->bufferSize, file);
+		fclose(file);
 		return 1;
 	}
 	Log("Didn't entered if");

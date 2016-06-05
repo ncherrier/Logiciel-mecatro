@@ -25,6 +25,7 @@ class FocusWindow : public QWidget
 		AsynchronousGrab *sync;
 		QString dirpath;
 		int nb_photos;
+		QImage * m_img;
 
 	signals:
 		void PictureTaken();

@@ -63,6 +63,7 @@ AsynchronousGrab::AsynchronousGrab(QWidget *parent, Qt::WindowFlags flags)
 		std::stringstream strMsg;
 		strMsg << "Cameras found..." << m_cameras.size();
 		Log(strMsg.str());
+		bitmap = AVTBitmap();
 	}
 }
 
@@ -174,25 +175,25 @@ void AsynchronousGrab::OnFrameReady(int status)
 								Log("4");
 								CopyToImage(pBuffer, ePixelFormat, *m_Image);
 								Log("5");
-								
+								/*
 								if (VmbPixelFormatRgb8 == ePixelFormat)
 								{
-									bitmap->colorCode = ColorCodeRGB24;
+									bitmap.colorCode = ColorCodeRGB24;
 								}
 								else
 								{
-									bitmap->colorCode = ColorCodeMono8;
+									bitmap.colorCode = ColorCodeMono8;
 								}
-								bitmap->bufferSize = nSize;
-								bitmap->width = nWidth;
-								bitmap->height = nHeight;
+								bitmap.bufferSize = nSize;
+								bitmap.width = nWidth;
+								bitmap.height = nHeight;
 								// Create the bitmap
-								if (0 == AVTCreateBitmap(bitmap, pBuffer))
+								if (0 == AVTCreateBitmap(&bitmap, pBuffer))
 								{
 									Log("Could not create bitmap");
 									err = VmbErrorResources;
 								}
-
+								*/
 								emit ImageReceivedSignal(m_Image);
 								Log("6 : signal emis");
 							}

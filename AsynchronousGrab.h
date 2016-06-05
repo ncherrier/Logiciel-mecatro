@@ -56,7 +56,7 @@ public:
 	// Our Qt image to display
 	QImage* m_Image;
 
-	AVTBitmap* bitmap;
+	AVTBitmap bitmap;
 
 	//
 	// Queries and lists all known camera
