@@ -265,9 +265,9 @@ unsigned char AVTWriteBitmapToFile(AVTBitmap const * const pBitmap, char const *
 		&& NULL != pFileName)
 	{
 		Log("Inside if write bitmap to file");
-		file = fopen(pFileName, "wb");
-		fwrite(pBitmap->buffer, 1, pBitmap->bufferSize, file);
-		fclose(file);
+		//file = fopen(pFileName, "wb");
+		//fwrite(pBitmap->buffer, 1, pBitmap->bufferSize, file);
+		//fclose(file);
 
 		return 1;
 	}

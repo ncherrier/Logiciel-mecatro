@@ -19,26 +19,28 @@ void FocusWindow::OnImageReceived(QImage* image) {
 
 void FocusWindow::SaveImage(){
 	Log("SaveImage called");
-	sync->OnBnClickedButtonStartstop();
-	//QImage img = sync->m_Image;
-	AVTBitmap* bitmap = &(sync->bitmap);
-	nb_photos++;
-	Log("Saving image");
-	//QString format = "png";
-	QString imgpath = dirpath + "/photo" + QString::number(nb_photos) + ".bmp";
-	Log(imgpath.toStdString());
+	if (sync->m_bIsStreaming){
+		sync->OnBnClickedButtonStartstop();
+		//QImage img = sync->m_Image;
+		AVTBitmap* bitmap = sync->bitmap;
+		nb_photos++;
+		Log("Saving image");
+		//QString format = "png";
+		QString imgpath = dirpath + "/photo" + QString::number(nb_photos) + ".png";
+		Log(imgpath.toStdString());
 
-	//bool res = img.save(imgpath);
-	unsigned char res = AVTWriteBitmapToFile(bitmap, imgpath.toStdString().c_str());
-	if (res) {
-		Log("Sauvegarde reussie");
-		emit PictureTaken();
+		//bool res = img.save(imgpath);
+		unsigned char res = AVTWriteBitmapToFile(bitmap, imgpath.toStdString().c_str());
+		if (res) {
+			Log("Sauvegarde reussie");
+			emit PictureTaken();
+		}
+		else{
+			Log("Sauvegarde echouee");
+		}
+		Log("Reprise du flux video");
+		sync->OnBnClickedButtonStartstop();
 	}
-	else{
-		Log("Sauvegarde echouee");
-	}
-	Log("Reprise du flux video");
-	sync->OnBnClickedButtonStartstop();
 }
 
 
@@ -66,7 +68,9 @@ FocusWindow::FocusWindow()
 
 // Default destructor
 FocusWindow::~FocusWindow() {
-	sync->OnBnClickedButtonStartstop(); // close camera
+	if (sync->m_bIsStreaming){
+		sync->OnBnClickedButtonStartstop(); // close camera
+	}
 }
 
 void FocusWindow::Log(std::string strMsg)

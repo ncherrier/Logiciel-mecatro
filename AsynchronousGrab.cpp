@@ -145,7 +145,7 @@ void AsynchronousGrab::OnFrameReady(int status)
 		if (VmbFrameStatusComplete == status)
 		{
 			Log("1");
-			VmbUchar_t *pBuffer;
+			VmbUchar_t * pBuffer;
 			VmbErrorType err = SP_ACCESS(pFrame)->GetImage(pBuffer);
 			if (VmbErrorSuccess == err)
 			{
@@ -173,32 +173,28 @@ void AsynchronousGrab::OnFrameReady(int status)
 								}
 								Log("4");
 								CopyToImage(pBuffer, ePixelFormat, *m_Image);
-
-								AVTBitmap bitmap;
+								Log("5");
+								
 								if (VmbPixelFormatRgb8 == ePixelFormat)
 								{
-									bitmap.colorCode = ColorCodeRGB24;
+									bitmap->colorCode = ColorCodeRGB24;
 								}
 								else
 								{
-									bitmap.colorCode = ColorCodeMono8;
+									bitmap->colorCode = ColorCodeMono8;
 								}
-								bitmap.bufferSize = nSize;
-								bitmap.width = nWidth;
-								bitmap.height = nHeight;
+								bitmap->bufferSize = nSize;
+								bitmap->width = nWidth;
+								bitmap->height = nHeight;
 								// Create the bitmap
-								if (0 == AVTCreateBitmap(&bitmap, pBuffer))
+								if (0 == AVTCreateBitmap(bitmap, pBuffer))
 								{
 									Log("Could not create bitmap");
 									err = VmbErrorResources;
 								}
-								else
-								{
-									emit ImageReceivedSignal(m_Image);
-								}
 
 								emit ImageReceivedSignal(m_Image);
-								Log("5 : signal emis");
+								Log("6 : signal emis");
 							}
 						}
 					}
