@@ -26,6 +26,9 @@ class FocusWindow : public QWidget
 		QString dirpath;
 		int nb_photos;
 
+	signals:
+		void PictureTaken();
+
 };
 
 

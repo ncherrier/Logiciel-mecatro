@@ -32,6 +32,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define AVT_VMBAPI_EXAMPLES_APICONTROLLER
 
 #include <string>
+#include <QFile>
+#include <QTextStream>
 
 #include <Vimba_2.0/VimbaCPP/Include/VimbaCPP.h>
 
@@ -170,6 +172,9 @@ namespace AVT {
 				//  The version as string
 				//
 				std::string         GetVersion() const;
+
+				void Log(std::string strMsg);
+
 			private:
 				// A reference to our Vimba singleton
 				VimbaSystem&                m_system;

@@ -7,7 +7,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QFileDialog>
-
+#include "Bitmap.h"
 
 
 // Slot
@@ -20,21 +20,24 @@ void FocusWindow::OnImageReceived(QImage* image) {
 void FocusWindow::SaveImage(){
 	Log("SaveImage called");
 	sync->OnBnClickedButtonStartstop();
-	QImage img = sync->m_Image;
+	//QImage img = sync->m_Image;
+	AVTBitmap bitmap = sync->bitmap;
 	nb_photos++;
 	Log("Saving image");
-	QString format = "png";
-	QString imgpath = dirpath + "\photo" + QString::number(nb_photos) + "." +format;
-	//QString imgpath = "photo.png";
+	//QString format = "png";
+	QString imgpath = dirpath + "/photo" + QString::number(nb_photos) + ".bmp";
 	Log(imgpath.toStdString());
-	bool res = img.save(imgpath);
+
+	//bool res = img.save(imgpath);
+	unsigned char res = AVTWriteBitmapToFile(&bitmap, imgpath.toStdString().c_str());
 	if (res) {
 		Log("Sauvegarde reussie");
+		emit PictureTaken();
 	}
 	else{
 		Log("Sauvegarde echouee");
 	}
-	Log("Reprise du flux vidéo");
+	Log("Reprise du flux video");
 	sync->OnBnClickedButtonStartstop();
 }
 
@@ -55,7 +58,7 @@ FocusWindow::FocusWindow()
 
 	// Prepare for saving
 	nb_photos = 0;
-	dirpath = QFileDialog::getExistingDirectory(this, tr("Open Directory"), "C:\\", QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+	dirpath = QFileDialog::getExistingDirectory(this, tr("Open Directory"), "C:/", QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
 	sync->OnBnClickedButtonStartstop();
 }

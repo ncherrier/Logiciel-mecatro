@@ -153,34 +153,53 @@ void AsynchronousGrab::OnFrameReady(int status)
 				err = SP_ACCESS(pFrame)->GetImageSize(nSize);
 				if (VmbErrorSuccess == err)
 				{
-					Log("3");
-					VmbPixelFormatType ePixelFormat = m_ApiController.GetPixelFormat();
-					if (!m_Image.isNull())
+					VmbUint32_t nWidth = 0;
+					err = pFrame->GetWidth(nWidth);
+					if (VmbErrorSuccess == err)
 					{
-						// Copy it
-						// We need that because Qt might repaint the view after we have released the frame already
+						VmbUint32_t nHeight = 0;
+						err = pFrame->GetHeight(nHeight);
+						if (VmbErrorSuccess == err)
+						{
+							Log("3");
+							VmbPixelFormatType ePixelFormat = m_ApiController.GetPixelFormat();
+							if (!m_Image.isNull())
+							{
+								if ((VmbPixelFormatMono8 != ePixelFormat)
+									&& (VmbPixelFormatRgb8 != ePixelFormat))
+								{
+									Log("ERREUR : Pas bon pixel format");
+								}
+								Log("4");
+								CopyToImage(pBuffer, ePixelFormat, m_Image);
 
-                        //if (ui.m_ColorProcessingCheckBox->checkState() == Qt::Checked)
-                        //{
-                        //	static const VmbFloat_t Matrix[] = { 8.0f, 0.1f, 0.1f, // this matrix just makes a quick color to mono conversion
-                        //		0.1f, 0.8f, 0.1f,
-                        //		0.0f, 0.0f, 1.0f };
-                        //	if (VmbErrorSuccess != CopyToImage(pBuffer, ePixelFormat, m_Image, Matrix))
-                        //	{
-                        //		ui.m_ColorProcessingCheckBox->setChecked(false);
-                        //	}
-                        //}
-						//else
-						//{
-						Log("4");
-							CopyToImage(pBuffer, ePixelFormat, m_Image);
-							emit ImageReceivedSignal(&m_Image);
-							Log("5 : signal emis");
-						//}
+								AVTBitmap bitmap;
+								if (VmbPixelFormatRgb8 == ePixelFormat)
+								{
+									bitmap.colorCode = ColorCodeRGB24;
+								}
+								else
+								{
+									bitmap.colorCode = ColorCodeMono8;
+								}
+								bitmap.bufferSize = nSize;
+								bitmap.width = nWidth;
+								bitmap.height = nHeight;
+								// Create the bitmap
+								if (0 == AVTCreateBitmap(&bitmap, pBuffer))
+								{
+									Log("Could not create bitmap");
+									err = VmbErrorResources;
+								}
+								else
+								{
+									emit ImageReceivedSignal(&m_Image);
+								}
 
-						// Display it
-						//const QSize s = ui.m_LabelStream->size();
-						//ui.m_LabelStream->setPixmap(QPixmap::fromImage(m_Image).scaled(s, Qt::KeepAspectRatio));
+								emit ImageReceivedSignal(&m_Image);
+								Log("5 : signal emis");
+							}
+						}
 					}
 				}
 			}

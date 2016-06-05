@@ -34,6 +34,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "GeneratedFiles/ui_logiciel_mecatro.h"
 
 #include <ApiController.h>
+#include "Bitmap.h"
 
 using AVT::VmbAPI::Examples::ApiController;
 
@@ -46,8 +47,6 @@ public:
 	~AsynchronousGrab();
 
 public:
-	// The Qt GUI
-	//Ui::AsynchronousGrabClass ui;
 	// Our controller that wraps API access
 	ApiController m_ApiController;
 	// A list of known camera IDs
@@ -56,6 +55,8 @@ public:
 	bool m_bIsStreaming;
 	// Our Qt image to display
 	QImage m_Image;
+
+	AVTBitmap bitmap;
 
 	//
 	// Queries and lists all known camera
