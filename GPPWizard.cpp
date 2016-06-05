@@ -79,7 +79,10 @@ GPPWizard::GPPWizard() : QWizard()
     settingsPage = createSettingsPage();
     inProcessPage = createInProcessPage();
 
-    //focuswindow = new FocusWindow();
+    focuswindow = new FocusWindow();
+	serialcomm = new SerialCommunication();
+	connect(serialcomm, SIGNAL(MvtFinished()), focuswindow, SLOT(SaveImage()));
+	connect(focuswindow, SIGNAL(PictureTaken()), serialcomm, SLOT(moveCameraToNextPosition()));
 
     addPage(introPage);
 

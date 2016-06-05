@@ -26,7 +26,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =============================================================================*/
 
-/*
+
 #include <sstream>
 #include <QFile>
 #include <QTextStream>
@@ -92,7 +92,7 @@ void AsynchronousGrab::OnBnClickedButtonStartstop()
 			if (VmbErrorSuccess == err)
 			{
 				Log("Success");
-				m_Image = QImage(m_ApiController.GetWidth(),
+				m_Image = new QImage(m_ApiController.GetWidth(),
 					m_ApiController.GetHeight(),
 					QImage::Format_RGB888);
 
@@ -108,7 +108,7 @@ void AsynchronousGrab::OnBnClickedButtonStartstop()
 			err = m_ApiController.StopContinuousImageAcquisition();
 			// Clear all frames that we have not picked up so far
 			m_ApiController.ClearFrameQueue();
-			m_Image = QImage();
+			m_Image = new QImage();
 			Log("Stopping Acquisition", err);
 		}
 
@@ -145,7 +145,7 @@ void AsynchronousGrab::OnFrameReady(int status)
 		if (VmbFrameStatusComplete == status)
 		{
 			Log("1");
-			VmbUchar_t *pBuffer;
+			VmbUchar_t * pBuffer;
 			VmbErrorType err = SP_ACCESS(pFrame)->GetImage(pBuffer);
 			if (VmbErrorSuccess == err)
 			{
@@ -154,34 +154,23 @@ void AsynchronousGrab::OnFrameReady(int status)
 				err = SP_ACCESS(pFrame)->GetImageSize(nSize);
 				if (VmbErrorSuccess == err)
 				{
-					Log("3");
-					VmbPixelFormatType ePixelFormat = m_ApiController.GetPixelFormat();
-					if (!m_Image.isNull())
+					VmbUint32_t nWidth = 0;
+					err = pFrame->GetWidth(nWidth);
+					if (VmbErrorSuccess == err)
 					{
-						// Copy it
-						// We need that because Qt might repaint the view after we have released the frame already
-
-                        //if (ui.m_ColorProcessingCheckBox->checkState() == Qt::Checked)
-                        //{
-                        //	static const VmbFloat_t Matrix[] = { 8.0f, 0.1f, 0.1f, // this matrix just makes a quick color to mono conversion
-                        //		0.1f, 0.8f, 0.1f,
-                        //		0.0f, 0.0f, 1.0f };
-                        //	if (VmbErrorSuccess != CopyToImage(pBuffer, ePixelFormat, m_Image, Matrix))
-                        //	{
-                        //		ui.m_ColorProcessingCheckBox->setChecked(false);
-                        //	}
-                        //}
-						//else
-						//{
-						Log("4");
-							CopyToImage(pBuffer, ePixelFormat, m_Image);
-							emit ImageReceivedSignal(&m_Image);
-							Log("5 : signal emis");
-						//}
-
-						// Display it
-						//const QSize s = ui.m_LabelStream->size();
-						//ui.m_LabelStream->setPixmap(QPixmap::fromImage(m_Image).scaled(s, Qt::KeepAspectRatio));
+						VmbUint32_t nHeight = 0;
+						err = pFrame->GetHeight(nHeight);
+						if (VmbErrorSuccess == err)
+						{
+							Log("3");
+							VmbPixelFormatType ePixelFormat = m_ApiController.GetPixelFormat();
+							if (!(*m_Image).isNull())
+							{
+								CopyToImage(pBuffer, ePixelFormat, *m_Image);
+								emit ImageReceivedSignal(m_Image);
+								Log("6 : signal emis");
+							}
+						}
 					}
 				}
 			}
@@ -369,6 +358,7 @@ void AsynchronousGrab::Log(std::string strMsg, VmbErrorType eErr)
 //
 void AsynchronousGrab::Log(std::string strMsg)
 {
+	/* UNCOMMENT TO DEBUG 
 	//ui.m_ListLog->insertItem(0, QString::fromStdString(strMsg));
 	QString filename = "C:/Data.txt";
 	QFile file(filename);
@@ -376,6 +366,5 @@ void AsynchronousGrab::Log(std::string strMsg)
 	{
 		QTextStream stream(&file);
 		stream << QString::fromUtf8(strMsg.c_str()) << endl;
-	}
+	} */
 }
-*/

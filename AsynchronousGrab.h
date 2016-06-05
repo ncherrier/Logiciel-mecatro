@@ -25,7 +25,7 @@ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =============================================================================*/
-/*
+
 
 #ifndef ASYNCHRONOUSGRABQT_H
 #define ASYNCHRONOUSGRABQT_H
@@ -46,8 +46,6 @@ public:
 	~AsynchronousGrab();
 
 public:
-	// The Qt GUI
-	//Ui::AsynchronousGrabClass ui;
 	// Our controller that wraps API access
 	ApiController m_ApiController;
 	// A list of known camera IDs
@@ -55,7 +53,8 @@ public:
 	// Are we streaming?
 	bool m_bIsStreaming;
 	// Our Qt image to display
-	QImage m_Image;
+	QImage* m_Image;
+
 
 	//
 	// Queries and lists all known camera
@@ -114,4 +113,3 @@ signals:
 };
 
 #endif // ASYNCHRONOUSGRABQT_H 
-*/

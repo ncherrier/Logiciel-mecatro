@@ -4,10 +4,11 @@
 #define SERIALCOMMUNICATION_H
 
 #include <QtSerialPort>
+#include <QWidget>
 
-class SerialCommunication : QObject
+class SerialCommunication : public QWidget
 {
-
+	// Comment this when on release, uncomment when debug
     Q_OBJECT
 
 	// All static functions below return true if everything went good
@@ -23,7 +24,7 @@ private:
 	// Low-level communication
     bool connectSerialPort();
     bool sendMessage(QByteArray);
-    static bool read(); // reads an "a"
+    bool read(); // reads an "a"
 
 public slots:
     void moveCameraToNextPosition(); // after picture has been taken: tell elec to move camera (over serial port)
@@ -41,6 +42,9 @@ public:
 	SerialCommunication();
 
 	// Higher-level functions
+
+signals:
+	void MvtFinished();
 
 };
 

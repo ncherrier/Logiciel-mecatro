@@ -1,11 +1,11 @@
-/*
+
 #ifndef FOCUSWINDOW_H
 #define FOCUSWINDOW_H
 
 #include <QWidget>
 #include <QPushButton>
 #include <QLabel>
-//#include "AsynchronousGrab.h"
+#include "AsynchronousGrab.h"
 
 class FocusWindow : public QWidget
 {
@@ -25,10 +25,13 @@ class FocusWindow : public QWidget
 		AsynchronousGrab *sync;
 		QString dirpath;
 		int nb_photos;
+		QImage * m_img;
+
+	signals:
+		void PictureTaken();
 
 };
 
 
 
 #endif // FOCUSWINDOW_H
-*/

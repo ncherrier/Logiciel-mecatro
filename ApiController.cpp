@@ -26,7 +26,7 @@ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =============================================================================*/
-/*
+
 #include <ApiController.h>
 #include <sstream>
 #include <iostream>
@@ -167,13 +167,18 @@ namespace AVT {
 							res = SP_ACCESS(m_pCamera)->GetFeatureByName("PixelFormat", pFormatFeature);
 							if (VmbErrorSuccess == res)
 							{
-								res = SP_ACCESS(pFormatFeature)->GetValue(m_nPixelFormat);
+								res = SP_ACCESS(pFormatFeature)->SetValue(VmbPixelFormatRgb8);
 								if (VmbErrorSuccess == res)
 								{
-									// Create a frame observer for this camera (This will be wrapped in a shared_ptr so we don't delete it)
-									SP_SET(m_pFrameObserver, new FrameObserver(m_pCamera));
-									// Start streaming
-									res = SP_ACCESS(m_pCamera)->StartContinuousImageAcquisition(NUM_FRAMES, m_pFrameObserver);
+									Log("PixelFormat changed");
+									res = SP_ACCESS(pFormatFeature)->GetValue(m_nPixelFormat);
+									if (VmbErrorSuccess == res) {
+										Log("PixelFormat read");
+										// Create a frame observer for this camera (This will be wrapped in a shared_ptr so we don't delete it)
+										SP_SET(m_pFrameObserver, new FrameObserver(m_pCamera));
+										// Start streaming
+										res = SP_ACCESS(m_pCamera)->StartContinuousImageAcquisition(NUM_FRAMES, m_pFrameObserver);
+									}
 								}
 							}
 						}
@@ -317,8 +322,21 @@ namespace AVT {
 				return os.str();
 			}
 
+			void ApiController::Log(std::string strMsg)
+			{
+				/* UNCOMMENT TO DEBUG
+				//ui.m_ListLog->insertItem(0, QString::fromStdString(strMsg));
+				QString filename = "C:/Data.txt";
+				QFile file(filename);
+				if (file.open(QIODevice::ReadWrite | QIODevice::Append))
+				{
+					QTextStream stream(&file);
+					stream << QString::fromUtf8(strMsg.c_str()) << endl;
+				}*/
+			}
+
+
 		}
 	}
 } // namespace AVT::VmbAPI::Examples
 
-*/

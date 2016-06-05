@@ -1,4 +1,4 @@
-/*
+
 #include <QtWidgets/QApplication>
 #include <QGridLayout>
 #include "FocusWindow.h"
@@ -7,35 +7,39 @@
 #include <QFile>
 #include <QTextStream>
 #include <QFileDialog>
-
+#include <QBuffer>
 
 
 // Slot
 void FocusWindow::OnImageReceived(QImage* image) {
 	Log("OnImageReceived called");
 	label->setPixmap(QPixmap::fromImage(*image).scaled(label->size(), Qt::KeepAspectRatio));
+	m_img = image;
 	Log("Image actualisee !");
 }
 
 void FocusWindow::SaveImage(){
-	Log("SaveImage called");
-	sync->OnBnClickedButtonStartstop();
-	QImage img = sync->m_Image;
-	nb_photos++;
-	Log("Saving image");
-	QString format = "png";
-	QString imgpath = dirpath + "\photo" + QString::number(nb_photos) + "." +format;
-	//QString imgpath = "photo.png";
-	Log(imgpath.toStdString());
-	bool res = img.save(imgpath);
-	if (res) {
-		Log("Sauvegarde reussie");
+	if (sync->m_bIsStreaming){
+		//sync->OnBnClickedButtonStartstop();
+		nb_photos++;
+		Log("Saving image");
+		QString imgpath = dirpath + "/photo" + QString::number(nb_photos) + ".png";
+		Log(imgpath.toStdString());
+		
+		QPixmap pixmap = QPixmap::fromImage(*m_img);
+		QSize bla = pixmap.size();
+		Log(std::to_string(bla.height()));
+		Log(std::to_string(bla.width()));
+		bool res = pixmap.save(imgpath, "PNG");
+		if (res) {
+			Log("Sauvegarde reussie");
+			emit PictureTaken();
+		}
+		else{
+			Log("Sauvegarde echouee");
+		}
+		//sync->OnBnClickedButtonStartstop();
 	}
-	else{
-		Log("Sauvegarde echouee");
-	}
-	Log("Reprise du flux video");
-	sync->OnBnClickedButtonStartstop();
 }
 
 
@@ -45,6 +49,7 @@ FocusWindow::FocusWindow()
 	setFixedSize(533,400);
 	setWindowTitle("Apercu du capteur");
 	label = new QLabel;
+	m_img = new QImage;
 	sync = new AsynchronousGrab();
 	Log("Sync object created");
 	QObject::connect(sync, SIGNAL(ImageReceivedSignal(QImage*)), this, SLOT(OnImageReceived(QImage*)));
@@ -55,40 +60,22 @@ FocusWindow::FocusWindow()
 
 	// Prepare for saving
 	nb_photos = 0;
-	dirpath = QFileDialog::getExistingDirectory(this, tr("Open Directory"), "C:\\", QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
-
-	sync->OnBnClickedButtonStartstop();
-<<<<<<< HEAD
 	dirpath = QFileDialog::getExistingDirectory(this, tr("Open Directory"), "C:/", QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
-	Log("SaveImage called");
 	sync->OnBnClickedButtonStartstop();
-	QImage img = sync->m_Image;
-	nb_photos++;
-	Log("Saving image");
-	QString imgpath = dirpath + "/photo" + QString::number(nb_photos) + ".PNG";
-	//QString imgpath = "photo.png";
-	Log(imgpath.toStdString());
-	bool res = img.save(imgpath);
-	if (res) {
-		Log("Sauvegarde reussie");
-	}
-	else{
-		Log("Sauvegarde echouee");
-	}
-	Log("Reprise du flux video");
-	sync->OnBnClickedButtonStartstop();
-=======
->>>>>>> 998579c7d459e7d2b85e7a152908d688469c65e9
+
 }
 
 // Default destructor
 FocusWindow::~FocusWindow() {
-	sync->OnBnClickedButtonStartstop(); // close camera
+	if (sync->m_bIsStreaming){
+		sync->OnBnClickedButtonStartstop(); // close camera
+	}
 }
 
 void FocusWindow::Log(std::string strMsg)
 {
+	/* UNCOMMENT TO DEBUG
 	QString filename = "C:/Data.txt";
 	QFile file(filename);
 	if (file.open(QIODevice::ReadWrite | QIODevice::Append))
@@ -96,6 +83,5 @@ void FocusWindow::Log(std::string strMsg)
 		QTextStream stream(&file);
 		stream << QString::fromUtf8(strMsg.c_str()) << endl;
 	}
-
+	*/
 }
-*/
