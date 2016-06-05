@@ -23,7 +23,8 @@ SOURCES += \
     FrameObserver.cpp \
     SettingsPage.cpp \
     FocusWindow.cpp \
-    CameraObserver.cpp
+    CameraObserver.cpp \
+    ProgressPage.cpp
 
 HEADERS += \
     cameraSettingsWindow.h \
@@ -66,7 +67,8 @@ HEADERS += \
     Vimba_2.0/VimbaCPP/Include/VimbaCPPCommon.h \
     Vimba_2.0/VimbaCPP/Include/VimbaSystem.h \
     Vimba_2.0/VimbaCPP/Include/VimbaSystem.hpp \
-    SettingsPage.h
+    SettingsPage.h \
+    ProgressPage.h
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/Vimba_2.0/VimbaC/Lib/Win32 -lVimbaC
 #else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/Vimba_2.0/VimbaC/Lib/Win32 -lVimbaCd

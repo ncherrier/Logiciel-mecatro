@@ -10,6 +10,7 @@
 #include <QtMultimedia> // useful?
 
 #include "SettingsPage.h"
+#include "ProgressPage.h"
 #include "FocusWindow.h"
 #include "SerialCommunication.h"
 
@@ -26,18 +27,18 @@ private:
     QWizardPage *createIntroPage();
     QWizardPage *createFramingPage();
     QWizardPage *createSettingsPage();
-    QWizardPage *createInProcessPage();
+    ProgressPage *createProgressPage();
 
     QWizardPage *introPage;
     QWizardPage *framingPage;
     QWizardPage *settingsPage;
-    QWizardPage *inProcessPage;
+    ProgressPage *progressPage;
 
     //FocusWindow * focuswindow;
 	SerialCommunication * serialcomm;
 
-    int getWishedXPos();
-    int getWishedYPos();
+    int getWishedXPos(); //utile ?
+    int getWishedYPos(); //utile ?
 
     // camera position (instruction to be given to Arduino)
     // as a percentage

@@ -65,10 +65,9 @@ QWizardPage * GPPWizard::createSettingsPage()
     return page;
 }
 
-QWizardPage * GPPWizard::createInProcessPage()
+ProgressPage * GPPWizard::createProgressPage()
 {
-    QWizardPage *page = new QWizardPage;
-    page->setTitle("In process...");
+    ProgressPage *page = new ProgressPage();
     return page;
 }
 
@@ -77,12 +76,14 @@ GPPWizard::GPPWizard() : QWizard()
     introPage = createIntroPage();
     framingPage = createFramingPage();
     settingsPage = createSettingsPage();
-    inProcessPage = createInProcessPage();
+    progressPage = createProgressPage();
 
     //focuswindow = new FocusWindow();
 	serialcomm = new SerialCommunication();
     //connect(serialcomm, SIGNAL(MvtFinished()), focuswindow, SLOT(SaveImage())); // TODO: uncomment !!!
     //connect(focuswindow, SIGNAL(PictureTaken()), serialcomm, SLOT(moveCameraToNextPosition())); // TODO: uncomment !!!
+    //connect(focusWindow, SIGNAL(PictureTaken()), progressPage, SLOT(incNbPicturesTaken());
+    connect(progressPage->getStopButton(), SIGNAL(clicked()), serialcomm, SLOT(emergencyStop()));
 
     addPage(introPage);
 
@@ -104,7 +105,7 @@ GPPWizard::GPPWizard() : QWizard()
     // End framing page
 
     addPage(createSettingsPage());
-    addPage(createInProcessPage());
+    addPage(createProgressPage());
 
     setWindowTitle("GigaProxyPhoto");
     setFixedSize(700, 600);
