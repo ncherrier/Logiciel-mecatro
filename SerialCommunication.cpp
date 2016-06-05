@@ -15,13 +15,13 @@ using namespace std;
 
 // Default constructor, inherits QObject()
 SerialCommunication::SerialCommunication()
-    : QObject() {
+    : QObject()
+    , m_standardOutput(stdout)
+    , m_bytesWritten(0)
+{
     cout << "SerialCommunication constructor called" << endl;
 
-    //m_serialPortName("Arduino");
-    //m_writeData;
-    //m_standardOutput(stdout);
-    //m_bytesWritten;
+     m_serialPortName = "Arduino";
 
     m_serialPort = new QSerialPort(this);
 
@@ -32,19 +32,15 @@ bool SerialCommunication::connectSerialPort(){
 
     cout << "calling SerialCommunication::connectSerialPort()" << endl;
 
-    QTextStream standardOutput(stdout);
-
 	int portCount = QSerialPortInfo::availablePorts().count();
 
 	if (portCount == 0) {
-        standardOutput << "No serial port found" << endl;
-		return false;
+        m_standardOutput << "No serial port found" << endl;
+        return false;
 	}
 
-	QSerialPort serialPort;
-	QString serialPortName = "Arduino";
-	serialPort.setPort(QSerialPortInfo::availablePorts()[0]);
-	serialPort.setBaudRate(QSerialPort::Baud9600);
+    m_serialPort->setPort(QSerialPortInfo::availablePorts()[0]);
+    m_serialPort->setBaudRate(QSerialPort::Baud9600);
 
 	return true;
 

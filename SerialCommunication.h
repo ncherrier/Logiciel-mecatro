@@ -13,7 +13,7 @@ class SerialCommunication : QObject
 	// All static functions below return true if everything went good
 
 private:
-    //QString         m_serialPortName; // utile ???
+    QString         m_serialPortName; // utile ???
     QSerialPort     *m_serialPort;
     QByteArray      m_writeData;
     QTextStream     m_standardOutput;
@@ -21,7 +21,7 @@ private:
     //QTimer          m_timer; // utile ???
 
 	// Low-level communication
-	static bool connectSerialPort();
+    bool connectSerialPort();
 	static bool sendMessage(QByteArray);
     static bool read(); // reads an "a"
 
@@ -30,7 +30,8 @@ public slots:
     // "o"
     void moveCameraTo(int, int);
     // ex: "b 30 50"
-    void emergencyStop(); // "s"
+    void emergencyStop();
+    // "s"
     void startCycle(); // start the cycle to take a (global) picture
     // "a"
     // > utile ?
@@ -40,21 +41,6 @@ public:
 	SerialCommunication();
 
 	// Higher-level functions
-
-    // Stop!
-    //static bool emergencyStop(); // "s"
-
-    // Movement
-    //static bool goUp();
-    //static bool goDown();
-    //static bool goLeft();
-    //static bool goRight();
-    //static bool goTo(int,int); // move camera (e. g. to focus). Args = percentage
-    // ex: "b 10 10"
-
-    //static bool startCycle(); // start the cycle to take a (global) picture
-    // "a"
-    // > utile ?
 
 };
 
