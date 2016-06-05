@@ -22,7 +22,7 @@ private:
 
 	// Low-level communication
     bool connectSerialPort();
-	static bool sendMessage(QByteArray);
+    bool sendMessage(QByteArray);
     static bool read(); // reads an "a"
 
 public slots:

@@ -25,7 +25,7 @@ SerialCommunication::SerialCommunication()
 
     m_serialPort = new QSerialPort(this);
 
-    // TODO?
+   connectSerialPort();
 }
 
 bool SerialCommunication::connectSerialPort(){
@@ -54,48 +54,82 @@ bool SerialCommunication::sendMessage(QByteArray c){
 
 	cout << "calling SerialCommunication::sendMessage" << endl;
 
-	QTextStream standardOutput(stdout);
+    if (!m_serialPort->open(QIODevice::ReadWrite)) {
+        m_standardOutput << QObject::tr("Failed to open port %1, error: %2").arg(m_serialPortName).arg(m_serialPort->errorString()) << endl;
+		return false;
+	}
+    m_writeData = c; //Caractere a choisir
 
-	int portCount = QSerialPortInfo::availablePorts().count();
+    m_bytesWritten = m_serialPort->write(m_writeData);
 
-	if (portCount == 0) {
-		standardOutput << "No serial port found" << endl;
+    if (m_bytesWritten == -1) {
+        //standardOutput << QObject::tr("Failed to write the data to port %1, error: %2").arg(m_serialPortName).arg(m_serialPort->errorString()) << endl;
+		return false;
+	}
+    else if (m_bytesWritten != m_writeData.size()) {
+        //standardOutput << QObject::tr("Failed to write all the data to port %1, error: %2").arg(m_serialPortName).arg(m_serialPort->errorString()) << endl;
+		return false;
+	}
+    else if (!m_serialPort->waitForBytesWritten(5000)) {
+        //standardOutput << QObject::tr("Operation timed out or an error occurred for port %1, error: %2").arg(serialPortName).arg(serialPort->errorString()) << endl;
 		return false;
 	}
 
-	QSerialPort serialPort;
-	QString serialPortName = "Arduino";
-	serialPort.setPort(QSerialPortInfo::availablePorts()[0]);
-
-	serialPort.setBaudRate(QSerialPort::Baud9600);
-
-	if (!serialPort.open(QIODevice::ReadWrite)) {
-		standardOutput << QObject::tr("Failed to open port %1, error: %2").arg(serialPortName).arg(serialPort.errorString()) << endl;
-		return false;
-	}
-	QByteArray writeData = c; //Caractere a choisir
-
-	qint64 bytesWritten = serialPort.write(writeData);
-
-	if (bytesWritten == -1) {
-		//standardOutput << QObject::tr("Failed to write the data to port %1, error: %2").arg(serialPortName).arg(serialPort.errorString()) << endl;
-		return false;
-	}
-	else if (bytesWritten != writeData.size()) {
-		//standardOutput << QObject::tr("Failed to write all the data to port %1, error: %2").arg(serialPortName).arg(serialPort.errorString()) << endl;
-		return false;
-	}
-	else if (!serialPort.waitForBytesWritten(5000)) {
-		//standardOutput << QObject::tr("Operation timed out or an error occurred for port %1, error: %2").arg(serialPortName).arg(serialPort.errorString()) << endl;
-		return false;
-	}
-
-	standardOutput << QObject::tr("Data successfully sent to port %1").arg(serialPortName) << endl;
-	serialPort.close();
+    m_standardOutput << QObject::tr("Data successfully sent to port %1").arg(m_serialPortName) << endl;
+    m_serialPort->close();
 
 	return true;
 
 }
+
+// ci-dessous version fonctionnelle (pas tres propre; "statique"; tout code a la volee
+/*
+bool SerialCommunication::sendMessage(QByteArray c){
+
+    cout << "calling SerialCommunication::sendMessage" << endl;
+
+    QTextStream standardOutput(stdout);
+
+    int portCount = QSerialPortInfo::availablePorts().count();
+
+    if (portCount == 0) {
+        standardOutput << "No serial port found" << endl;
+        return false;
+    }
+
+    QSerialPort serialPort;
+    QString serialPortName = "Arduino";
+    serialPort.setPort(QSerialPortInfo::availablePorts()[0]);
+
+    serialPort.setBaudRate(QSerialPort::Baud9600);
+
+    if (!serialPort.open(QIODevice::ReadWrite)) {
+        standardOutput << QObject::tr("Failed to open port %1, error: %2").arg(serialPortName).arg(serialPort.errorString()) << endl;
+        return false;
+    }
+    QByteArray writeData = c; //Caractere a choisir
+
+    qint64 bytesWritten = serialPort.write(writeData);
+
+    if (bytesWritten == -1) {
+        //standardOutput << QObject::tr("Failed to write the data to port %1, error: %2").arg(serialPortName).arg(serialPort.errorString()) << endl;
+        return false;
+    }
+    else if (bytesWritten != writeData.size()) {
+        //standardOutput << QObject::tr("Failed to write all the data to port %1, error: %2").arg(serialPortName).arg(serialPort.errorString()) << endl;
+        return false;
+    }
+    else if (!serialPort.waitForBytesWritten(5000)) {
+        //standardOutput << QObject::tr("Operation timed out or an error occurred for port %1, error: %2").arg(serialPortName).arg(serialPort.errorString()) << endl;
+        return false;
+    }
+
+    standardOutput << QObject::tr("Data successfully sent to port %1").arg(serialPortName) << endl;
+    serialPort.close();
+
+    return true;
+
+}*/
 
 // Permet de lire un "a"
 // lecture synchrone (blocking)
