@@ -6,10 +6,12 @@
 #include "TakePictureTest.h" // for tests only
 #include <iostream> // for tests
 
-// For videos
+// Pour le flux video de la webam
 #include <QtMultimedia>
 #include <QtMultimediaWidgets>
 #include <QVideoWidget>
+#include <QPainter>
+#include <QLabel>
 
 #include "GPPWizard.h"
 
@@ -33,6 +35,10 @@ int main(int argc, char *argv[])
 
     //WEBCAM !!!!
 
+    //Définition de l'image contenant le rectangle
+    QImage image = QImage(800,460,QImage::Format_ARGB32);
+    QPainter painter(&image);
+
     //Permet de détecter la webcam
     QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
     QCameraInfo const firstCam = cameras[0];
@@ -49,11 +55,20 @@ int main(int argc, char *argv[])
     // création d'un QVideoWidget avec videoContainer comme parent
     QVideoWidget videoWidget(&videoContainer);
 
-    videoWidget.resize(600, 360); //Taille de la vidéo
+    videoWidget.resize(600, 360); //Taille de la vidéo - A MODIFIER ???
+    videoWidget.setAspectRatioMode(Qt::KeepAspectRatio);
 
     camera.setViewfinder(&videoWidget); //Intègre la vidéo au videoWidget
     camera.start();
 
+
+
+    // tracer le cadre
+    painter.drawRect(0,0,700,400); // A MODIFIER
+    QLabel myLabel(&videoContainer);
+    myLabel.setPixmap(QPixmap::fromImage(image));
+
+    // layout
     QGridLayout *layout = new QGridLayout;
     layout->addWidget(&videoContainer);
     w.setLayout(layout);
