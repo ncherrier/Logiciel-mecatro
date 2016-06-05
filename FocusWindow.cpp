@@ -7,7 +7,6 @@
 #include <QFile>
 #include <QTextStream>
 #include <QFileDialog>
-#include "Bitmap.h"
 #include <QBuffer>
 
 
@@ -20,29 +19,18 @@ void FocusWindow::OnImageReceived(QImage* image) {
 }
 
 void FocusWindow::SaveImage(){
-	Log("SaveImage called");
 	if (sync->m_bIsStreaming){
-		sync->OnBnClickedButtonStartstop();
-		
-		//AVTBitmap bitmap = sync->bitmap;
+		//sync->OnBnClickedButtonStartstop();
 		nb_photos++;
 		Log("Saving image");
-		//QString format = "png";
 		QString imgpath = dirpath + "/photo" + QString::number(nb_photos) + ".png";
-		//QString imgpath = "test.png";
 		Log(imgpath.toStdString());
 		
 		QPixmap pixmap = QPixmap::fromImage(*m_img);
 		QSize bla = pixmap.size();
 		Log(std::to_string(bla.height()));
 		Log(std::to_string(bla.width()));
-		//QByteArray bytes;
-		//QBuffer buffer(&bytes);
-		//buffer.open(QIODevice::WriteOnly);
-		//bool res = pixmap.save(&buffer, "PNG");
 		bool res = pixmap.save(imgpath, "PNG");
-		//bool res = img.save(imgpath);
-		//unsigned char res = AVTWriteBitmapToFile(&bitmap, imgpath.toStdString().c_str());
 		if (res) {
 			Log("Sauvegarde reussie");
 			emit PictureTaken();
@@ -50,8 +38,7 @@ void FocusWindow::SaveImage(){
 		else{
 			Log("Sauvegarde echouee");
 		}
-		Log("Reprise du flux video");
-		sync->OnBnClickedButtonStartstop();
+		//sync->OnBnClickedButtonStartstop();
 	}
 }
 
@@ -88,6 +75,7 @@ FocusWindow::~FocusWindow() {
 
 void FocusWindow::Log(std::string strMsg)
 {
+	/* UNCOMMENT TO DEBUG
 	QString filename = "C:/Data.txt";
 	QFile file(filename);
 	if (file.open(QIODevice::ReadWrite | QIODevice::Append))
@@ -95,5 +83,5 @@ void FocusWindow::Log(std::string strMsg)
 		QTextStream stream(&file);
 		stream << QString::fromUtf8(strMsg.c_str()) << endl;
 	}
-
+	*/
 }

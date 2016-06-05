@@ -324,6 +324,7 @@ namespace AVT {
 
 			void ApiController::Log(std::string strMsg)
 			{
+				/* UNCOMMENT TO DEBUG
 				//ui.m_ListLog->insertItem(0, QString::fromStdString(strMsg));
 				QString filename = "C:/Data.txt";
 				QFile file(filename);
@@ -331,7 +332,7 @@ namespace AVT {
 				{
 					QTextStream stream(&file);
 					stream << QString::fromUtf8(strMsg.c_str()) << endl;
-				}
+				}*/
 			}
 
 

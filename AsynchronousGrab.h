@@ -34,7 +34,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "GeneratedFiles/ui_logiciel_mecatro.h"
 
 #include <ApiController.h>
-#include "Bitmap.h"
 
 using AVT::VmbAPI::Examples::ApiController;
 
@@ -56,7 +55,6 @@ public:
 	// Our Qt image to display
 	QImage* m_Image;
 
-	AVTBitmap bitmap;
 
 	//
 	// Queries and lists all known camera
