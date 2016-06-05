@@ -191,28 +191,6 @@ void SerialCommunication::emergencyStop() {
     sendMessage("s");
 }
 
-// Move camera
-
-//bool SerialCommunication::goUp(){
-    //cout << "calling SerialCommunication::goUp()" << endl;
-    //return sendMessage("u"); // voir avec l'elec
-//}
-
-//bool SerialCommunication::goDown(){
-    //cout << "calling SerialCommunication::goDown()" << endl;
-    //return sendMessage("d"); // voir avec l"elec
-//}
-
-//bool SerialCommunication::goLeft(){
-//	cout << "calling SerialCommunication::goLeft()" << endl;
-//	return sendMessage("l"); // voir avec l'elec
-//}
-
-//bool SerialCommunication::goRight(){
-//	cout << "calling SerialCommunication::goRight()" << endl;
-//	return sendMessage("r"); // voir avec l'elec
-//}
-
 void SerialCommunication::moveCameraTo(int x, int y){
 
     cout << "calling SerialCommunication::goTo(" << x << "," << y << ")" << endl;
