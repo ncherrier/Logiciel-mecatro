@@ -24,12 +24,12 @@ int main(int argc, char *argv[])
 
 
     // WIZARD (fenetre principale)
-    //GPPWizard * GPP = new GPPWizard();
-    //GPP->show();
+    GPPWizard * GPP = new GPPWizard();
+    GPP->show();
     // FIN WIZARD
 
-    TakePictureTest *tak = new TakePictureTest();
-    tak->show();
+    //TakePictureTest *tak = new TakePictureTest();
+    //tak->show();
 
     //WEBCAM !!!!
 

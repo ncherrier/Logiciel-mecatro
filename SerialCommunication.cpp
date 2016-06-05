@@ -13,14 +13,31 @@
 
 using namespace std;
 
+// Default constructor, inherits QObject()
+SerialCommunication::SerialCommunication()
+    : QObject() {
+    cout << "SerialCommunication constructor called" << endl;
+
+    //m_serialPortName("Arduino");
+    //m_writeData;
+    //m_standardOutput(stdout);
+    //m_bytesWritten;
+
+    m_serialPort = new QSerialPort(this);
+
+    // TODO?
+}
 
 bool SerialCommunication::connectSerialPort(){
 
     cout << "calling SerialCommunication::connectSerialPort()" << endl;
 
+    QTextStream standardOutput(stdout);
+
 	int portCount = QSerialPortInfo::availablePorts().count();
 
 	if (portCount == 0) {
+        standardOutput << "No serial port found" << endl;
 		return false;
 	}
 
@@ -32,6 +49,7 @@ bool SerialCommunication::connectSerialPort(){
 	return true;
 
 }
+
 
 
 // Low-level communication (read and write - TODO)
@@ -84,6 +102,8 @@ bool SerialCommunication::sendMessage(QByteArray c){
 }
 
 // Permet de lire un "a"
+// lecture synchrone (blocking)
+// preferer lecture asynchrone ?
 bool SerialCommunication::read(){
 	QTextStream standardOutput(stdout);
 
@@ -136,9 +156,9 @@ bool SerialCommunication::read(){
 // Higher-level functions
 // Try several times ? a reflechir
 
-bool SerialCommunication::emergencyStop() {
+void SerialCommunication::emergencyStop() {
 	cout << "calling SerialCommunication::emergencyStop()" << endl;
-	return sendMessage("s");
+    sendMessage("s");
 }
 
 // Move camera
@@ -163,26 +183,25 @@ bool SerialCommunication::emergencyStop() {
 //	return sendMessage("r"); // voir avec l'elec
 //}
 
-bool SerialCommunication::goTo(int x, int y){
+void SerialCommunication::moveCameraTo(int x, int y){
 
     cout << "calling SerialCommunication::goTo(" << x << "," << y << ")" << endl;
 
     const char* x_char = (char *) x; // WARNING "integer of different size"
     const char* y_char = (char *) y;
 
-    return (sendMessage("b") && sendMessage(x_char) && sendMessage(y_char));
+    (sendMessage("b") && sendMessage(x_char) && sendMessage(y_char));
     // TODO: verifier protocole de communication avec elec
 }
 
-bool SerialCommunication::startCycle() {
+void SerialCommunication::startCycle() {
     cout << "calling SerialCommunication::startCycle()" << endl;
-    return sendMessage("a");
+    sendMessage("a");
 }
 
-bool SerialCommunication::pictureTaken() {
-	cout << "calling SerialCommunication::pictureTaken()" << endl;
-	return sendMessage("o"); // "OK"
+void SerialCommunication::moveCameraToNextPosition() {
+    cout << "calling SerialCommunication::moveCameraToNextPosition()" << endl;
+    sendMessage("o"); // "OK"
 }
-
 
 
