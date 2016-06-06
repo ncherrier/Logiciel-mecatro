@@ -3,7 +3,7 @@
 #include "SerialCommunication.h"
 
 #include <iostream> // TODO: remove after tests
-
+#include <string>
 #include <QtSerialPort>
 
 #include <QTextStream>
@@ -13,9 +13,20 @@
 
 using namespace std;
 
+void SerialCommunication::Log(std::string strMsg)
+{
+	QString filename = "Data.txt";
+	QFile file(filename);
+	if (file.open(QIODevice::ReadWrite | QIODevice::Append))
+	{
+		QTextStream stream(&file);
+		stream << QString::fromUtf8(strMsg.c_str()) << endl;
+	}
+}
+
 bool SerialCommunication::connectSerialPort(){
 
-    cout << "calling SerialCommunication::connectSerialPort()" << endl;
+    Log("calling SerialCommunication::connectSerialPort()");
 
     int portCount = QSerialPortInfo::availablePorts().count();
 
@@ -41,7 +52,7 @@ SerialCommunication::SerialCommunication()
     , m_standardOutput(stdout)
     , m_bytesWritten(0)
 {
-   cout << "SerialCommunication constructor called" << endl;
+   Log("SerialCommunication constructor called");
 
    m_serialPortName = "Arduino";
 
@@ -63,7 +74,7 @@ SerialCommunication::~SerialCommunication() {
 // Ecriture - low-level
 void SerialCommunication::write(QByteArray c){
 
-    cout << "calling SerialCommunication::write" << endl;
+    Log("calling SerialCommunication::write");
 
     // TODO: ouvrir le port ?
     //if (!m_serialPort->open(QIODevice::ReadWrite)) {
@@ -107,7 +118,7 @@ void SerialCommunication::write(QByteArray c){
 /*
 bool SerialCommunication::write(QByteArray c){
 
-    cout << "calling SerialCommunication::write" << endl;
+    Log("calling SerialCommunication::write");
 
     QTextStream standardOutput(stdout);
 
@@ -156,13 +167,14 @@ bool SerialCommunication::write(QByteArray c){
 // Ecriture - higher-level functions
 
 void SerialCommunication::emergencyStop() {
-	cout << "calling SerialCommunication::emergencyStop()" << endl;
+	Log("calling SerialCommunication::emergencyStop()");
     write("s");
 }
 
 void SerialCommunication::moveCameraTo(int x, int y){
 
-    cout << "calling SerialCommunication::goTo(" << x << "," << y << ")" << endl;
+	string debugMesg = ("calling SerialCommunication::goTo with args" + (std::to_string(x)) + (std::to_string(y)));
+	Log(debugMesg);
 
     //TODO: fabriquer la bonne chaine de caracteres (pas sure de ce code-ci)
     const char* x_char = (char *) x; // WARNING "integer of different size"
@@ -177,12 +189,12 @@ void SerialCommunication::moveCameraTo(int x, int y){
 }
 
 void SerialCommunication::startCycle() {
-    cout << "calling SerialCommunication::startCycle()" << endl;
+    Log("calling SerialCommunication::startCycle()");
     write("a");
 }
 
 void SerialCommunication::moveCameraToNextPosition() {
-    cout << "calling SerialCommunication::moveCameraToNextPosition()" << endl;
+    Log("calling SerialCommunication::moveCameraToNextPosition()");
     write("o"); // "OK"
 }
 
@@ -191,7 +203,7 @@ void SerialCommunication::moveCameraToNextPosition() {
 void SerialCommunication::handleReadyRead() {
 
     m_readData = m_serialPort->readAll();
-    m_standardOutput << "Nouveau message recu : " << m_readData << endl;
+	Log("Nouveau message recu : ");
 
     if (m_readData == "a") {
         emit MvtFinished();

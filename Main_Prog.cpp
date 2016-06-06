@@ -18,7 +18,7 @@
 
 using namespace std;
 
-
+// to debug
 void Log(std::string strMsg)
 {
 	QString filename = "Data.txt";

@@ -6,6 +6,17 @@
 
 #include <iostream> // for tests
 
+// to debug
+void GPPWizard::Log(std::string strMsg)
+{
+	QString filename = "Data.txt";
+	QFile file(filename);
+	if (file.open(QIODevice::ReadWrite | QIODevice::Append))
+	{
+		QTextStream stream(&file);
+		stream << QString::fromUtf8(strMsg.c_str()) << endl;
+	}
+}
 
 //Permet de detecter la camera // TODO: ameliorer...
 QCameraInfo const getWebcamInfo(){
@@ -81,11 +92,19 @@ GPPWizard::GPPWizard() : QWizard()
     focuswindow = new FocusWindow();
 	serialcomm = new SerialCommunication();
 	Log("Objets focus et serial crees");
+
+	// Prendre des photos qd le mvt est termine
     connect(serialcomm, SIGNAL(MvtFinished()), focuswindow, SLOT(SaveImage())); // TODO: uncomment !!!
+	// Demander a l'elec de bouger la camera qd la photo est prise
     connect(focuswindow, SIGNAL(PictureTaken()), serialcomm, SLOT(moveCameraToNextPosition())); // TODO: uncomment !!!
+	// Pour la barre de progression 
     connect(focuswindow, SIGNAL(PictureTaken()), progressPage, SLOT(incNbPicturesTaken()));
+	// Arret d'urgence
     connect(progressPage->getStopButton(), SIGNAL(clicked()), serialcomm, SLOT(emergencyStop()));
+	// Debut du cycle !
+	connect(progressPage->getGoButton(), SIGNAL(clicked()), serialcomm, SLOT(startCycle()));
 	Log("Connexions faites");
+
     addPage(introPage);
 
 
@@ -136,13 +155,3 @@ GPPWizard::GPPWizard() : QWizard()
 
 // End of wizard creation
 
-void GPPWizard::Log(std::string strMsg)
-{
-	QString filename = "Data.txt";
-	QFile file(filename);
-	if (file.open(QIODevice::ReadWrite | QIODevice::Append))
-	{
-		QTextStream stream(&file);
-		stream << QString::fromUtf8(strMsg.c_str()) << endl;
-	}
-}

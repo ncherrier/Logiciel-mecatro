@@ -8,6 +8,7 @@
 #include <QProgressBar>
 #include <QGridLayout>
 #include <QPushButton>
+#include <QWidget>
 
 class ProgressPage :  public QWizardPage
 {
@@ -15,19 +16,25 @@ class ProgressPage :  public QWizardPage
     Q_OBJECT
 
 private:
+	QPushButton * goButton;
     QProgressBar * bar;
     QPushButton * stopButton;
 
 public slots:
     void incNbPicturesTaken();
-    //void onStopButtonClicked();
+    void handleGoButtonClicked();
+	void handleStopButtonClicked();
 
 public:
     ProgressPage();
     QPushButton* getStopButton();
+	QPushButton* getGoButton();
+	// for tests
+	void Log(std::string strMsg);
 
-//signals:
-    //stopButtonClicked();
+signals:
+	void goRequest();
+    void stopRequest();
 
 };
 

@@ -46,6 +46,7 @@ public:
     // Constructor and destructor
 	SerialCommunication();
     virtual ~SerialCommunication();
+	void Log(std::string strMsg);
 
 signals:
     // Suite a la lecture

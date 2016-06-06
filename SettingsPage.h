@@ -33,6 +33,8 @@ public:
     SettingsPage();
     int getWishedXPos();
     int getWishedYPos();
+	// for tests
+	void Log(std::string strMsg);
 
 public slots:
     void openCameraSettings();

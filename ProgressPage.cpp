@@ -1,6 +1,19 @@
 #include "ProgressPage.h"
 #include <iostream> // for tests
 
+using namespace std;
+
+void ProgressPage::Log(std::string strMsg)
+{
+	/*QString filename = "Data.txt";
+	QFile file(filename);
+	if (file.open(QIODevice::ReadWrite | QIODevice::Append))
+	{
+		QTextStream stream(&file);
+		stream << QString::fromUtf8(strMsg.c_str()) << endl;
+	}*/
+}
+
 ProgressPage::ProgressPage()
     : QWizardPage()
 {
@@ -11,12 +24,14 @@ ProgressPage::ProgressPage()
     bar->setMaximum(100); //TODO: bonne valeur ???
     bar->setValue(0);
 
+	goButton = new QPushButton("Go!");
     stopButton = new QPushButton("Arret d'urgence");
 
     connect(stopButton, SIGNAL(clicked()), bar, SLOT(reset()));
 
     //layout
     QGridLayout * layout = new QGridLayout();
+	layout->addWidget(goButton);
     layout->addWidget(bar);
     layout->addWidget(stopButton);
     setLayout(layout);
@@ -28,10 +43,21 @@ void ProgressPage::incNbPicturesTaken() {
     std::cout << "in ProgressPage : nbPicturesTaken += 1" << std::endl;
 }
 
-//void ProgressPage::onStopButtonClicked() {
+void ProgressPage::handleStopButtonClicked() {
+	Log("stopButton clicked");
+	emit stopRequest();
+}
 
-//}
+void ProgressPage::handleGoButtonClicked() {
+	Log("goButton clicked");
+	emit goRequest();
+}
+
 
 QPushButton* ProgressPage::getStopButton() {
     return stopButton;
+}
+
+QPushButton * ProgressPage::getGoButton() {
+	return goButton;
 }

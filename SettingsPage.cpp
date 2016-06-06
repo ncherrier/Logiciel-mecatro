@@ -1,6 +1,17 @@
 #include "SettingsPage.h"
 #include <iostream> // for tests
 
+void SettingsPage::Log(std::string strMsg)
+{
+	QString filename = "Data.txt";
+	QFile file(filename);
+	if (file.open(QIODevice::ReadWrite | QIODevice::Append))
+	{
+		QTextStream stream(&file);
+		stream << QString::fromUtf8(strMsg.c_str()) << endl;
+	}
+}
+
 int SettingsPage::getWishedXPos(){
     return XPosBox->value();
 }
