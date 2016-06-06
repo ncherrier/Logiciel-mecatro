@@ -19,15 +19,27 @@
 using namespace std;
 
 
+void Log(std::string strMsg)
+{
+	QString filename = "Data.txt";
+	QFile file(filename);
+	if (file.open(QIODevice::ReadWrite | QIODevice::Append))
+	{
+		QTextStream stream(&file);
+		stream << QString::fromUtf8(strMsg.c_str()) << endl;
+	}
+}
+
 int main(int argc, char *argv[])
 {
-    cout << "hello! in main" << endl;
+    Log("hello! in main");
 	QApplication *app = new QApplication(argc, argv);
 
 
     // WIZARD (fenetre principale)
     GPPWizard * GPP = new GPPWizard();
     GPP->show();
+	Log("GPP Wizard created");
     // FIN WIZARD
 
     //TakePictureTest *tak = new TakePictureTest();
@@ -41,43 +53,48 @@ int main(int argc, char *argv[])
 
     //Permet de détecter la webcam
     QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
-    QCameraInfo const firstCam = cameras[0];
-    //QCameraInfo const secondCam = cameras[1];
-    QCamera camera(firstCam);
-    //
+	QWidget w;
+	QWidget videoContainer;
+	QCamera *camera;
+	QVideoWidget* videoWidget;
+	QLabel *myLabel;
+	QGridLayout *layout;
+	if (cameras.size() > 0){
+		Log("Webcam trouvee");
 
-    QWidget w;
+		QCameraInfo const firstCam = cameras[0];
+		//QCameraInfo const secondCam = cameras[1];
+		camera = new QCamera(firstCam);
+		
+		// création d'un QVideoWidget avec videoContainer comme parent
+		videoWidget = new QVideoWidget(&videoContainer);
 
-    //QWidget videoContainer(&w);
-    //w.setCentralWidget(&videoContainer);
-    QWidget videoContainer;
+		videoWidget->resize(600, 360); //Taille de la vidéo - A MODIFIER ???
+		videoWidget->setAspectRatioMode(Qt::KeepAspectRatio);
 
-    // création d'un QVideoWidget avec videoContainer comme parent
-    QVideoWidget videoWidget(&videoContainer);
-
-    videoWidget.resize(600, 360); //Taille de la vidéo - A MODIFIER ???
-    videoWidget.setAspectRatioMode(Qt::KeepAspectRatio);
-
-    camera.setViewfinder(&videoWidget); //Intègre la vidéo au videoWidget
-    camera.start();
+		camera->setViewfinder(videoWidget); //Intègre la vidéo au videoWidget
+		camera->start();
 
 
 
-    // tracer le cadre
-    painter.drawRect(0,0,700,400); // A MODIFIER
-    QLabel myLabel(&videoContainer);
-    myLabel.setPixmap(QPixmap::fromImage(image));
+		// tracer le cadre
+		painter.drawRect(0, 0, 700, 400); // A MODIFIER
+		myLabel = new QLabel(&videoContainer);
+		myLabel->setPixmap(QPixmap::fromImage(image));
 
-    // layout
-    QGridLayout *layout = new QGridLayout;
-    layout->addWidget(&videoContainer);
-    w.setLayout(layout);
+		// layout
+		layout = new QGridLayout;
+		layout->addWidget(&videoContainer);
+		w.setLayout(layout);
 
-    w.resize(600, 360); //Taille de la fenêtre
+		w.resize(600, 360); //Taille de la fenêtre
 
-    w.show();
-    //FIN WEBCAM
-
+		w.show();
+		//FIN WEBCAM
+	}
+	else{
+		Log("Pas de webcam trouvee");
+	}
 
     return app->exec();
 }

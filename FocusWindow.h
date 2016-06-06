@@ -1,4 +1,4 @@
-/*
+
 #ifndef FOCUSWINDOW_H
 #define FOCUSWINDOW_H
 
@@ -35,4 +35,3 @@ class FocusWindow : public QWidget
 
 
 #endif // FOCUSWINDOW_H
-*/

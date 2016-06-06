@@ -26,7 +26,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =============================================================================*/
 
-/*
+
 #ifndef ASYNCHRONOUSGRABQT_H
 #define ASYNCHRONOUSGRABQT_H
 
@@ -113,4 +113,3 @@ signals:
 };
 
 #endif // ASYNCHRONOUSGRABQT_H 
-*/

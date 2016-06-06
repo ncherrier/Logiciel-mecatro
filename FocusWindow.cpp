@@ -1,4 +1,4 @@
-/*
+
 #include <QtWidgets/QApplication>
 #include <QGridLayout>
 #include "FocusWindow.h"
@@ -84,4 +84,4 @@ void FocusWindow::Log(std::string strMsg)
 		stream << QString::fromUtf8(strMsg.c_str()) << endl;
 	}
 	*/
-//}
+}

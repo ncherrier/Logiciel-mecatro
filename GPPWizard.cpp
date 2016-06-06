@@ -77,14 +77,15 @@ GPPWizard::GPPWizard() : QWizard()
     framingPage = createFramingPage();
     settingsPage = createSettingsPage();
     progressPage = createProgressPage();
-
-    //focuswindow = new FocusWindow();
+	Log("Pages creees");
+    focuswindow = new FocusWindow();
 	serialcomm = new SerialCommunication();
-    //connect(serialcomm, SIGNAL(MvtFinished()), focuswindow, SLOT(SaveImage())); // TODO: uncomment !!!
-    //connect(focuswindow, SIGNAL(PictureTaken()), serialcomm, SLOT(moveCameraToNextPosition())); // TODO: uncomment !!!
-    //connect(focusWindow, SIGNAL(PictureTaken()), progressPage, SLOT(incNbPicturesTaken());
+	Log("Objets focus et serial crees");
+    connect(serialcomm, SIGNAL(MvtFinished()), focuswindow, SLOT(SaveImage())); // TODO: uncomment !!!
+    connect(focuswindow, SIGNAL(PictureTaken()), serialcomm, SLOT(moveCameraToNextPosition())); // TODO: uncomment !!!
+    connect(focuswindow, SIGNAL(PictureTaken()), progressPage, SLOT(incNbPicturesTaken()));
     connect(progressPage->getStopButton(), SIGNAL(clicked()), serialcomm, SLOT(emergencyStop()));
-
+	Log("Connexions faites");
     addPage(introPage);
 
 
@@ -109,9 +110,9 @@ GPPWizard::GPPWizard() : QWizard()
 
     setWindowTitle("GigaProxyPhoto");
     setFixedSize(700, 600);
-
+	Log("Pages ajoutees");
     // Webcam
-
+	/*
     QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
     QCameraInfo const firstCam = cameras[0];
     //QCameraInfo const secondCam = cameras[1];
@@ -128,10 +129,20 @@ GPPWizard::GPPWizard() : QWizard()
     //windowWithVideo->resize(400,400);
     //camera.start();
     //windowWithVideo->show();
-
+	*/
     show();
 
 }
 
 // End of wizard creation
 
+void GPPWizard::Log(std::string strMsg)
+{
+	QString filename = "Data.txt";
+	QFile file(filename);
+	if (file.open(QIODevice::ReadWrite | QIODevice::Append))
+	{
+		QTextStream stream(&file);
+		stream << QString::fromUtf8(strMsg.c_str()) << endl;
+	}
+}

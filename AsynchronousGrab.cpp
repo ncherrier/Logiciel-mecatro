@@ -26,7 +26,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =============================================================================*/
 
-/*
+
 #include <sstream>
 #include <QFile>
 #include <QTextStream>
@@ -369,4 +369,4 @@ void AsynchronousGrab::Log(std::string strMsg)
     //}
 }
 
-*/
+

@@ -21,6 +21,7 @@ class GPPWizard : public QWizard
 public:
     GPPWizard();
     QCameraInfo const getWebcamInfo(); // useful???
+	void Log(std::string strMsg);
 
 private:
     // functions to create the 4 pages of the wizard
@@ -34,7 +35,7 @@ private:
     QWizardPage *settingsPage;
     ProgressPage *progressPage;
 
-    //FocusWindow * focuswindow;
+    FocusWindow * focuswindow;
 	SerialCommunication * serialcomm;
 
     int getWishedXPos(); //utile ?
