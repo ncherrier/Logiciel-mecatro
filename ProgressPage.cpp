@@ -1,17 +1,20 @@
 #include "ProgressPage.h"
-#include <iostream> // for tests
+// for tests
+#include <iostream> 
+#include <QFile>
+#include <QTextStream>
 
 using namespace std;
 
 void ProgressPage::Log(std::string strMsg)
 {
-	/*QString filename = "Data.txt";
+	QString filename = "Data.txt";
 	QFile file(filename);
 	if (file.open(QIODevice::ReadWrite | QIODevice::Append))
 	{
 		QTextStream stream(&file);
 		stream << QString::fromUtf8(strMsg.c_str()) << endl;
-	}*/
+	}
 }
 
 ProgressPage::ProgressPage()
@@ -27,7 +30,9 @@ ProgressPage::ProgressPage()
 	goButton = new QPushButton("Go!");
     stopButton = new QPushButton("Arret d'urgence");
 
-    connect(stopButton, SIGNAL(clicked()), bar, SLOT(reset()));
+    //connect(stopButton, SIGNAL(clicked()), bar, SLOT(reset()));
+	connect(goButton, SIGNAL(clicked()), this, SLOT(handleGoButtonClicked()));
+	connect(stopButton, SIGNAL(clicked()), this, SLOT(handleStopButtonClicked()));
 
     //layout
     QGridLayout * layout = new QGridLayout();
@@ -46,6 +51,7 @@ void ProgressPage::incNbPicturesTaken() {
 void ProgressPage::handleStopButtonClicked() {
 	Log("stopButton clicked");
 	emit stopRequest();
+	bar->reset();
 }
 
 void ProgressPage::handleGoButtonClicked() {

@@ -6,9 +6,9 @@
 #include <string>
 #include <QtSerialPort>
 
+#include <QFile>
 #include <QTextStream>
 #include <QCoreApplication>
-#include <QFile>
 #include <QStringList>
 
 using namespace std;
@@ -42,6 +42,7 @@ bool SerialCommunication::connectSerialPort(){
 
     }
 
+	Log("Connection port serie etablie");
     return true;
 
 }
@@ -168,7 +169,7 @@ bool SerialCommunication::write(QByteArray c){
 
 void SerialCommunication::emergencyStop() {
 	Log("calling SerialCommunication::emergencyStop()");
-    write("s");
+    //write("s");
 }
 
 void SerialCommunication::moveCameraTo(int x, int y){

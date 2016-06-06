@@ -100,9 +100,9 @@ GPPWizard::GPPWizard() : QWizard()
 	// Pour la barre de progression 
     connect(focuswindow, SIGNAL(PictureTaken()), progressPage, SLOT(incNbPicturesTaken()));
 	// Arret d'urgence
-    connect(progressPage->getStopButton(), SIGNAL(clicked()), serialcomm, SLOT(emergencyStop()));
+    connect(progressPage->stopButton, SIGNAL(clicked()), serialcomm, SLOT(emergencyStop()));
 	// Debut du cycle !
-	connect(progressPage->getGoButton(), SIGNAL(clicked()), serialcomm, SLOT(startCycle()));
+	connect(progressPage->goButton, SIGNAL(clicked()), serialcomm, SLOT(startCycle()));
 	Log("Connexions faites");
 
     addPage(introPage);

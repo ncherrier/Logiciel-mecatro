@@ -16,9 +16,8 @@ class ProgressPage :  public QWizardPage
     Q_OBJECT
 
 private:
-	QPushButton * goButton;
+	
     QProgressBar * bar;
-    QPushButton * stopButton;
 
 public slots:
     void incNbPicturesTaken();
@@ -26,6 +25,8 @@ public slots:
 	void handleStopButtonClicked();
 
 public:
+	QPushButton * goButton;
+	QPushButton * stopButton;
     ProgressPage();
     QPushButton* getStopButton();
 	QPushButton* getGoButton();

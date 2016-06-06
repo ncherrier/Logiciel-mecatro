@@ -341,7 +341,7 @@ void AsynchronousGrab::Log(std::string strMsg, VmbErrorType eErr)
 {
 	//strMsg += "..." + m_ApiController.ErrorCodeToMessage(eErr);
 	//ui.m_ListLog->insertItem(0, QString::fromStdString(strMsg));
-	QString filename = "C:/Data.txt";
+	QString filename = "Data.txt";
 	QFile file(filename);
 	if (file.open(QIODevice::ReadWrite | QIODevice::Append))
 	{
