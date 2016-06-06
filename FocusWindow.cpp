@@ -9,6 +9,18 @@
 #include <QFileDialog>
 #include <QBuffer>
 
+void FocusWindow::Log(std::string strMsg)
+{
+	// UNCOMMENT TO DEBUG
+	QString filename = "Data.txt";
+	QFile file(filename);
+	if (file.open(QIODevice::ReadWrite | QIODevice::Append))
+	{
+		QTextStream stream(&file);
+		stream << QString::fromUtf8(strMsg.c_str()) << endl;
+	}
+}
+
 
 // Slot
 void FocusWindow::OnImageReceived(QImage* image) {
@@ -19,6 +31,7 @@ void FocusWindow::OnImageReceived(QImage* image) {
 }
 
 void FocusWindow::SaveImage(){
+	Log("call on FocusWindow::saveImage()");
 	if (sync->m_bIsStreaming){
 		//sync->OnBnClickedButtonStartstop();
 		nb_photos++;
@@ -39,6 +52,10 @@ void FocusWindow::SaveImage(){
 			Log("Sauvegarde echouee");
 		}
 		//sync->OnBnClickedButtonStartstop();
+	}
+	else{
+		Log("Camera not started");
+		sync->OnBnClickedButtonStartstop();
 	}
 }
 
@@ -63,6 +80,7 @@ FocusWindow::FocusWindow()
 	dirpath = QFileDialog::getExistingDirectory(this, tr("Open Directory"), "C:/", QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
 	sync->OnBnClickedButtonStartstop();
+	emit CameraStarted();
 
 }
 
@@ -73,15 +91,3 @@ FocusWindow::~FocusWindow() {
 	}
 }
 
-void FocusWindow::Log(std::string strMsg)
-{
-    /* UNCOMMENT TO DEBUG
-    QString filename = "C:/Data.txt";
-	QFile file(filename);
-	if (file.open(QIODevice::ReadWrite | QIODevice::Append))
-	{
-		QTextStream stream(&file);
-		stream << QString::fromUtf8(strMsg.c_str()) << endl;
-	}
-	*/
-}

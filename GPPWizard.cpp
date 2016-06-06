@@ -94,16 +94,19 @@ GPPWizard::GPPWizard() : QWizard()
 	Log("Objets focus et serial crees");
 
 	// Prendre des photos qd le mvt est termine
-    connect(serialcomm, SIGNAL(MvtFinished()), focuswindow, SLOT(SaveImage())); // TODO: uncomment !!!
+    connect(serialcomm, SIGNAL(MvtFinished()), focuswindow, SLOT(SaveImage()));
 	// Demander a l'elec de bouger la camera qd la photo est prise
-    connect(focuswindow, SIGNAL(PictureTaken()), serialcomm, SLOT(moveCameraToNextPosition())); // TODO: uncomment !!!
+    connect(focuswindow, SIGNAL(PictureTaken()), serialcomm, SLOT(moveCameraToNextPosition()));
 	// Pour la barre de progression 
     connect(focuswindow, SIGNAL(PictureTaken()), progressPage, SLOT(incNbPicturesTaken()));
 	// Arret d'urgence
     connect(progressPage->stopButton, SIGNAL(clicked()), serialcomm, SLOT(emergencyStop()));
 	// Debut du cycle !
-	connect(progressPage->goButton, SIGNAL(clicked()), serialcomm, SLOT(startCycle()));
+	connect(progressPage, SIGNAL(goRequest()), serialcomm, SLOT(startCycle()));
 	Log("Connexions faites");
+
+	//test
+	connect(focuswindow, SIGNAL(CameraStarted()), serialcomm, SLOT(startCycle()));
 
     addPage(introPage);
 
