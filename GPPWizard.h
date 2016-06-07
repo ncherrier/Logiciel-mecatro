@@ -23,6 +23,9 @@ public:
     QCameraInfo const getWebcamInfo(); // useful???
 	void Log(std::string strMsg);
 
+	QPushButton * goButton;
+	QPushButton * stopButton;
+
     // functions to create the 4 pages of the wizard
     QWizardPage *createIntroPage();
     QWizardPage *createFramingPage();

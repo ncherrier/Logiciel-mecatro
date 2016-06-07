@@ -93,6 +93,9 @@ GPPWizard::GPPWizard() : QWizard()
 	serialcomm = new SerialCommunication();
 	Log("Objets focus et serial crees");
 
+	goButton = new QPushButton("Go!");
+	stopButton = new QPushButton("Arret d'urgence");
+
 	// Prendre des photos qd le mvt est termine
     connect(serialcomm, SIGNAL(MvtFinished()), focuswindow, SLOT(SaveImage()));
 	// Demander a l'elec de bouger la camera qd la photo est prise
@@ -104,6 +107,11 @@ GPPWizard::GPPWizard() : QWizard()
 	// Debut du cycle !
 	connect(progressPage, SIGNAL(goRequest()), serialcomm, SLOT(startCycle()));
 	Log("Connexions faites");
+
+	// solution de secours
+	connect(goButton, SIGNAL(clicked()), serialcomm, SLOT(startCycle()));
+	connect(stopButton, SIGNAL(clicked()), serialcomm, SLOT(emergencyStop()));
+
 
 	//test
 	connect(focuswindow, SIGNAL(CameraStarted()), serialcomm, SLOT(startCycle()));
@@ -123,6 +131,13 @@ GPPWizard::GPPWizard() : QWizard()
     //webcam.start();
 
     //framingPage->layout()->addWidget(videoContainer);
+	
+	QGridLayout * layout = new QGridLayout;
+	layout->addWidget(goButton);
+	layout->addWidget(stopButton);
+
+	setLayout(layout);
+
 
     addPage(framingPage);
     // End framing page
