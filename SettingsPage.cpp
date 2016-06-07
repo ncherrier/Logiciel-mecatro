@@ -49,7 +49,7 @@ SettingsPage::SettingsPage() : QWizardPage()
     label = new QLabel("Faites la mise au point (a l'aide du bouton poussoir) et au besoin reglez la caméra industrielle. \nVous pouvez deplacer la camera : precisez la position voulue sous forme de pourcentage. Le coin superieur gauche correspond à 0 0, le coin inferieur droit à 100 100.");
     label->setWordWrap(true);
 
-    // Camera position settings
+    // Camera position settings (manual)
     XPosBox = new QSpinBox();
     XPosBox->setMinimum(0); // TODO: check values with elec
     XPosBox->setMaximum(100);

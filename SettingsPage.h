@@ -37,8 +37,9 @@ public:
 	void Log(std::string strMsg);
 
 public slots:
-    void openCameraSettings();
+   
     void moveCamera();
+	void openCameraSettings();
     void restoreToActualValues();
 
 };

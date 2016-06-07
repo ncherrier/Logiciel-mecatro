@@ -46,7 +46,6 @@ void FocusWindow::SaveImage(){
 		bool res = pixmap.save(imgpath, "PNG");
 		if (res) {
 			Log("Sauvegarde reussie");
-			emit PictureTaken();
 		}
 		else{
 			Log("Sauvegarde echouee");
@@ -57,6 +56,7 @@ void FocusWindow::SaveImage(){
 		Log("Camera not started");
 		sync->OnBnClickedButtonStartstop();
 	}
+	emit PictureTaken();
 }
 
 
@@ -80,7 +80,7 @@ FocusWindow::FocusWindow()
 	dirpath = QFileDialog::getExistingDirectory(this, tr("Open Directory"), "C:/", QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
 	sync->OnBnClickedButtonStartstop();
-	emit CameraStarted();
+	//emit CameraStarted();
 
 }
 

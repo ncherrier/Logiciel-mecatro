@@ -3,7 +3,10 @@
 #ifndef GPPWIZARD_H
 #define GPPWIZARD_H
 
-#include <QWizard>
+//#include <QWizard>
+#include <QSpinBox>
+#include <QLabel>
+#include <QGridLayout>
 
 #include "SerialCommunication.h"
 
@@ -14,9 +17,19 @@
 #include "FocusWindow.h"
 #include "SerialCommunication.h"
 
-class GPPWizard : public QWizard
+class GPPWizard : public QWidget
 {
-   // Q_OBJECT
+   Q_OBJECT
+
+private: 
+	QSpinBox * XPosBox;
+	QSpinBox * YPosBox;
+	QPushButton * moveButton;
+	QPushButton * realButton;
+	//QPushButton * cameraSettingsButton;
+	int realXPos;
+	int realYPos;
+	QProgressBar * bar;
 
 public:
     GPPWizard();
@@ -25,17 +38,18 @@ public:
 
 	QPushButton * goButton;
 	QPushButton * stopButton;
+	QPushButton * photoButton;
 
     // functions to create the 4 pages of the wizard
-    QWizardPage *createIntroPage();
-    QWizardPage *createFramingPage();
-    QWizardPage *createSettingsPage();
-    ProgressPage *createProgressPage();
+    //QWizardPage *createIntroPage();
+    //QWizardPage *createFramingPage();
+    //QWizardPage *createSettingsPage();
+    //ProgressPage *createProgressPage();
 
-    QWizardPage *introPage;
+    /*QWizardPage *introPage;
     QWizardPage *framingPage;
     QWizardPage *settingsPage;
-    ProgressPage *progressPage;
+    ProgressPage *progressPage;*/
 
     FocusWindow * focuswindow;
 	SerialCommunication * serialcomm;
@@ -48,6 +62,11 @@ public:
     //int wishedXPos;
     //int wishedYPos;
 
+	public slots:
+	void incNbPicturesTaken();
+	//void openCameraSettings();
+	void restoreToActualValues();
+	void moveCamera();
 };
 
 #endif // GPPWIZARD_H

@@ -6,6 +6,14 @@
 
 #include <iostream> // for tests
 
+int GPPWizard::getWishedXPos(){
+	return XPosBox->value();
+}
+
+int GPPWizard::getWishedYPos(){
+	return YPosBox->value();
+}
+
 // to debug
 void GPPWizard::Log(std::string strMsg)
 {
@@ -18,6 +26,27 @@ void GPPWizard::Log(std::string strMsg)
 	}
 }
 
+// SLOTS
+
+void GPPWizard::moveCamera(){
+	// "internal memory" of this page
+	realXPos = getWishedXPos();
+	realYPos = getWishedYPos();
+	// actual movement: communicate with Arduino
+	//SerialCommunication::goTo(realXPos, realYPos);
+	std::cout << "TODO!" << std::endl;
+}
+
+void GPPWizard::restoreToActualValues() {
+	XPosBox->setValue(realXPos);
+	YPosBox->setValue(realYPos);
+}
+
+void GPPWizard::incNbPicturesTaken() {
+	bar->setValue(bar->value() + 1);
+	Log("in ProgressPage : nbPicturesTaken += 1");
+}
+
 //Permet de detecter la camera // TODO: ameliorer...
 QCameraInfo const getWebcamInfo(){
     QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
@@ -26,7 +55,7 @@ QCameraInfo const getWebcamInfo(){
 }
 
 // Wizard creation
-
+/*
 // Introduction page
 QWizardPage * GPPWizard::createIntroPage()
 {
@@ -81,42 +110,75 @@ ProgressPage * GPPWizard::createProgressPage()
     ProgressPage *page = new ProgressPage();
     return page;
 }
-
-GPPWizard::GPPWizard() : QWizard()
+*/
+GPPWizard::GPPWizard() 
 {
-    introPage = createIntroPage();
+    /*introPage = createIntroPage();
     framingPage = createFramingPage();
     settingsPage = createSettingsPage();
     progressPage = createProgressPage();
-	Log("Pages creees");
+	Log("Pages creees");*/
     focuswindow = new FocusWindow();
 	serialcomm = new SerialCommunication();
 	Log("Objets focus et serial crees");
 
+	// Settings
+
+	// Camera position settings (manual)
+	XPosBox = new QSpinBox();
+	XPosBox->setMinimum(0); // TODO: check values with elec
+	XPosBox->setMaximum(100);
+	XPosBox->setSingleStep(1);
+	XPosBox->setAccelerated(true);
+	XPosBox->setSuffix("%");
+
+	YPosBox = new QSpinBox();
+	YPosBox->setMinimum(0); // TODO: check values with elec
+	YPosBox->setMaximum(100);
+	YPosBox->setSingleStep(1);
+	YPosBox->setAccelerated(true);
+	YPosBox->setSuffix("%");
+
+	moveButton = new QPushButton("Move camera");
+	realButton = new QPushButton("Show actual values");
+
+	//cameraSettingsButton = new QPushButton("Indus. camera settings");
+
+	// Progress
 	goButton = new QPushButton("Go!");
 	stopButton = new QPushButton("Arret d'urgence");
+	photoButton = new QPushButton("Prendre une photo");
+
+	// bar de progression
+	bar = new QProgressBar();
+	bar->setMinimum(0);
+	bar->setMaximum(225); //TODO: bonne valeur ???
+	bar->setValue(0);
 
 	// Prendre des photos qd le mvt est termine
     connect(serialcomm, SIGNAL(MvtFinished()), focuswindow, SLOT(SaveImage()));
 	// Demander a l'elec de bouger la camera qd la photo est prise
-    connect(focuswindow, SIGNAL(PictureTaken()), serialcomm, SLOT(moveCameraToNextPosition()));
+    //connect(focuswindow, SIGNAL(PictureTaken()), serialcomm, SLOT(moveCameraToNextPosition()));
 	// Pour la barre de progression 
-    connect(focuswindow, SIGNAL(PictureTaken()), progressPage, SLOT(incNbPicturesTaken()));
+    connect(focuswindow, SIGNAL(PictureTaken()), this, SLOT(incNbPicturesTaken()));
+	connect(photoButton, SIGNAL(clicked()), focuswindow, SLOT(SaveImage()));
 	// Arret d'urgence
-    connect(progressPage->stopButton, SIGNAL(clicked()), serialcomm, SLOT(emergencyStop()));
+    //connect(progressPage->stopButton, SIGNAL(clicked()), serialcomm, SLOT(emergencyStop()));
 	// Debut du cycle !
-	connect(progressPage, SIGNAL(goRequest()), serialcomm, SLOT(startCycle()));
+	//connect(progressPage, SIGNAL(goRequest()), serialcomm, SLOT(startCycle()));
 	Log("Connexions faites");
 
-	// solution de secours
-	connect(goButton, SIGNAL(clicked()), serialcomm, SLOT(startCycle()));
+	
+	//connect(goButton, SIGNAL(clicked()), serialcomm, SLOT(startCycle()));
 	connect(stopButton, SIGNAL(clicked()), serialcomm, SLOT(emergencyStop()));
-
+	
+	//QObject::connect(moveButton, SIGNAL(clicked()), this, SLOT(moveCamera()));
+	//QObject::connect(realButton, SIGNAL(clicked()), this, SLOT(restoreToActualValues()));
 
 	//test
-	connect(focuswindow, SIGNAL(CameraStarted()), serialcomm, SLOT(startCycle()));
+	//connect(focuswindow, SIGNAL(CameraStarted()), serialcomm, SLOT(startCycle()));
 
-    addPage(introPage);
+    //addPage(introPage);
 
 
     // Framing page
@@ -132,22 +194,32 @@ GPPWizard::GPPWizard() : QWizard()
 
     //framingPage->layout()->addWidget(videoContainer);
 	
+	// layout
+
 	QGridLayout * layout = new QGridLayout;
+	//layout->addWidget(XPosBox);
+	//layout->addWidget(YPosBox);
+	//layout->addWidget(realButton);
+	//layout->addWidget(moveButton);
+	//layout->addWidget(cameraSettingsButton);
+
+	layout->addWidget(photoButton);
 	layout->addWidget(goButton);
 	layout->addWidget(stopButton);
+	layout->addWidget(bar);
 
 	setLayout(layout);
 
 
-    addPage(framingPage);
+    //addPage(framingPage);
     // End framing page
 
-    addPage(createSettingsPage());
-    addPage(createProgressPage());
+    //addPage(createSettingsPage());
+    //addPage(createProgressPage());
 
     setWindowTitle("GigaProxyPhoto");
     setFixedSize(700, 600);
-	Log("Pages ajoutees");
+	//Log("Pages ajoutees");
     // Webcam
 	/*
     QList<QCameraInfo> cameras = QCameraInfo::availableCameras();

@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     //WEBCAM !!!!
 
     //Définition de l'image contenant le rectangle
-    QImage image = QImage(800,460,QImage::Format_ARGB32);
+    QImage image = QImage(1200,675,QImage::Format_ARGB32);
     QPainter painter(&image);
 
     //Permet de détecter la webcam
@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
 		// création d'un QVideoWidget avec videoContainer comme parent
 		videoWidget = new QVideoWidget(&videoContainer);
 
-		videoWidget->resize(600, 360); //Taille de la vidéo - A MODIFIER ???
+		videoWidget->resize(1200, 675); //Taille de la vidéo - A MODIFIER ???
 		videoWidget->setAspectRatioMode(Qt::KeepAspectRatio);
 
 		camera->setViewfinder(videoWidget); //Intègre la vidéo au videoWidget
@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
 
 
 		// tracer le cadre
-		painter.drawRect(0, 0, 700, 400); // A MODIFIER
+		painter.drawRect(528, 297, 143, 80); // A MODIFIER
 		myLabel = new QLabel(&videoContainer);
 		myLabel->setPixmap(QPixmap::fromImage(image));
 
@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
 		layout->addWidget(&videoContainer);
 		w.setLayout(layout);
 
-		w.resize(600, 360); //Taille de la fenêtre
+		w.resize(1280, 700); //Taille de la fenêtre
 
 		w.show();
 		//FIN WEBCAM

@@ -231,12 +231,13 @@ void SerialCommunication::handleReadyRead() {
 	Log("readAll() execute. Message lu :");
 	std::string string_readData(m_readData.constData(), m_readData.length());
 	Log(string_readData);
-
-    if (string_readData.compare("a")) {
+	Log(std::to_string(string_readData.compare("a")));
+	Log(std::to_string(string_readData.compare("f")));
+    if (string_readData.compare("a") == 0) {
         emit MvtFinished();
 		Log("signal MvtFinished() emis par SerialCommunication");
 	}
-	else if (string_readData.compare("f")) {
+	else if (string_readData.compare("f") == 0) {
         emit CycleFinished();
 		Log("signal CycleFinished() emis par SerialCommunication");
     }

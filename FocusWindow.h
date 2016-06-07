@@ -29,7 +29,7 @@ class FocusWindow : public QWidget
 
 	signals:
 		void PictureTaken();
-		void CameraStarted();
+		//void CameraStarted();
 
 };
 
